@@ -1,1 +1,1 @@
-# magisthans_spielekiste.github.io
+# magisthans-spielekiste.github.io
