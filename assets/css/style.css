@@ -1,3 +1,7 @@
+/* ==========================
+   Lokale Schriftarten
+   ========================== */
+
 @font-face {
     font-family: 'Orbitron';
     src: url('../fonts/Orbitron-Regular.woff2') format('woff2');
@@ -33,32 +37,359 @@
     font-style: normal;
 }
 
-:root{
---bg:#080812;--panel:#141424;--pink:#ff2ac3;--blue:#3aa8ff;--text:#f3f3f3;
+/* ==========================
+   Farben
+   ========================== */
+
+:root {
+
+    --bg: #080812;
+    --panel: #141424;
+
+    --pink: #ff2ac3;
+    --blue: #3aa8ff;
+
+    --text: #f3f3f3;
+
+    --border: #26264a;
 }
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
-.hero{min-height:420px;background:linear-gradient(135deg,#1a1030,#091a35);display:flex;align-items:center;justify-content:center;text-align:center}
-.hero h1{font-size:4rem;text-shadow:0 0 15px var(--pink),0 0 30px var(--blue)}
-nav{background:#0d0d18;padding:15px;position:sticky;top:0;text-align:center}
-nav a{color:#fff;text-decoration:none;margin:0 12px}
-.container{max-width:1300px;margin:auto;padding:30px 20px}
-.layout{display:grid;grid-template-columns:3fr 1fr;gap:25px}
-.card{background:var(--panel);padding:20px;border-radius:12px;border:1px solid #2a2a4a;transition:.25s}
-.card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(255,42,195,.25)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.thumb{height:160px;border-radius:8px;background:linear-gradient(135deg,var(--pink),var(--blue));margin-bottom:10px}
-iframe{width:100%;height:500px;border:none;border-radius:12px}
-.search{width:100%;padding:12px;border-radius:8px;border:none;margin-bottom:20px}
-.timeline .card{margin-bottom:15px}
-.social a{color:white;margin-right:12px}
-footer{background:#0d0d18;padding:25px;text-align:center}
-@media(max-width:900px){.layout{grid-template-columns:1fr}.hero h1{font-size:2.5rem}}
+
+/* ==========================
+   Basis
+   ========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
+
+    background: var(--bg);
+
+    color: var(--text);
+
     font-family: 'Inter', sans-serif;
+
+    line-height: 1.7;
 }
 
-h1, h2, h3, nav {
+a {
+
+    color: var(--blue);
+
+    text-decoration: none;
+}
+
+a:hover {
+
+    color: var(--pink);
+}
+
+/* ==========================
+   Hero Banner
+   ========================== */
+
+.hero {
+
+    min-height: 550px;
+
+    background:
+        linear-gradient(
+            rgba(8,8,18,0.45),
+            rgba(8,8,18,0.80)
+        ),
+        url('../images/banner.png');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+}
+
+.hero-content {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    padding: 60px 30px;
+
+    text-align: center;
+}
+
+.hero h1 {
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 4rem;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px var(--pink),
+        0 0 25px var(--pink),
+        0 0 40px var(--blue);
+}
+
+.hero p {
+
+    font-size: 1.2rem;
+
+    color: #dddddd;
+}
+
+/* ==========================
+   Navigation
+   ========================== */
+
+nav {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background: rgba(13,13,24,0.95);
+
+    backdrop-filter: blur(8px);
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav a {
+
+    font-family: 'Orbitron', sans-serif;
+
+    color: white;
+
+    margin: 0 15px;
+}
+
+/* ==========================
+   Layout
+   ========================== */
+
+.container {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 40px 20px;
+}
+
+.layout {
+
+    display: grid;
+
+    grid-template-columns: 3fr 1fr;
+
+    gap: 25px;
+}
+
+/* ==========================
+   Überschriften
+   ========================== */
+
+h2 {
+
+    font-family: 'Orbitron', sans-serif;
+
+    color: var(--blue);
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 0 10px rgba(58,168,255,0.4);
+}
+
+h3 {
+
+    font-family: 'Orbitron', sans-serif;
+
+    margin-bottom: 10px;
+}
+
+/* ==========================
+   Suche
+   ========================== */
+
+.search {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--panel);
+
+    color: white;
+}
+
+/* ==========================
+   Karten
+   ========================== */
+
+.card {
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 20px rgba(255,42,195,0.15),
+        0 0 30px rgba(58,168,255,0.10);
+}
+
+/* ==========================
+   Kartenraster
+   ========================== */
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 20px;
+}
+
+/* ==========================
+   Video Thumbnail
+   ========================== */
+
+.thumb {
+
+    height: 180px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--blue)
+        );
+
+    margin-bottom: 15px;
+}
+
+/* ==========================
+   YouTube
+   ========================== */
+
+iframe {
+
+    width: 100%;
+
+    height: 500px;
+
+    border: none;
+
+    border-radius: 14px;
+}
+
+/* ==========================
+   Sidebar
+   ========================== */
+
+.sidebar .card {
+
+    margin-bottom: 20px;
+}
+
+/* ==========================
+   Timeline
+   ========================== */
+
+.timeline .card {
+
+    margin-bottom: 15px;
+}
+
+/* ==========================
+   Social
+   ========================== */
+
+.social a {
+
+    display: inline-block;
+
+    margin-right: 15px;
+}
+
+/* ==========================
+   Footer
+   ========================== */
+
+footer {
+
+    margin-top: 40px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #0d0d18;
+
+    border-top: 1px solid var(--border);
+}
+
+/* ==========================
+   Mobile
+   ========================== */
+
+@media (max-width: 900px) {
+
+    .layout {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+
+        min-height: 350px;
+    }
+
+    .hero h1 {
+
+        font-size: 2.3rem;
+    }
+
+    iframe {
+
+        height: 280px;
+    }
+}
     font-family: 'Orbitron', sans-serif;
 }
