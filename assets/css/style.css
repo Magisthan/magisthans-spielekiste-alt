@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root{
+--bg:#080812;--panel:#141424;--pink:#ff2ac3;--blue:#3aa8ff;--text:#f3f3f3;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
+.hero{min-height:420px;background:linear-gradient(135deg,#1a1030,#091a35);display:flex;align-items:center;justify-content:center;text-align:center}
+.hero h1{font-size:4rem;text-shadow:0 0 15px var(--pink),0 0 30px var(--blue)}
+nav{background:#0d0d18;padding:15px;position:sticky;top:0;text-align:center}
+nav a{color:#fff;text-decoration:none;margin:0 12px}
+.container{max-width:1300px;margin:auto;padding:30px 20px}
+.layout{display:grid;grid-template-columns:3fr 1fr;gap:25px}
+.card{background:var(--panel);padding:20px;border-radius:12px;border:1px solid #2a2a4a;transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(255,42,195,.25)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.thumb{height:160px;border-radius:8px;background:linear-gradient(135deg,var(--pink),var(--blue));margin-bottom:10px}
+iframe{width:100%;height:500px;border:none;border-radius:12px}
+.search{width:100%;padding:12px;border-radius:8px;border:none;margin-bottom:20px}
+.timeline .card{margin-bottom:15px}
+.social a{color:white;margin-right:12px}
+footer{background:#0d0d18;padding:25px;text-align:center}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.hero h1{font-size:2.5rem}}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, nav {
+    font-family: 'Orbitron', sans-serif;
+}
