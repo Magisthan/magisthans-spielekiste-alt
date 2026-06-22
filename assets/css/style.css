@@ -333,31 +333,28 @@ iframe {
 }
 
 /* ==========================
-   Playlists & Serien
+   Playlist Sidebar
    ========================== */
 
-.playlist-grid {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-top: 10px;
+.playlist-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.playlist-button {
+.playlist-list li {
+    margin-bottom: 8px;
+}
+
+.playlist-list a {
 
     display: block;
-
-    width: 100%;
 
     padding: 10px 12px;
 
     background: rgba(58,168,255,0.08);
 
-    border: 1px solid rgba(58,168,255,0.25);
+    border: 1px solid rgba(58,168,255,0.20);
 
     border-radius: 8px;
 
@@ -365,22 +362,20 @@ iframe {
 
     text-decoration: none;
 
-    transition: all .2s ease;
-
-    font-size: 0.95rem;
+    transition: all 0.2s ease;
 }
 
-.playlist-button:hover {
+.playlist-list a:hover {
 
-    color: white;
+    color: #ffffff;
 
-    border-color: var(--blue);
+    border-color: #3aa8ff;
 
     background: rgba(58,168,255,0.18);
 
-    box-shadow: 0 0 12px rgba(58,168,255,0.35);
+    box-shadow: 0 0 10px rgba(58,168,255,0.35);
 
-    transform: translateX(3px);
+    transform: translateX(4px);
 }
 
 /* ==========================
