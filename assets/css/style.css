@@ -153,6 +153,34 @@ nav a:hover {
 }
 
 /* ==========================
+   Pixelkumpel Menüpunkt
+   ========================== */
+
+.pixelkumpel-link {
+
+    display: inline-flex !important;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.pixelkumpel-link img {
+
+    width: 28px;
+
+    height: 28px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 1px solid var(--blue);
+
+    box-shadow: 0 0 6px rgba(58,168,255,.5);
+}
+
+/* ==========================
    Layout
    ========================== */
 
