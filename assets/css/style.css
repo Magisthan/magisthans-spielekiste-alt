@@ -163,21 +163,15 @@ nav a:hover {
     align-items: center;
 
     gap: 8px;
+
+    vertical-align: middle;
 }
 
 .pixelkumpel-link img {
 
-    width: 28px;
+    position: relative;
 
-    height: 28px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-    border: 1px solid var(--blue);
-
-    box-shadow: 0 0 6px rgba(58,168,255,.5);
+    top: -1px;
 }
 
 /* ==========================
