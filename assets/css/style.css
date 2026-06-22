@@ -510,7 +510,7 @@ iframe {
 }
 
 /* ==========================
-   Social Links
+   Social Sidebar
    ========================== */
 
 .social-list {
@@ -534,7 +534,11 @@ iframe {
 
 .social-list a {
 
-    display: block;
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
 
     padding: 10px 12px;
 
@@ -564,6 +568,16 @@ iframe {
     transform: translateX(4px);
 }
 
+.social-list img {
+
+    width: 24px;
+
+    height: 24px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
 /* ==========================
    Footer
    ========================== */
