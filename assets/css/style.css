@@ -578,6 +578,28 @@ iframe {
 
     flex-shrink: 0;
 }
+
+.legal-content {
+
+    line-height: 1.9;
+
+    color: #d8d8d8;
+}
+
+.legal-content h3 {
+
+    margin-top: 30px;
+
+    color: var(--blue);
+}
+
+.legal-content p {
+
+    margin-bottom: 15px;
+
+    text-align: justify;
+}
+
 /* ==========================
    Footer
    ========================== */
