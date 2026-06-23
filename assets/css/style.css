@@ -354,6 +354,52 @@ iframe {
    Playlist Sidebar
    ========================== */
 
+.playlist-bg {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.playlist-bg::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    opacity: 0.10;
+
+    transition: opacity 0.25s ease;
+
+    z-index: 0;
+}
+
+.playlist-bg:hover::before {
+
+    opacity: 0.16;
+}
+
+.playlist-bg .playlist-title,
+.playlist-bg .platform-tag,
+.playlist-bg .platform-icons {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.patrizier-bg::before {
+
+    background-image:
+    url("../images/playlists/patrizier.png");
+}
+
 .playlist-list {
     list-style: none;
     padding: 0;
