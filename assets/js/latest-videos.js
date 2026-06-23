@@ -4,41 +4,23 @@ fetch("data/latest-videos.json")
 
 .then(videos => {
 
-    const container =
-        document.getElementById("latest-videos");
+    const featured = document.getElementById("featured-video");
 
-    videos.forEach(video => {
+if (featured && videos.length > 0) {
 
-        container.innerHTML += `
+    const firstVideo = videos[0];
 
-        <a href="${video.url}"
-           target="_blank"
-           class="video-row">
+    featured.innerHTML = `
 
-            <div class="video-thumb">
+    <div class="featured-video-card">
 
-                <img src="${video.thumbnail}"
-                     alt="${video.title}">
+        <iframe
+            src="https://www.youtube-nocookie.com/embed/${firstVideo.videoId}"
+            title="${firstVideo.title}"
+            allowfullscreen>
+        </iframe>
 
-            </div>
+    </div>
 
-            <div class="video-info">
-
-                <h3>${video.title}</h3>
-
-                <p>
-                    Neues Video auf Magisthans Spielekiste.
-                </p>
-
-            </div>
-
-            <div class="video-arrow">
-                →
-            </div>
-
-        </a>
-
-        `;
-    });
-
-});
+    `;
+}
