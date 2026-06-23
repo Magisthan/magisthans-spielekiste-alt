@@ -945,12 +945,14 @@ footer a:hover {
 
     .welcome-image img {
 
-        width: 220px;
+    width: 280px;
 
-        max-width: 100%;
+    max-width: 100%;
 
-        height: auto;
-    }
+    height: auto;
+
+    border-radius: 10px;
+}
 
     .welcome-button {
 
