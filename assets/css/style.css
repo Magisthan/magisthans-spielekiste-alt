@@ -397,7 +397,7 @@ iframe {
 .patrizier-bg::before {
 
     background-image:
-    url("../images/playlists/patrizier.png");
+    url("../playlists/patrizier.png");
 }
 
 .playlist-list {
