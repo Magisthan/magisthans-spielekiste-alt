@@ -746,6 +746,34 @@ iframe {
 }
 
 /* ==========================
+   Featured Video
+   ========================== */
+
+.featured-video-card {
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+}
+
+.featured-video-card iframe {
+
+    width: 100%;
+
+    height: 520px;
+
+    border: none;
+
+    display: block;
+}
+
+/* ==========================
    Footer
    ========================== */
 
