@@ -344,36 +344,6 @@ iframe {
 }
 
 /* ==========================
-   Retro News Flash Liste
-   ========================== */
-
-.rnf-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.rnf-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #26264a;
-}
-
-.rnf-list li:last-child {
-    border-bottom: none;
-}
-
-.rnf-list a {
-    color: var(--text);
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.rnf-list a:hover {
-    color: var(--blue);
-    padding-left: 5px;
-}
-
-/* ==========================
    Playlist Sidebar
    ========================== */
 
@@ -485,6 +455,50 @@ iframe {
     gap: 6px;
 
     align-self: flex-end;
+}
+
+/* ==========================
+   Retro News Flash Archiv
+   ========================== */
+
+.archive-card {
+
+    text-align: center;
+}
+
+.archive-card p {
+
+    color: #cfcfcf;
+
+    margin-bottom: 20px;
+}
+
+.archive-button {
+
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border-radius: 10px;
+
+    background: rgba(58,168,255,0.12);
+
+    border: 1px solid rgba(58,168,255,0.25);
+
+    color: #ffffff;
+
+    transition: all 0.25s ease;
+}
+
+.archive-button:hover {
+
+    background: rgba(58,168,255,0.20);
+
+    border-color: #3aa8ff;
+
+    box-shadow: 0 0 12px rgba(58,168,255,0.35);
+
+    transform: translateY(-2px);
 }
 
 /* ==========================
