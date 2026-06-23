@@ -411,7 +411,7 @@ iframe {
 
     background-image:
     url("../playlists/megalomania.png");
-    background-position: center 70%;
+    background-position: center;
 }
 
 .max1869-bg::before {
