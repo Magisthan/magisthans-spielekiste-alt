@@ -13,18 +13,31 @@ fetch("data/latest-videos.json")
 
         <a href="${video.url}"
            target="_blank"
-           class="video-box">
+           class="video-row">
 
-            <img src="${video.thumbnail}"
-                 alt="${video.title}">
+            <div class="video-thumb">
 
-            <div class="video-content">
-
-                <h3>${video.title}</h3>
+                <img src="${video.thumbnail}"
+                     alt="${video.title}">
 
             </div>
 
+            <div class="video-info">
+
+                <h3>${video.title}</h3>
+
+                <p>
+                    Neues Video auf Magisthans Spielekiste.
+                </p>
+
+            </div>
+
+            <div class="video-arrow">
+                →
+            </div>
+
         </a>
+
         `;
     });
 
