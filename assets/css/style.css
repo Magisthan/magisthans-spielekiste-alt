@@ -405,6 +405,13 @@ iframe {
     background-position: center 70%;
 }
 
+.megalomania-bg::before {
+
+    background-image:
+    url("../playlists/megalomania.png");
+    background-position: center 70%;
+}
+
 /* ==========================
    Playlist Sidebar Weiter
    ========================== */
