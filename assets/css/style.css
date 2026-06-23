@@ -433,6 +433,13 @@ iframe {
     background-position: center 70%;
 }
 
+.ringsofmedusa-bg::before {
+
+    background-image:
+    url("../playlists/ringsofmedusa.png");
+    background-position: center 70%;
+}
+
 /* ==========================
    Playlist Sidebar Weiter
    ========================== */
