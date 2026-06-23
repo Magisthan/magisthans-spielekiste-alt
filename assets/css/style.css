@@ -553,22 +553,24 @@ iframe {
 
     justify-content: center;
 
-    width: 30px;
+    width: 34px;
 
-    height: 30px;
+    height: 34px;
 
     border-radius: 50%;
 
-    background: rgba(58,168,255,0.12);
+    background: rgba(255,255,255,0.92);
 
-    border: 1px solid rgba(58,168,255,0.25);
+    border: 1px solid rgba(255,255,255,0.35);
+
+    box-shadow: 0 0 6px rgba(255,255,255,0.15);
 }
 
 .platform-tag img {
 
-    width: 18px;
+    width: 20px;
 
-    height: 18px;
+    height: 20px;
 
     object-fit: contain;
 }
