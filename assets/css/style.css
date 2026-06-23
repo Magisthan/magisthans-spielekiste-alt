@@ -810,7 +810,11 @@ iframe {
 
     background: rgba(58,168,255,0.08);
 
-    transform: translateX(6px);
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 12px rgba(58,168,255,0.20);
+
 }
 
 .video-thumb {
@@ -827,7 +831,16 @@ iframe {
     border-radius: 8px;
 
     display: block;
+
+    transition: transform 0.25s ease;
 }
+
+.video-row:hover .video-thumb img {
+
+    transform: scale(1.03);
+}
+
+
 
 .video-info {
 
@@ -865,7 +878,7 @@ iframe {
 
 .video-row:hover .video-arrow {
 
-    transform: translateX(6px);
+    transform: translateX(10px);
 
     color: var(--pink);
 }
