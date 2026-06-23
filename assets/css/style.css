@@ -926,4 +926,48 @@ footer a:hover {
 
         height: 280px;
     }
+
+    /* Willkommen Box */
+
+    .welcome-box {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 25px;
+    }
+
+    .welcome-text p {
+
+        max-width: 100%;
+    }
+
+    .welcome-image img {
+
+        width: 220px;
+
+        max-width: 100%;
+
+        height: auto;
+    }
+
+    .welcome-button {
+
+        width: 100%;
+
+        max-width: 250px;
+    }
+
+    /* Letzte Videos */
+
+    .latest-videos-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .video-card img {
+
+        height: auto;
+    }
 }
