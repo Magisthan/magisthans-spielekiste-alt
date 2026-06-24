@@ -22,9 +22,10 @@ jobs:
 
       - name: Download Feed
         run: |
-         curl -L \
-         -o feed.xml \
-         "https://rsshub.app/youtube/channel/UCvRke7SHMc6oz8FND7u0DPQ"
+         wget \
+         --server-response \
+         -O feed.xml \
+         "https://www.youtube.com/feeds/videos.xml?channel_id=UCvRke7SHMc6oz8FND7u0DPQ"
 
       - name: Show Feed Header
         run: |
