@@ -276,6 +276,25 @@ h3 {
     line-height: 1.6;
 }
 
+.retro-fact {
+
+    margin-bottom: 25px;
+}
+
+.retro-fact h3 {
+
+    margin-top: 0;
+}
+
+.retro-fact p {
+
+    margin-bottom: 0;
+
+    color: #d8d8d8;
+
+    line-height: 1.6;
+}
+
 /* ==========================
    Karten
    ========================== */
