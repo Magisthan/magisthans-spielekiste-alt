@@ -22,9 +22,9 @@ jobs:
 
       - name: Download Feed
         run: |
-         curl -L -A "Mozilla/5.0" \
+         curl -L \
          -o feed.xml \
-         "https://www.youtube.com/feeds/videos.xml?channel_id=UCvRke7SHMc6oz8FND7u0DPQ"
+         "https://rsshub.app/youtube/channel/UCvRke7SHMc6oz8FND7u0DPQ"
 
       - name: Show Feed Header
         run: |
