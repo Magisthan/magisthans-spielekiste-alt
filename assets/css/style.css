@@ -1170,8 +1170,12 @@ footer a:hover {
 
     nav a {
 
-        font-size: 0.95rem;
-    }
+        font-size: 0.85rem;
+
+        padding: 6px 8px;
+
+        margin: 0 2px;
+}
 
     /* Banner */
 
