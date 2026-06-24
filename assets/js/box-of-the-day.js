@@ -4,7 +4,7 @@ const games = [
     title: "SDI",
     subtitle: "Cinemaware / Mindscape · Amiga · 1987",
 
-    image: "assets/games/sdi.png",
+    image: "assets/games/SDI_Box Inhalt.png",
 
     description:
         "Die Erde wird von Atomraketen bedroht. Deine Aufgabe besteht darin, mit dem Satellitenabwehrsystem SDI die Welt vor der Vernichtung zu bewahren.",
