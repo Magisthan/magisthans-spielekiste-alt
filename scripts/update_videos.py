@@ -33,6 +33,12 @@ seen = set()
 
 for video_id, title in matches:
 
+    title = (
+        title.replace("\\u0026", "&")
+             .replace("\\u003c", "<")
+             .replace("\\u003e", ">")
+    )
+
     if video_id in seen:
         continue
 
