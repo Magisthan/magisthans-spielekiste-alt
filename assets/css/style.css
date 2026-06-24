@@ -1099,11 +1099,6 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 
-    .hero {
-
-        min-height: 350px;
-    }
-
     .hero h1 {
 
         font-size: 2.3rem;
