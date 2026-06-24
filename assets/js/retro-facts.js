@@ -12,7 +12,7 @@ const facts = [
 
     "Der SID-Chip des C64 gilt bis heute als legendär.",
 
-    "Viele moderne Indie-Spiele orientieren sich optisch an 8-Bit- und 16-Bit-Klassikern."
+    "Viele moderne Indie-Spiele orientieren sich optisch an 8-Bit- und 16-Bit-Klassikern.",
 
     "Der Commodore 64 wurde über 12 Millionen Mal verkauft.",
 
@@ -82,7 +82,7 @@ const facts = [
 
     "Der Soundtrack von Turrican 2 stammt von Chris Hülsbeck.",
 
-    "Der C64 konnte Sprites direkt per Hardware darstellen."
+    "Der C64 konnte Sprites direkt per Hardware darstellen.",
 
 ];
 
