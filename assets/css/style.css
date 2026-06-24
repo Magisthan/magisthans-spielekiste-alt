@@ -1226,4 +1226,9 @@ footer a:hover {
 
         height: 24px;
     }
+
+html,
+body {
+
+    overflow-x: hidden;
 }
