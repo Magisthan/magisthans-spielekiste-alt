@@ -233,27 +233,23 @@ h3 {
 
     width: 100%;
 
-    margin-bottom: 30px;
+    height: 38px;
 
-    padding: 10px 16px;
+    padding: 0 12px;
 
-    min-height: 48px;
+    margin-bottom: 20px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 14px;
+    gap: 10px;
 
-    background: linear-gradient(
-        90deg,
-        rgba(58,168,255,0.10),
-        rgba(170,60,255,0.10)
-    );
+    background: rgba(58,168,255,0.05);
 
-    border: 1px solid rgba(58,168,255,0.25);
+    border: 1px solid rgba(58,168,255,0.15);
 
-    border-radius: 10px;
+    border-radius: 8px;
 
     overflow: hidden;
 }
@@ -282,13 +278,11 @@ h3 {
 
     display: inline-block;
 
-    font-size: 0.95rem;
-
-    color: #d8d8d8;
-
     padding-left: 100%;
 
-    animation: retroTicker 30s linear infinite;
+    animation: retroTicker 35s linear infinite;
+
+    font-size: 0.9rem;
 }
 
 @keyframes retroTicker {
