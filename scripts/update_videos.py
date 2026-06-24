@@ -1,50 +1,61 @@
 import json
-import xml.etree.ElementTree as ET
+import re
 import sys
+import requests
+
+CHANNEL_URL = "https://www.youtube.com/@MagisthansSpielekiste/videos"
 
 try:
+    response = requests.get(
+        CHANNEL_URL,
+        headers={
+            "User-Agent": "Mozilla/5.0"
+        },
+        timeout=20
+    )
 
-    with open("feed.xml", "r", encoding="utf-8") as f:
-        content = f.read()
+    response.raise_for_status()
 
-    if "<feed" not in content:
-        print("Ungültiger Feed erhalten.")
-        sys.exit(0)
-
-    root = ET.fromstring(content)
+    html = response.text
 
 except Exception as e:
 
-    print(f"Feed Fehler: {e}")
+    print(f"Fehler beim Abrufen der Kanalseite: {e}")
 
     sys.exit(0)
 
-ns = {
-    "atom": "http://www.w3.org/2005/Atom",
-    "yt": "http://www.youtube.com/xml/schemas/2015"
-}
+# Video IDs suchen
+video_ids = []
 
-videos = []
+matches = re.findall(r'"videoId":"([a-zA-Z0-9_-]{11})"', html)
 
-for entry in root.findall("atom:entry", ns)[:3]:
+for video_id in matches:
 
-    title = entry.find("atom:title", ns).text
+    if video_id not in video_ids:
+        video_ids.append(video_id)
 
-    video_id = entry.find("yt:videoId", ns).text
+# Nur die ersten 3 Videos verwenden
+video_ids = video_ids[:3]
 
-    videos.append({
-        "title": title,
-        "videoId": video_id,
-        "url": f"https://www.youtube.com/watch?v={video_id}",
-        "thumbnail": f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg"
-    })
-
-if not videos:
+if not video_ids:
 
     print("Keine Videos gefunden.")
 
     sys.exit(0)
 
+videos = []
+
+for video_id in video_ids:
+
+    videos.append({
+        "title": "YouTube Video",
+        "videoId": video_id,
+        "url": f"https://www.youtube.com/watch?v={video_id}",
+        "thumbnail": f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg"
+    })
+
 with open("data/latest-videos.json", "w", encoding="utf-8") as f:
 
-    json.dump(videos, f, indent=2)
+    json.dump(videos, f, indent=2, ensure_ascii=False)
+
+print(f"{len(videos)} Videos aktualisiert.")
