@@ -38,11 +38,11 @@ const games = [
 
 ];
 
-const day =
+const todayIndex =
     Math.floor(Date.now() / 86400000);
 
 const game =
-    games[day % games.length];
+    games[todayIndex % games.length];
 
 document.getElementById("box-of-the-day").innerHTML = `
 
