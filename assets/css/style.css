@@ -1159,4 +1159,66 @@ footer a:hover {
 
         height: auto;
     }
+
+   /* Navigation */
+
+    nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    nav a {
+
+        font-size: 0.95rem;
+    }
+
+    /* Banner */
+
+    .hero img {
+
+        width: 100%;
+
+        height: auto;
+
+        display: block;
+    }
+
+    /* Retro-Fakt */
+
+    .retro-wissen {
+
+        font-size: 0.85rem;
+
+        padding: 8px 12px;
+    }
+
+    .retro-wissen-label {
+
+        flex-shrink: 0;
+    }
+
+    /* Sidebar */
+
+    aside {
+
+        margin-top: 20px;
+    }
+
+    /* Playlist Boxen */
+
+    .playlist-list li a {
+
+        min-height: 70px;
+    }
+
+    .playlist-title {
+
+        font-size: 0.95rem;
+    }
 }
