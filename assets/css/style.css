@@ -1440,6 +1440,25 @@ footer a:hover {
         width: 100%;
     }
 
+   .box-of-day {
+
+    flex-direction: column;
+
+    text-align: center;
+    }
+
+    .box-day-image img {
+
+        width: 280px;
+    }
+
+    .box-day-button {
+
+        width: 100%;
+
+        max-width: 250px;
+    }
+
 html,
 body {
 
