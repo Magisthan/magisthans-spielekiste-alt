@@ -1391,6 +1391,126 @@ footer a:hover {
 }
 
 /* ==========================
+   Animierte Sterne
+   ========================== */
+
+.review-stars {
+
+    position: relative;
+
+    display: inline-block;
+
+    font-size: 2rem;
+
+    letter-spacing: 4px;
+
+    line-height: 1;
+}
+
+/* Graue Sterne */
+
+.review-stars::before {
+
+    content: "★★★★★";
+
+    color: #555;
+}
+
+/* Goldene Sterne */
+
+.review-stars::after {
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    color: #FFD54A;
+
+    text-shadow: 0 0 10px rgba(255,213,74,.6);
+
+    width: 0;
+
+    transition: width 1.1s ease-out;
+}
+
+/* Animation wird gestartet */
+
+.review-stars.animate::after {
+
+    width: var(--rating-width);
+}
+
+/* Sterne-Klassen */
+
+.stars-5::after {
+
+    content: "★★★★★";
+
+    --rating-width: 100%;
+}
+
+.stars-4-5::after {
+
+    content: "★★★★★";
+
+    --rating-width: 90%;
+}
+
+.stars-4::after {
+
+    content: "★★★★★";
+
+    --rating-width: 80%;
+}
+
+.stars-3-5::after {
+
+    content: "★★★★★";
+
+    --rating-width: 70%;
+}
+
+.stars-3::after {
+
+    content: "★★★★★";
+
+    --rating-width: 60%;
+}
+
+.stars-2-5::after {
+
+    content: "★★★★★";
+
+    --rating-width: 50%;
+}
+
+.stars-2::after {
+
+    content: "★★★★★";
+
+    --rating-width: 40%;
+}
+
+.stars-1-5::after {
+
+    content: "★★★★★";
+
+    --rating-width: 30%;
+}
+
+.stars-1::after {
+
+    content: "★★★★★";
+
+    --rating-width: 20%;
+}
+
+/* ==========================
    Mobile
    ========================== */
 
