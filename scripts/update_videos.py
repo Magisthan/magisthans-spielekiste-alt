@@ -12,15 +12,11 @@ OPTIONS = {
 }
 
 try:
-
     with YoutubeDL(OPTIONS) as ydl:
-
         info = ydl.extract_info(CHANNEL_URL, download=False)
 
 except Exception as e:
-
     print(f"Fehler beim Abrufen: {e}")
-
     sys.exit(0)
 
 videos = []
@@ -32,24 +28,23 @@ for entry in info.get("entries", [])[:3]:
     if not video_id:
         continue
 
-   thumbnail = ""
+    # Bestes verfügbares Thumbnail verwenden
+    thumbnail = ""
 
-if entry.get("thumbnails"):
-    thumbnail = entry["thumbnails"][-1]["url"]
-else:
-    thumbnail = f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg"
+    if entry.get("thumbnails"):
+        thumbnail = entry["thumbnails"][-1]["url"]
+    else:
+        thumbnail = f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg"
 
-videos.append({
-    "title": entry.get("title", "YouTube Video"),
-    "videoId": video_id,
-    "url": f"https://www.youtube.com/watch?v={video_id}",
-    "thumbnail": thumbnail
-})
+    videos.append({
+        "title": entry.get("title", "YouTube Video"),
+        "videoId": video_id,
+        "url": f"https://www.youtube.com/watch?v={video_id}",
+        "thumbnail": thumbnail
+    })
 
 if not videos:
-
     print("Keine Videos gefunden.")
-
     sys.exit(0)
 
 with open(
@@ -57,7 +52,6 @@ with open(
     "w",
     encoding="utf-8"
 ) as f:
-
     json.dump(
         videos,
         f,
