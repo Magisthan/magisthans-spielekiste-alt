@@ -1343,53 +1343,6 @@ iframe {
     line-height: 1.8;
 }
 
-/* Sterne-Klassen */
-
-.stars-5::before { content: "★★★★★"; }
-
-.stars-4::before { content: "★★★★☆"; }
-
-.stars-3::before { content: "★★★☆☆"; }
-
-.stars-2::before { content: "★★☆☆☆"; }
-
-.stars-1::before { content: "★☆☆☆☆"; }
-
-/* ==========================
-   Footer
-   ========================== */
-
-footer {
-
-    width: 100%;
-
-    margin-top: 50px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    background: #0d0d18;
-
-    border-top: 1px solid var(--border);
-
-    color: #aaa;
-}
-
-footer a {
-
-    color: var(--blue);
-
-    margin: 0 8px;
-
-    transition: color 0.2s ease;
-}
-
-footer a:hover {
-
-    color: var(--pink);
-}
-
 /* ==========================
    Animierte Sterne
    ========================== */
@@ -1509,6 +1462,42 @@ footer a:hover {
 
     --rating-width: 20%;
 }
+
+/* ==========================
+   Footer
+   ========================== */
+
+footer {
+
+    width: 100%;
+
+    margin-top: 50px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #0d0d18;
+
+    border-top: 1px solid var(--border);
+
+    color: #aaa;
+}
+
+footer a {
+
+    color: var(--blue);
+
+    margin: 0 8px;
+
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+
+    color: var(--pink);
+}
+
 
 /* ==========================
    Mobile
