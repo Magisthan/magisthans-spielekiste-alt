@@ -1248,6 +1248,102 @@ iframe {
 }
 
 /* ==========================
+   Magisthans Wertung
+   ========================== */
+
+.review-box {
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    margin-top: 40px;
+}
+
+.review-photo {
+
+    flex-shrink: 0;
+
+    text-align: center;
+}
+
+.review-photo img {
+
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(58,168,255,0.35);
+
+    transition: all .3s ease;
+}
+
+.review-photo img:hover {
+
+    transform: scale(1.05);
+
+    box-shadow: 0 0 18px rgba(58,168,255,.35);
+}
+
+.review-name {
+
+    margin-top: 10px;
+
+    font-size: .9rem;
+
+    color: #bfbfbf;
+}
+
+.review-content {
+
+    flex: 1;
+}
+
+.review-stars {
+
+    font-size: 2rem;
+
+    color: #FFD54A;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 8px rgba(255,213,74,.45);
+
+    margin-bottom: 8px;
+}
+
+.review-rating {
+
+    font-weight: bold;
+
+    color: var(--blue);
+
+    margin-bottom: 18px;
+}
+
+.review-text {
+
+    color: #d0d0d0;
+
+    line-height: 1.8;
+}
+
+/* ==========================
    Footer
    ========================== */
 
@@ -1465,6 +1561,13 @@ footer a:hover {
 
         max-width: 250px;
     }
+
+    .review-box {
+
+    flex-direction: column;
+
+    text-align: center;
+}
 
 html,
 body {
