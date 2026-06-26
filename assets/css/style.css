@@ -1536,6 +1536,20 @@ line-height:2;
 padding-left:28px;
 }
 
+.rnf-header{
+
+    display:block;
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:0 auto 35px auto;
+
+    border-radius:14px;
+
+}
+
 /* ==========================
    Footer
    ========================== */
