@@ -1631,6 +1631,10 @@ padding-left:28px;
 
 }
 
+/* =====================================================
+   Retro News Flash Logo Shine Effect
+   ===================================================== */
+
 .rnf-logo-wrapper{
 
     position:relative;
@@ -1647,33 +1651,39 @@ padding-left:28px;
 
     position:absolute;
 
-    top:-40%;
+    top:-60%;
 
-    left:-120%;
+    left:-150%;
 
-    width:35%;
+    width:28%;
 
-    height:180%;
+    height:220%;
+
+    pointer-events:none;
+
+    transform:rotate(24deg);
 
     background:linear-gradient(
 
         90deg,
 
-        transparent,
+        transparent 0%,
 
-        rgba(255,255,255,.45),
+        rgba(58,168,255,.15) 35%,
 
-        transparent
+        rgba(255,255,255,.75) 50%,
+
+        rgba(255,77,225,.20) 65%,
+
+        transparent 100%
 
     );
 
-    transform:rotate(25deg);
-
-    animation:logoShine 10s infinite;
+    animation:rnfLogoShine 12s ease-in-out infinite;
 
 }
 
-@keyframes logoShine{
+@keyframes rnfLogoShine{
 
     0%{
 
@@ -1681,7 +1691,7 @@ padding-left:28px;
 
     }
 
-    12%{
+    8%{
 
         left:140%;
 
