@@ -1539,7 +1539,7 @@ iframe {
 
     /* Normal */
 
-    0%,58%{
+    0%,30%{
 
         filter:
 
@@ -1557,7 +1557,7 @@ iframe {
 
     /* Logo wird langsam heller */
 
-    62%{
+    34%{
 
         filter:
 
@@ -1575,7 +1575,7 @@ iframe {
 
     /* kurzer Peak */
 
-    65%{
+    37%{
 
         filter:
 
@@ -1595,7 +1595,7 @@ iframe {
 
     /* kleines Flackern */
 
-    67%{
+    39%{
 
         filter:
 
@@ -1613,7 +1613,7 @@ iframe {
 
     /* nochmal heller */
 
-    69%{
+    42%{
 
         filter:
 
