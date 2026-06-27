@@ -1464,52 +1464,88 @@ iframe {
 }
 
 /* =====================================================
-   Retro News Flash Intro
+   Retro News Flash
    ===================================================== */
 
-.rnf-intro{
+/* -----------------------------
+   Hero Bereich
+------------------------------*/
 
-    max-width:700px;
+.hero-card{
 
-    margin:10px auto 60px auto;
+    padding:45px;
 
-    padding:38px 55px;
+}
 
-    text-align:center;
+/* -----------------------------
+   Logo Karte
+------------------------------*/
+
+.hero-logo-card{
+
+    max-width:920px;
+
+    margin:0 auto 35px auto;
+
+    padding:30px 35px;
 
     background:rgba(255,255,255,.025);
 
-    border:1px solid rgba(58,168,255,.12);
+    border:1px solid rgba(255,255,255,.05);
 
-    border-radius:16px;
+    border-radius:18px;
 
     box-shadow:
-
-        0 8px 30px rgba(0,0,0,.18),
-
-        inset 0 1px 0 rgba(255,255,255,.03);
-   
-   transition:
-        border-color .35s ease,
-        box-shadow .35s ease;
+        inset 0 1px 0 rgba(255,255,255,.03),
+        0 10px 28px rgba(0,0,0,.18);
 
 }
 
-.rnf-intro:hover{
+.rnf-header{
 
-    border-color:rgba(58,168,255,.25);
+    display:block;
 
-    box-shadow:
+    width:100%;
 
-        0 10px 35px rgba(0,0,0,.22),
+    max-width:760px;
 
-        0 0 20px rgba(58,168,255,.08);
+    margin:0 auto;
+
+    filter:
+        drop-shadow(0 0 10px rgba(58,168,255,.18))
+        drop-shadow(0 0 20px rgba(255,77,225,.10));
 
 }
 
-.rnf-intro h1{
+/* -----------------------------
+   Infobox
+------------------------------*/
 
-    margin-bottom:15px;
+.hero-info-card{
+
+    max-width:920px;
+
+    margin:0 auto;
+
+    padding:40px 50px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:18px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.03),
+        0 10px 28px rgba(0,0,0,.18);
+
+    text-align:center;
+
+}
+
+.hero-info-card h1{
+
+    margin:0 0 18px;
 
 }
 
@@ -1519,7 +1555,7 @@ iframe {
 
     font-size:1.08rem;
 
-    line-height:1.7;
+    line-height:1.8;
 
     margin-bottom:25px;
 
@@ -1531,7 +1567,9 @@ iframe {
 
     height:2px;
 
-    margin:0 auto 30px auto;
+    margin:0 auto 30px;
+
+    border-radius:2px;
 
     background:linear-gradient(
         90deg,
@@ -1539,15 +1577,17 @@ iframe {
         #ff4de1
     );
 
-    border-radius:2px;
-
 }
+
+/* -----------------------------
+   Metadaten
+------------------------------*/
 
 .rnf-meta{
 
-    max-width:540px;
+    max-width:600px;
 
-    margin:28px auto 0 auto;
+    margin:0 auto;
 
 }
 
@@ -1559,9 +1599,9 @@ iframe {
 
     align-items:center;
 
-    padding:12px 0;
+    padding:14px 0;
 
-    border-bottom:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.08);
 
 }
 
@@ -1573,9 +1613,9 @@ iframe {
 
 .rnf-meta span{
 
-    color:#98a7c6;
+    color:#97a5c3;
 
-    font-weight:500;
+    font-weight:600;
 
 }
 
@@ -1587,253 +1627,191 @@ iframe {
 
 }
 
-.rnf-intro .game-button{
+.hero-info-card .game-button{
 
-    margin-top:30px;
+    margin-top:35px;
 
 }
 
+/* -----------------------------
+   Inhaltsbereiche
+------------------------------*/
+
 .section{
-margin-top:55px;
+
+    margin-top:45px;
+
+}
+
+.section:first-child{
+
+    margin-top:0;
+
 }
 
 .section h2{
-margin-bottom:20px;
+
+    margin-bottom:20px;
+
 }
 
 .section p,
+
 .section li{
-line-height:1.8;
+
+    line-height:1.85;
+
 }
+
+/* -----------------------------
+   Trenner
+------------------------------*/
+
+.content-divider{
+
+    border:0;
+
+    height:1px;
+
+    margin:45px 0;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(58,168,255,.18),
+
+        rgba(255,77,225,.18),
+
+        transparent
+
+    );
+
+}
+
+/* -----------------------------
+   Mission Box
+------------------------------*/
 
 .mission-box{
-display:flex;
-gap:30px;
-align-items:center;
-padding:35px;
-background:var(--panel);
-border:1px solid var(--border);
-border-radius:14px;
-}
 
-.mission-box img{
-width:120px;
-height:120px;
-border-radius:50%;
-}
+    display:flex;
 
-.goal-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:25px;
-}
+    gap:30px;
 
-.goal-card{
-padding:22px;
-background:rgba(58,168,255,.08);
-border:1px solid var(--border);
-border-radius:12px;
-transition:.3s;
-}
-
-.goal-card:hover{
-transform:translateY(-4px);
-box-shadow:0 0 18px rgba(58,168,255,.25);
-}
-
-.rnf-timeline{
-line-height:2;
-padding-left:28px;
-}
-
-.rnf-header{
-
-    display:block;
-
-    width:100%;
-
-    max-width:760px;
-
-    margin:0 auto 12px auto;
-
-    border-radius:14px;
-
-    transition:transform .35s ease;
-
-    filter:
-
-        brightness(1)
-
-        saturate(1)
-
-        drop-shadow(0 0 8px rgba(58,168,255,.20))
-
-        drop-shadow(0 0 14px rgba(255,77,225,.10));
-
-    animation:rnfNeon 12s infinite;
-
-}
-
-.rnf-header:hover{
-
-    transform:scale(1.01);
-
-}
-
-@keyframes rnfNeon{
-
-    /* Normal */
-
-    0%,58%{
-
-        filter:
-
-            brightness(1)
-
-            contrast(1)
-
-            saturate(1)
-
-            drop-shadow(0 0 8px rgba(58,168,255,.20))
-
-            drop-shadow(0 0 14px rgba(255,77,225,.10));
-
-    }
-
-    /* Logo wird langsam heller */
-
-    62%{
-
-        filter:
-
-            brightness(1.08)
-
-            contrast(1.03)
-
-            saturate(1.08)
-
-            drop-shadow(0 0 12px rgba(58,168,255,.35))
-
-            drop-shadow(0 0 24px rgba(255,77,225,.20));
-
-    }
-
-    /* kurzer Peak */
-
-    65%{
-
-        filter:
-
-            brightness(1.15)
-
-            contrast(1.06)
-
-            saturate(1.15)
-
-            drop-shadow(0 0 18px rgba(58,168,255,.55))
-
-            drop-shadow(0 0 36px rgba(255,77,225,.35))
-
-            drop-shadow(0 0 10px rgba(255,255,255,.15));
-
-    }
-
-    /* kleines Flackern */
-
-    67%{
-
-        filter:
-
-            brightness(.97)
-
-            contrast(.98)
-
-            saturate(.96)
-
-            drop-shadow(0 0 6px rgba(58,168,255,.15))
-
-            drop-shadow(0 0 10px rgba(255,77,225,.08));
-
-    }
-
-    /* nochmal heller */
-
-    69%{
-
-        filter:
-
-            brightness(1.12)
-
-            contrast(1.04)
-
-            saturate(1.10)
-
-            drop-shadow(0 0 16px rgba(58,168,255,.45))
-
-            drop-shadow(0 0 28px rgba(255,77,225,.30));
-
-    }
-
-    /* zurück */
-
-    72%,100%{
-
-        filter:
-
-            brightness(1)
-
-            contrast(1)
-
-            saturate(1)
-
-            drop-shadow(0 0 8px rgba(58,168,255,.20))
-
-            drop-shadow(0 0 14px rgba(255,77,225,.10));
-
-    }
-
-.hero-logo-card{
-
-    margin:0 auto 35px auto;
+    align-items:center;
 
     padding:35px;
 
-    max-width:920px;
+    background:rgba(255,255,255,.02);
 
-    background:rgba(255,255,255,.025);
+    border:1px solid rgba(255,255,255,.05);
 
-    border:1px solid rgba(255,255,255,.06);
-
-    border-radius:18px;
-
-    box-shadow:
-
-        inset 0 1px 0 rgba(255,255,255,.03),
-
-        0 12px 28px rgba(0,0,0,.18);
+    border-radius:16px;
 
 }
 
-.hero-info-card{
+.mission-box img{
 
-    max-width:920px;
+    width:120px;
 
-    margin:0 auto;
+    height:120px;
 
-    padding:40px 55px;
+    border-radius:50%;
 
-    background:rgba(255,255,255,.025);
+    flex-shrink:0;
 
-    border:1px solid rgba(255,255,255,.06);
+}
 
-    border-radius:18px;
+/* -----------------------------
+   Ziele
+------------------------------*/
 
-    box-shadow:
+.goal-grid{
 
-        inset 0 1px 0 rgba(255,255,255,.03),
+    display:grid;
 
-        0 12px 28px rgba(0,0,0,.18);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:24px;
+
+    margin-top:25px;
+
+}
+
+.goal-card{
+
+    padding:22px;
+
+    text-align:center;
+
+    background:rgba(58,168,255,.08);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:14px;
+
+    transition:.25s;
+
+}
+
+.goal-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 18px rgba(58,168,255,.18);
+
+}
+
+/* -----------------------------
+   Timeline
+------------------------------*/
+
+.rnf-timeline{
+
+    padding-left:28px;
+
+    line-height:2;
+
+}
+
+/* -----------------------------
+   Responsive
+------------------------------*/
+
+@media (max-width:800px){
+
+    .hero-card{
+
+        padding:25px;
+
+    }
+
+    .hero-logo-card,
+
+    .hero-info-card{
+
+        padding:25px;
+
+    }
+
+    .mission-box{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .rnf-meta div{
+
+        flex-direction:column;
+
+        gap:6px;
+
+    }
 
 }
    
