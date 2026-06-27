@@ -1793,6 +1793,26 @@ padding-left:28px;
 
     }
 
+/* ==========================================
+   Retro News Flash Trenner
+   ========================================== */
+
+.content-divider{
+
+    border:0;
+
+    height:1px;
+
+    margin:45px 0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(58,168,255,.22),
+        rgba(255,77,225,.18),
+        transparent
+    );
+
 }
 
 /* ==========================
