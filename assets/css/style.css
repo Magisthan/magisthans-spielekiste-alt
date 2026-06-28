@@ -2083,7 +2083,7 @@ iframe {
         0 0 12px rgba(58,168,255,.45),
         0 0 24px rgba(155,99,255,.25);
 
-    animation:rnfProgressFill 2.4s ease forwards;
+    animation:rnfProgressFill 5s ease forwards;
 
 }
 
