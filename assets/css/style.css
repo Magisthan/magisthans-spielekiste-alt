@@ -1953,16 +1953,14 @@ iframe {
 
 .pixelkumpel-video{
 
-    width:100%;
+    .pixelkumpel-video{
 
     max-width:900px;
+    max-height:420px;   /* ausprobieren: 380–420px */
 
-    margin:20px auto 40px auto;
-
+    margin:30px auto 40px;
     overflow:hidden;
-
-    border-radius:18px;
-
+    border-radius:16px;
     border:1px solid rgba(255,255,255,.05);
 
     box-shadow:
@@ -1975,12 +1973,9 @@ iframe {
 
 .pixelkumpel-video video{
 
-    display:block;
-
     width:100%;
-
-    height:auto;
-
+    height:100%;
+    object-fit:cover;
 }
    
 /* ==========================================
