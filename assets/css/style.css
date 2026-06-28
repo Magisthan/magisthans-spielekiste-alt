@@ -1463,19 +1463,29 @@ iframe {
     --rating-width: 20%;
 }
 
-/* ==========================================
-   Retro News Flash Glow
-   ========================================== */
+/* =====================================================
+   Retro News Flash
+   ===================================================== */
+
+/* -----------------------------
+   Hero Bereich
+------------------------------*/
+
+.hero-card{
+
+    padding:45px;
+
+}
+
+/* -----------------------------
+   Logo Karte
+------------------------------*/
 
 .hero-logo-card{
 
-    position:relative;
-
-    overflow:hidden;
-
     max-width:920px;
 
-    margin:0 auto 35px;
+    margin:0 auto 35px auto;
 
     padding:30px 35px;
 
@@ -1487,15 +1497,11 @@ iframe {
 
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,.03),
-        0 12px 28px rgba(0,0,0,.18);
+        0 10px 28px rgba(0,0,0,.18);
 
 }
 
-/* Logo */
-
 .rnf-header{
-
-    position:relative;
 
     display:block;
 
@@ -1503,145 +1509,141 @@ iframe {
 
     max-width:900px;
 
-    margin:0 auto;
+    margin:0 auto 8px auto;
 
-    z-index:2;
+    border-radius:14px;
+
+    transition:transform .35s ease;
 
     filter:
-        drop-shadow(0 0 10px rgba(58,168,255,.18))
-        drop-shadow(0 0 18px rgba(255,77,225,.12));
+
+        brightness(1)
+
+        saturate(1)
+
+        drop-shadow(0 0 8px rgba(58,168,255,.20))
+
+        drop-shadow(0 0 14px rgba(255,77,225,.10));
+
+    animation:rnfNeon 12s infinite;
 
 }
 
-/* Glow Layer */
+.rnf-header:hover{
 
-.rnf-glow{
-
-    position:absolute;
-
-    inset:-20%;
-
-    z-index:1;
-
-    overflow:hidden;
+    transform:scale(1.01);
 
 }
 
-/* Lichtkreis 1 */
+@keyframes rnfNeon{
 
-.rnf-glow::before{
+    /* Normal */
 
-    content:"";
+    0%,15%{
 
-    position:absolute;
+        filter:
 
-    width:420px;
+            brightness(1)
 
-    height:420px;
+            contrast(1)
 
-    border-radius:50%;
+            saturate(1)
 
-    background:
+            drop-shadow(0 0 8px rgba(58,168,255,.20))
 
-        radial-gradient(
-
-            circle,
-
-            rgba(58,168,255,.30) 0%,
-
-            rgba(58,168,255,.10) 35%,
-
-            transparent 70%
-
-        );
-
-    left:-120px;
-
-    top:-80px;
-
-    filter:blur(55px);
-
-    animation:rnfGlowBlue 22s ease-in-out infinite alternate;
-
-}
-
-/* Lichtkreis 2 */
-
-.rnf-glow::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:340px;
-
-    height:340px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-
-            circle,
-
-            rgba(255,77,225,.26) 0%,
-
-            rgba(255,77,225,.08) 40%,
-
-            transparent 75%
-
-        );
-
-    right:-100px;
-
-    bottom:-80px;
-
-    filter:blur(50px);
-
-    animation:rnfGlowPink 18s ease-in-out infinite alternate;
-
-}
-
-/* Blau */
-
-@keyframes rnfGlowBlue{
-
-    0%{
-
-        transform:
-            translate(0px,0px)
-            scale(1);
+            drop-shadow(0 0 14px rgba(255,77,225,.10));
 
     }
 
-    100%{
+    /* Logo wird langsam heller */
 
-        transform:
-            translate(70px,25px)
-            scale(1.2);
+    19%{
 
-    }
+        filter:
 
-}
+            brightness(1.08)
 
-/* Pink */
+            contrast(1.03)
 
-@keyframes rnfGlowPink{
+            saturate(1.08)
 
-    0%{
+            drop-shadow(0 0 12px rgba(58,168,255,.35))
 
-        transform:
-            translate(0px,0px)
-            scale(1);
+            drop-shadow(0 0 24px rgba(255,77,225,.20));
 
     }
 
-    100%{
+    /* kurzer Peak */
 
-        transform:
-            translate(-60px,-20px)
-            scale(1.25);
+    21%{
+
+        filter:
+
+            brightness(1.15)
+
+            contrast(1.06)
+
+            saturate(1.15)
+
+            drop-shadow(0 0 18px rgba(58,168,255,.55))
+
+            drop-shadow(0 0 36px rgba(255,77,225,.35))
+
+            drop-shadow(0 0 10px rgba(255,255,255,.15));
+
+    }
+
+    /* kleines Flackern */
+
+    23%{
+
+        filter:
+
+            brightness(.97)
+
+            contrast(.98)
+
+            saturate(.96)
+
+            drop-shadow(0 0 6px rgba(58,168,255,.15))
+
+            drop-shadow(0 0 10px rgba(255,77,225,.08));
+
+    }
+
+    /* nochmal heller */
+
+    25%{
+
+        filter:
+
+            brightness(1.12)
+
+            contrast(1.04)
+
+            saturate(1.10)
+
+            drop-shadow(0 0 16px rgba(58,168,255,.45))
+
+            drop-shadow(0 0 28px rgba(255,77,225,.30));
+
+    }
+
+    /* zurück */
+
+    72%,100%{
+
+        filter:
+
+            brightness(1)
+
+            contrast(1)
+
+            saturate(1)
+
+            drop-shadow(0 0 8px rgba(58,168,255,.20))
+
+            drop-shadow(0 0 14px rgba(255,77,225,.10));
 
     }
 
