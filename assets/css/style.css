@@ -2010,23 +2010,17 @@ iframe {
 
 }
 
-/* ==========================================
-   Retro News Flash Timeline
-   ========================================== */
+/* =====================================================
+   Retro News Flash Progress Timeline
+   ===================================================== */
 
-.timeline-section{
+.rnf-progress-section{
 
-    margin-top:70px;
-
-}
-
-.timeline-section h2{
-
-    margin-bottom:70px;
+    margin-top:60px;
 
 }
 
-.timeline-retro-progress{
+.rnf-progress{
 
     position:relative;
 
@@ -2036,176 +2030,186 @@ iframe {
 
     align-items:flex-start;
 
-    gap:20px;
+    margin-top:70px;
+
+    padding-top:30px;
 
 }
 
-.timeline-progress-line{
+/* -----------------------------------
+   Grundlinie
+----------------------------------- */
+
+.rnf-progress-line{
 
     position:absolute;
 
-    top:18px;
+    left:8%;
 
-    left:6%;
+    right:8%;
 
-    right:6%;
+    top:11px;
 
     height:4px;
 
-    border-radius:30px;
+    background:rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+/* -----------------------------------
+   Animierter Fortschritt
+----------------------------------- */
+
+.rnf-progress-fill{
+
+    width:0;
+
+    height:100%;
+
+    border-radius:20px;
 
     background:linear-gradient(
         90deg,
-        rgba(60,170,255,.85),
-        rgba(165,90,255,.75)
+        #3aa8ff,
+        #6f8cff,
+        #9b63ff
     );
 
     box-shadow:
-        0 0 10px rgba(60,170,255,.35),
-        0 0 20px rgba(165,90,255,.20);
+        0 0 12px rgba(58,168,255,.45),
+        0 0 24px rgba(155,99,255,.25);
+
+    animation:rnfProgressFill 2.4s ease forwards;
 
 }
 
-.timeline-milestone{
+@keyframes rnfProgressFill{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:82%;
+    }
+
+}
+
+/* -----------------------------------
+   Ein Punkt
+----------------------------------- */
+
+.rnf-progress-item{
 
     position:relative;
 
-    flex:1;
+    width:170px;
 
     text-align:center;
 
-    z-index:2;
+    animation:rnfFadeUp .7s ease forwards;
+
+    opacity:0;
 
 }
 
-.timeline-node{
+.rnf-progress-item:nth-child(2){animation-delay:.3s;}
+.rnf-progress-item:nth-child(3){animation-delay:.6s;}
+.rnf-progress-item:nth-child(4){animation-delay:.9s;}
+.rnf-progress-item:nth-child(5){animation-delay:1.2s;}
+.rnf-progress-item:nth-child(6){animation-delay:1.5s;}
 
-    width:24px;
+@keyframes rnfFadeUp{
 
-    height:24px;
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* -----------------------------------
+   Node
+----------------------------------- */
+
+.rnf-progress-node{
+
+    width:28px;
+
+    height:28px;
 
     margin:0 auto;
 
     border-radius:50%;
 
-    background:#46a7ff;
+    background:#3aa8ff;
 
-    border:4px solid #171b2b;
+    border:5px solid #171c2b;
 
-    box-shadow:
-        0 0 12px rgba(70,167,255,.7),
-        0 0 30px rgba(70,167,255,.25);
+    position:relative;
 
-    transition:.3s;
-
-}
-
-.timeine-upcoming .timeline-node{
-
-    background:#ba63ff;
+    z-index:2;
 
     box-shadow:
-        0 0 15px rgba(186,99,255,.9),
-        0 0 35px rgba(186,99,255,.45);
+
+        0 0 18px rgba(58,168,255,.7),
+
+        0 0 35px rgba(58,168,255,.35);
+
+    transition:.25s;
 
 }
 
-.timeline-label{
+.rnf-progress-item:hover .rnf-progress-node{
 
-    margin-top:18px;
-
-    color:#8fc6ff;
-
-    font-size:.85rem;
-
-    font-weight:600;
+    transform:scale(1.18);
 
 }
 
-.timeline-card{
+/* -----------------------------------
+   Future Node
+----------------------------------- */
 
-    margin-top:20px;
+.rnf-progress-item.future .rnf-progress-node{
 
-    background:#1d2339;
-
-    border:1px solid rgba(255,255,255,.05);
-
-    border-radius:14px;
-
-    padding:18px;
-
-    opacity:0;
-
-    transform:translateY(15px);
-
-    transition:.35s;
-
-    pointer-events:none;
+    background:#b365ff;
 
     box-shadow:
-        0 10px 25px rgba(0,0,0,.35);
+
+        0 0 20px rgba(179,101,255,.85),
+
+        0 0 40px rgba(179,101,255,.35);
+
+    animation:rnfPulse 2s infinite;
 
 }
 
-.timeline-card h3{
-
-    margin-bottom:10px;
-
-    color:white;
-
-    font-size:1rem;
-
-}
-
-.timeline-card p{
-
-    color:#bfc6d6;
-
-    font-size:.9rem;
-
-    line-height:1.5;
-
-}
-
-.timeline-milestone:hover .node{
-
-    transform:scale(1.25);
-
-}
-
-.timeline-milestone:hover .card{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-.timeline-pulse{
-
-    animation:pulseGlow 2s infinite;
-
-}
-
-@keyframes pulseGlow{
+@keyframes rnfPulse{
 
 0%{
 
 transform:scale(1);
 
-box-shadow:
-0 0 12px rgba(186,99,255,.8),
-0 0 25px rgba(186,99,255,.4);
-
 }
 
 50%{
 
-transform:scale(1.35);
-
-box-shadow:
-0 0 25px rgba(186,99,255,1),
-0 0 45px rgba(186,99,255,.8);
+transform:scale(1.25);
 
 }
 
@@ -2213,27 +2217,191 @@ box-shadow:
 
 transform:scale(1);
 
-box-shadow:
-0 0 12px rgba(186,99,255,.8),
-0 0 25px rgba(186,99,255,.4);
-
 }
 
 }
 
-@media (max-width:950px){
+/* -----------------------------------
+   Datum
+----------------------------------- */
 
-.timeline-retro-progress{
+.rnf-progress-date{
+
+    margin-top:18px;
+
+    color:#8ec8ff;
+
+    font-weight:700;
+
+    font-size:.95rem;
+
+}
+
+/* -----------------------------------
+   Titel
+----------------------------------- */
+
+.rnf-progress-title{
+
+    margin-top:8px;
+
+    color:white;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    line-height:1.35;
+
+}
+
+/* -----------------------------------
+   Progressbar bei Folge 100
+----------------------------------- */
+
+.rnf-progress-counter{
+
+    margin-top:16px;
+
+}
+
+.rnf-progress-counter span{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:.78rem;
+
+    color:#9fa8bc;
+
+}
+
+.rnf-progress-counter-bar{
+
+    width:110px;
+
+    height:7px;
+
+    margin:0 auto;
+
+    border-radius:20px;
+
+    background:#2a3044;
+
+    overflow:hidden;
+
+}
+
+.rnf-progress-counter-fill{
+
+    width:94%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #3aa8ff,
+        #8f6dff
+    );
+
+}
+
+/* -----------------------------------
+   Popup
+----------------------------------- */
+
+.rnf-progress-popup{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:155px;
+
+    transform:translateX(-50%) translateY(12px);
+
+    width:220px;
+
+    padding:15px;
+
+    background:#1a2033;
+
+    border:1px solid rgba(58,168,255,.18);
+
+    border-radius:12px;
+
+    color:#c8d0e2;
+
+    font-size:.85rem;
+
+    line-height:1.6;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.25s;
+
+    box-shadow:
+
+        0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.rnf-progress-popup::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8px;
+
+    width:16px;
+
+    height:16px;
+
+    background:#1a2033;
+
+    transform:translateX(-50%) rotate(45deg);
+
+    border-right:1px solid rgba(58,168,255,.18);
+
+    border-bottom:1px solid rgba(58,168,255,.18);
+
+}
+
+.rnf-progress-item:hover .rnf-progress-popup{
+
+    opacity:1;
+
+    transform:translateX(-50%) translateY(0);
+
+}
+
+/* -----------------------------------
+   Responsive
+----------------------------------- */
+
+@media(max-width:900px){
+
+.rnf-progress{
 
     flex-direction:column;
 
-    gap:40px;
+    gap:45px;
+
+    margin-top:40px;
 
 }
 
-.timeline-progress-line{
+.rnf-progress-line{
 
-    left:11px;
+    left:13px;
 
     top:0;
 
@@ -2245,15 +2413,43 @@ box-shadow:
 
 }
 
-.timeline-milestone{
+.rnf-progress-fill{
 
-    text-align:left;
+    width:100%;
 
-    padding-left:50px;
+    height:0;
+
+    animation:rnfProgressVertical 2s ease forwards;
 
 }
 
-.timeline-node{
+@keyframes rnfProgressVertical{
+
+from{
+
+height:0;
+
+}
+
+to{
+
+height:82%;
+
+}
+
+}
+
+.rnf-progress-item{
+
+    width:100%;
+
+    text-align:left;
+
+    padding-left:55px;
+
+}
+
+.rnf-progress-node{
 
     position:absolute;
 
@@ -2261,24 +2457,19 @@ box-shadow:
 
 }
 
-.timeline-label{
+.rnf-progress-popup{
 
-    margin-top:0;
+    display:none;
 
 }
 
-.timeline-card{
+.rnf-progress-counter-bar{
 
-    opacity:1;
-
-    transform:none;
-
-    pointer-events:auto;
+    margin-left:0;
 
 }
 
 }
-
 /* ==========================
    Footer
    ========================== */
