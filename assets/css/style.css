@@ -1525,7 +1525,7 @@ iframe {
 
         drop-shadow(0 0 14px rgba(255,77,225,.10));
 
-    animation:rnfNeon 12s infinite;
+    animation:rnfNeon 9s infinite;
 
 }
 
@@ -1539,116 +1539,114 @@ iframe {
 
     /* Normal */
 
-    0%,15%{
+    0%,16%{
 
         filter:
 
             brightness(1)
-
             contrast(1)
-
             saturate(1)
 
             drop-shadow(0 0 8px rgba(58,168,255,.20))
-
             drop-shadow(0 0 14px rgba(255,77,225,.10));
 
     }
 
-    /* Logo wird langsam heller */
+    /* lädt sich auf */
 
-    19%{
-
-        filter:
-
-            brightness(1.08)
-
-            contrast(1.03)
-
-            saturate(1.08)
-
-            drop-shadow(0 0 12px rgba(58,168,255,.35))
-
-            drop-shadow(0 0 24px rgba(255,77,225,.20));
-
-    }
-
-    /* kurzer Peak */
-
-    21%{
+    18%{
 
         filter:
 
             brightness(1.15)
-
-            contrast(1.06)
-
+            contrast(1.08)
             saturate(1.15)
 
-            drop-shadow(0 0 18px rgba(58,168,255,.55))
-
-            drop-shadow(0 0 36px rgba(255,77,225,.35))
-
-            drop-shadow(0 0 10px rgba(255,255,255,.15));
+            drop-shadow(0 0 16px rgba(58,168,255,.45))
+            drop-shadow(0 0 30px rgba(255,77,225,.30));
 
     }
 
-    /* kleines Flackern */
+    /* FLASH */
+
+    20%{
+
+        filter:
+
+            brightness(1.35)
+            contrast(1.18)
+            saturate(1.35)
+
+            drop-shadow(0 0 18px rgba(58,168,255,.85))
+            drop-shadow(0 0 45px rgba(58,168,255,.55))
+            drop-shadow(0 0 70px rgba(255,77,225,.45))
+            drop-shadow(0 0 12px rgba(255,255,255,.45));
+
+    }
+
+    /* bricht kurz zusammen */
+
+    21.5%{
+
+        filter:
+
+            brightness(.90)
+            contrast(.95)
+            saturate(.90)
+
+            drop-shadow(0 0 5px rgba(58,168,255,.10))
+            drop-shadow(0 0 8px rgba(255,77,225,.06));
+
+    }
+
+    /* zweiter Flash */
 
     23%{
 
         filter:
 
-            brightness(.97)
+            brightness(1.28)
+            contrast(1.12)
+            saturate(1.25)
 
-            contrast(.98)
-
-            saturate(.96)
-
-            drop-shadow(0 0 6px rgba(58,168,255,.15))
-
-            drop-shadow(0 0 10px rgba(255,77,225,.08));
+            drop-shadow(0 0 16px rgba(58,168,255,.75))
+            drop-shadow(0 0 40px rgba(58,168,255,.45))
+            drop-shadow(0 0 60px rgba(255,77,225,.35))
+            drop-shadow(0 0 10px rgba(255,255,255,.30));
 
     }
 
-    /* nochmal heller */
+    /* langsames Ausblenden */
 
-    25%{
+    26%{
 
         filter:
 
-            brightness(1.12)
+            brightness(1.08)
+            contrast(1.03)
+            saturate(1.08)
 
-            contrast(1.04)
-
-            saturate(1.10)
-
-            drop-shadow(0 0 16px rgba(58,168,255,.45))
-
-            drop-shadow(0 0 28px rgba(255,77,225,.30));
+            drop-shadow(0 0 12px rgba(58,168,255,.35))
+            drop-shadow(0 0 22px rgba(255,77,225,.18));
 
     }
 
     /* zurück */
 
-    72%,100%{
+    30%,100%{
 
         filter:
 
             brightness(1)
-
             contrast(1)
-
             saturate(1)
 
             drop-shadow(0 0 8px rgba(58,168,255,.20))
-
             drop-shadow(0 0 14px rgba(255,77,225,.10));
 
     }
 
 }
-
 /* -----------------------------
    Infobox
 ------------------------------*/
