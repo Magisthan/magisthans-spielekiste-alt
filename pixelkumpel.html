@@ -46,19 +46,20 @@
         <!-- Hero-Video -->
         <div class="pixelkumpel-video">
 
-            <video
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata">
+          <video id="pixelVideo" autoplay muted playsinline>
+          <source src="assets/video/pixelkumpel-intro.mp4" type="video/mp4">
+          </video>
 
-                <source src="assets/video/pixelkumpelvideo.mp4"
-                        type="video/mp4">
+        <script>
+         const video = document.getElementById("pixelVideo");
 
-                Dein Browser unterstützt keine HTML5-Videos.
-
-            </video>
+         video.addEventListener("ended", () => {
+            setTimeout(() => {
+         video.currentTime = 0;
+         video.play();
+              }, 3000); // 3000 ms = 3 Sekunden Pause
+          });
+</script>
 
         </div>
 
