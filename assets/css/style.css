@@ -2122,7 +2122,7 @@ iframe {
 
 }
 
-.card{
+.timeline-card{
 
     margin-top:20px;
 
@@ -2147,7 +2147,7 @@ iframe {
 
 }
 
-.card h3{
+.timeline-card h3{
 
     margin-bottom:10px;
 
@@ -2157,7 +2157,7 @@ iframe {
 
 }
 
-.card p{
+.timeline-card p{
 
     color:#bfc6d6;
 
@@ -2267,7 +2267,7 @@ box-shadow:
 
 }
 
-.card{
+.timeline-card{
 
     opacity:1;
 
