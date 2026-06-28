@@ -2026,7 +2026,7 @@ iframe {
 
 }
 
-.retro-progress{
+.timeline-retro-progress{
 
     position:relative;
 
@@ -2040,7 +2040,7 @@ iframe {
 
 }
 
-.progress-line{
+.timeline-progress-line{
 
     position:absolute;
 
@@ -2066,7 +2066,7 @@ iframe {
 
 }
 
-.milestone{
+.timeline-milestone{
 
     position:relative;
 
@@ -2078,7 +2078,7 @@ iframe {
 
 }
 
-.node{
+.timeline-node{
 
     width:24px;
 
@@ -2100,7 +2100,7 @@ iframe {
 
 }
 
-.upcoming .node{
+.timeine-upcoming .timeline-node{
 
     background:#ba63ff;
 
@@ -2110,7 +2110,7 @@ iframe {
 
 }
 
-.label{
+.timeline-label{
 
     margin-top:18px;
 
@@ -2167,13 +2167,13 @@ iframe {
 
 }
 
-.milestone:hover .node{
+.timeline-milestone:hover .node{
 
     transform:scale(1.25);
 
 }
 
-.milestone:hover .card{
+.timeline-milestone:hover .card{
 
     opacity:1;
 
@@ -2181,7 +2181,7 @@ iframe {
 
 }
 
-.pulse{
+.timeline-pulse{
 
     animation:pulseGlow 2s infinite;
 
@@ -2223,7 +2223,7 @@ box-shadow:
 
 @media (max-width:950px){
 
-.retro-progress{
+.timeline-retro-progress{
 
     flex-direction:column;
 
@@ -2231,7 +2231,7 @@ box-shadow:
 
 }
 
-.progress-line{
+.timeline-progress-line{
 
     left:11px;
 
@@ -2245,7 +2245,7 @@ box-shadow:
 
 }
 
-.milestone{
+.timeline-milestone{
 
     text-align:left;
 
@@ -2253,7 +2253,7 @@ box-shadow:
 
 }
 
-.node{
+.timeline-node{
 
     position:absolute;
 
@@ -2261,7 +2261,7 @@ box-shadow:
 
 }
 
-.label{
+.timeline-label{
 
     margin-top:0;
 
