@@ -1463,29 +1463,19 @@ iframe {
     --rating-width: 20%;
 }
 
-/* =====================================================
-   Retro News Flash
-   ===================================================== */
-
-/* -----------------------------
-   Hero Bereich
-------------------------------*/
-
-.hero-card{
-
-    padding:45px;
-
-}
-
-/* -----------------------------
-   Logo Karte
-------------------------------*/
+/* ==========================================
+   Retro News Flash Glow
+   ========================================== */
 
 .hero-logo-card{
 
+    position:relative;
+
+    overflow:hidden;
+
     max-width:920px;
 
-    margin:0 auto 35px auto;
+    margin:0 auto 35px;
 
     padding:30px 35px;
 
@@ -1497,11 +1487,15 @@ iframe {
 
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,.03),
-        0 10px 28px rgba(0,0,0,.18);
+        0 12px 28px rgba(0,0,0,.18);
 
 }
 
+/* Logo */
+
 .rnf-header{
+
+    position:relative;
 
     display:block;
 
@@ -1509,141 +1503,145 @@ iframe {
 
     max-width:900px;
 
-    margin:0 auto 8px auto;
+    margin:0 auto;
 
-    border-radius:14px;
-
-    transition:transform .35s ease;
+    z-index:2;
 
     filter:
-
-        brightness(1)
-
-        saturate(1)
-
-        drop-shadow(0 0 8px rgba(58,168,255,.20))
-
-        drop-shadow(0 0 14px rgba(255,77,225,.10));
-
-    animation:rnfNeon 12s infinite;
+        drop-shadow(0 0 10px rgba(58,168,255,.18))
+        drop-shadow(0 0 18px rgba(255,77,225,.12));
 
 }
 
-.rnf-header:hover{
+/* Glow Layer */
 
-    transform:scale(1.01);
+.rnf-glow{
+
+    position:absolute;
+
+    inset:-20%;
+
+    z-index:1;
+
+    overflow:hidden;
 
 }
 
-@keyframes rnfNeon{
+/* Lichtkreis 1 */
 
-    /* Normal */
+.rnf-glow::before{
 
-    0%,15%{
+    content:"";
 
-        filter:
+    position:absolute;
 
-            brightness(1)
+    width:420px;
 
-            contrast(1)
+    height:420px;
 
-            saturate(1)
+    border-radius:50%;
 
-            drop-shadow(0 0 8px rgba(58,168,255,.20))
+    background:
 
-            drop-shadow(0 0 14px rgba(255,77,225,.10));
+        radial-gradient(
 
-    }
+            circle,
 
-    /* Logo wird langsam heller */
+            rgba(58,168,255,.30) 0%,
 
-    19%{
+            rgba(58,168,255,.10) 35%,
 
-        filter:
+            transparent 70%
 
-            brightness(1.08)
+        );
 
-            contrast(1.03)
+    left:-120px;
 
-            saturate(1.08)
+    top:-80px;
 
-            drop-shadow(0 0 12px rgba(58,168,255,.35))
+    filter:blur(55px);
 
-            drop-shadow(0 0 24px rgba(255,77,225,.20));
+    animation:rnfGlowBlue 22s ease-in-out infinite alternate;
 
-    }
+}
 
-    /* kurzer Peak */
+/* Lichtkreis 2 */
 
-    21%{
+.rnf-glow::after{
 
-        filter:
+    content:"";
 
-            brightness(1.15)
+    position:absolute;
 
-            contrast(1.06)
+    width:340px;
 
-            saturate(1.15)
+    height:340px;
 
-            drop-shadow(0 0 18px rgba(58,168,255,.55))
+    border-radius:50%;
 
-            drop-shadow(0 0 36px rgba(255,77,225,.35))
+    background:
 
-            drop-shadow(0 0 10px rgba(255,255,255,.15));
+        radial-gradient(
 
-    }
+            circle,
 
-    /* kleines Flackern */
+            rgba(255,77,225,.26) 0%,
 
-    23%{
+            rgba(255,77,225,.08) 40%,
 
-        filter:
+            transparent 75%
 
-            brightness(.97)
+        );
 
-            contrast(.98)
+    right:-100px;
 
-            saturate(.96)
+    bottom:-80px;
 
-            drop-shadow(0 0 6px rgba(58,168,255,.15))
+    filter:blur(50px);
 
-            drop-shadow(0 0 10px rgba(255,77,225,.08));
+    animation:rnfGlowPink 18s ease-in-out infinite alternate;
 
-    }
+}
 
-    /* nochmal heller */
+/* Blau */
 
-    25%{
+@keyframes rnfGlowBlue{
 
-        filter:
+    0%{
 
-            brightness(1.12)
-
-            contrast(1.04)
-
-            saturate(1.10)
-
-            drop-shadow(0 0 16px rgba(58,168,255,.45))
-
-            drop-shadow(0 0 28px rgba(255,77,225,.30));
+        transform:
+            translate(0px,0px)
+            scale(1);
 
     }
 
-    /* zurück */
+    100%{
 
-    72%,100%{
+        transform:
+            translate(70px,25px)
+            scale(1.2);
 
-        filter:
+    }
 
-            brightness(1)
+}
 
-            contrast(1)
+/* Pink */
 
-            saturate(1)
+@keyframes rnfGlowPink{
 
-            drop-shadow(0 0 8px rgba(58,168,255,.20))
+    0%{
 
-            drop-shadow(0 0 14px rgba(255,77,225,.10));
+        transform:
+            translate(0px,0px)
+            scale(1);
+
+    }
+
+    100%{
+
+        transform:
+            translate(-60px,-20px)
+            scale(1.25);
 
     }
 
