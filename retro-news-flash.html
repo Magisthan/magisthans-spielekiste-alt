@@ -377,7 +377,33 @@
     <a href="impressum.html">Impressum</a> |
     <a href="datenschutz.html">Datenschutz</a>
 </footer>
+<script>
 
+const progress = document.getElementById("rnfProgress");
+const fill = progress.querySelector(".rnf-progress-fill");
+
+let running = false;
+
+progress.addEventListener("mouseenter", () => {
+
+    if(running) return;
+
+    running = true;
+
+    fill.style.animation = "none";
+    fill.offsetHeight;
+
+    fill.style.animation = "rnfProgressFill 5s ease forwards";
+
+    fill.addEventListener("animationend", () => {
+
+        running = false;
+
+    }, { once:true });
+
+});
+
+</script>
 </body>
 </html>
 
