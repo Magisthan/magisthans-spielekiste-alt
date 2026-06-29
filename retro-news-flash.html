@@ -405,5 +405,56 @@ progress.addEventListener("mouseenter", () => {
 
 </script>
 </body>
+    <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const timeline = document.querySelector(".rnf-progress");
+
+    const fill = document.querySelector(".rnf-progress-fill");
+
+    if(!timeline || !fill) return;
+
+    const observer = new IntersectionObserver((entries)=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                fill.style.animation = "";
+
+                void fill.offsetWidth;
+
+                if(window.innerWidth <= 900){
+
+                    fill.style.animation =
+                        "rnfProgressVertical 2s ease forwards";
+
+                }else{
+
+                    fill.style.animation =
+                        "rnfProgressFill 5s ease forwards";
+
+                }
+
+            }else{
+
+                fill.style.animation = "none";
+
+            }
+
+        });
+
+    },{
+
+        threshold:0.45
+
+    });
+
+    observer.observe(timeline);
+
+});
+
+</script>
 </html>
 
