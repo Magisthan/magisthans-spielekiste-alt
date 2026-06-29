@@ -2978,6 +2978,188 @@ transform:scale(1);
 
 }
 
+/* ==========================================
+   ABOUT HERO
+========================================== */
+
+.about-hero{
+
+    display:grid;
+
+    grid-template-columns:
+
+        300px
+
+        1fr
+
+        320px;
+
+    gap:35px;
+
+    align-items:center;
+
+    padding:45px;
+
+}
+
+/* Portrait */
+
+.about-photo-card{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.about-photo-card img{
+
+    width:100%;
+
+    max-width:260px;
+
+    border-radius:20px;
+
+    display:block;
+
+}
+
+/* Intro */
+
+.about-intro-card h1{
+
+    margin:10px 0 20px;
+
+    font-size:2.3rem;
+
+}
+
+.about-pretitle{
+
+    color:#4eb8ff;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    font-size:.85rem;
+
+}
+
+.about-lead{
+
+    font-size:1.08rem;
+
+    line-height:1.8;
+
+    color:#d7dceb;
+
+}
+
+.about-intro-card blockquote{
+
+    margin:35px 0 0;
+
+    padding-left:20px;
+
+    border-left:3px solid #46b3ff;
+
+    color:#b7bfd4;
+
+    font-style:italic;
+
+}
+
+/* Profile */
+
+.about-profile-card{
+
+    background:#161c2d;
+
+    border:1px solid rgba(58,168,255,.18);
+
+    border-radius:16px;
+
+    padding:28px;
+
+}
+
+.about-profile-card h2{
+
+    margin-top:0;
+
+    margin-bottom:25px;
+
+    color:#4eb8ff;
+
+}
+
+.profile-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.profile-row:last-child{
+
+    border:none;
+
+}
+
+.profile-row span{
+
+    color:#98a6c3;
+
+}
+
+.profile-row strong{
+
+    color:white;
+
+}
+
+.online{
+
+    color:#59d66d;
+
+}
+
+/* Responsive */
+
+@media(max-width:1100px){
+
+    .about-hero{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-photo-card{
+
+        order:1;
+
+    }
+
+    .about-intro-card{
+
+        order:2;
+
+    }
+
+    .about-profile-card{
+
+        order:3;
+
+    }
+
+}
+
 /* ==========================
    Footer
    ========================== */
