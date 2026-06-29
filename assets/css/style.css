@@ -3002,6 +3002,62 @@ transform:scale(1);
 
 }
 
+.about-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    right:-220px;
+
+    top:-220px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        rgba(58,168,255,.10),
+
+        transparent 70%
+
+    );
+
+    pointer-events:none;
+
+}
+
+.about-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    left:-180px;
+
+    bottom:-180px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        rgba(143,109,255,.08),
+
+        transparent 70%
+
+    );
+
+    pointer-events:none;
+
+}
+
 /* Portrait */
 
 .about-photo-card{
@@ -3431,6 +3487,53 @@ transform:scale(1);
     color:#ffffff;
 
 }
+
+/* ==========================================
+   Quote
+========================================== */
+
+.about-quote{
+
+    margin-top:35px;
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:flex-start;
+
+}
+
+.quote-line{
+
+    width:4px;
+
+    min-height:70px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        180deg,
+        #46b3ff,
+        #8f6dff
+    );
+
+}
+
+.about-quote p{
+
+    margin:0;
+
+    color:#b9c4d9;
+
+    font-style:italic;
+
+    line-height:1.8;
+
+}
+
+
+
 
 /* ==========================
    Footer
