@@ -2427,7 +2427,7 @@ transform:scale(1);
 
     height:0;
 
-    animation:rnfProgressVertical 2s ease forwards;
+    animation:none;
 
 }
 
@@ -2918,7 +2918,7 @@ footer a:hover {
 
     transform-origin:top center;
 
-    animation:rnfProgressVertical 2s ease forwards;
+    animation:none;
 
 }
    
