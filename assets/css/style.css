@@ -2993,7 +2993,7 @@ transform:scale(1);
     grid-template-columns:
         320px
         minmax(0,1fr)
-        360px;
+        380px;
 
     gap:48px;
 
@@ -3146,29 +3146,36 @@ transform:scale(1);
 }
 
 .about-profile-card {
+
     align-self:start;
     background:#192234;
     border:1px solid rgba(58,168,255,.20);
     border-radius:22px;
-    padding:34px;
-    box-shadow:0 18px 35px rgba(0,0,0,.22)
+
+    padding:26px;
+
+    box-shadow:0 18px 35px rgba(0,0,0,.22);
+
 }
 
-.about-profile-card h2{
+.about-profile-card{
 
-    width:360px;
+    width:100%;
+    max-width:380px;
 
     justify-self:end;
-
-    align-self:start;
 
 }
 
 .profile-row {
+
     display:flex;
     justify-content:space-between;
-    padding:12px 0;
-    border-bottom:1px solid rgba(255,255,255,.05)
+
+    padding:9px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
 }
 
 .profile-row span {
@@ -3180,10 +3187,12 @@ transform:scale(1);
 }
 
 .profile-divider {
-    margin:28px 0;
+
+    margin:20px 0;
     border:0;
     height:1px;
-    background:rgba(255,255,255,.08)
+    background:rgba(255,255,255,.08);
+
 }
 
 .online {
@@ -3200,22 +3209,36 @@ transform:scale(1);
 }
 
 .inventory-grid {
+
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:14px;
-    margin-top:18px
+
+    gap:10px;
+
+    margin-top:14px;
+
 }
 
 .inventory-item {
-    height:82px;
+
+    height:68px;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
-    font-size:2rem;
+
+    font-size:1.7rem;
+
     background:#232d43;
+
     border:1px solid rgba(255,255,255,.05);
-    border-radius:14px;
-    transition:.25s
+
+    border-radius:12px;
+
+    transition:.25s;
+
 }
 
 .inventory-item:hover {
@@ -3225,22 +3248,24 @@ transform:scale(1);
 }
 
 .stat {
-    margin-top:22px
+
+    margin-top:16px;
+
 }
 
 .stat span {
+
     display:block;
-    margin-bottom:8px;
+
+    margin-bottom:6px;
+
     color:#cfd7eb;
-    font-size:.92rem
+
+    font-size:.88rem;
+
 }
 
-.stat-bar {
-    height:12px;
-    background:#2b3448;
-    border-radius:30px;
-    overflow:hidden
-}
+.stat-bar
 
 .stat-fill {
     height:100%;
