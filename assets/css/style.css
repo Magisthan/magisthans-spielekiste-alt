@@ -2700,6 +2700,22 @@ transform:scale(1);
 
 }
 
+.rnf-terminal span{
+
+    color:#ffffff;
+
+    font-weight:700;
+
+}
+
+.rnf-terminal.ready{
+
+    box-shadow:
+        0 0 20px rgba(58,168,255,.20),
+        inset 0 0 0 1px rgba(255,255,255,.03);
+
+}
+
 .rnf-terminal pre::selection{
 
     background:#3aa8ff;
