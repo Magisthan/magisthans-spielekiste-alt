@@ -3126,7 +3126,31 @@ transform:scale(1);
 
 .online{
 
-    color:#59d66d;
+    color:#57d66d;
+
+    animation:onlinePulse 2.2s infinite;
+
+}
+
+@keyframes onlinePulse{
+
+    0%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.45;
+
+    }
+
+    100%{
+
+        opacity:1;
+
+    }
 
 }
 
