@@ -3160,6 +3160,160 @@ transform:scale(1);
 
 }
 
+/* ==========================================
+   Profile Divider
+========================================== */
+
+.profile-divider{
+
+    margin:28px 0;
+
+    border:0;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* ==========================================
+   Inventar
+========================================== */
+
+.inventory-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+    margin-top:18px;
+
+}
+
+.inventory-item{
+
+    height:64px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.8rem;
+
+    background:#1d2438;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:12px;
+
+    transition:.25s;
+
+    cursor:default;
+
+}
+
+.inventory-item:hover{
+
+    transform:translateY(-3px);
+
+    background:#25304c;
+
+    border-color:rgba(58,168,255,.45);
+
+    box-shadow:
+
+        0 8px 18px rgba(58,168,255,.18);
+
+}
+
+/* ==========================================
+   Stats
+========================================== */
+
+.stat{
+
+    margin-top:18px;
+
+}
+
+.stat span{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#cfd7eb;
+
+    font-size:.92rem;
+
+}
+
+.stat-bar{
+
+    height:10px;
+
+    background:#242c40;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.stat-fill{
+
+    height:100%;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #42b3ff,
+
+        #7f6fff
+
+    );
+
+}
+
+.w100{
+
+    width:100%;
+
+}
+
+.w70{
+
+    width:70%;
+
+}
+
+.w35{
+
+    width:35%;
+
+}
+
+.danger{
+
+    background:linear-gradient(
+
+        90deg,
+
+        #ffb347,
+
+        #ff6b5c
+
+    );
+
+}
+
 /* ==========================
    Footer
    ========================== */
