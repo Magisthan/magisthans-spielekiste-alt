@@ -1953,18 +1953,30 @@ iframe {
 
 .pixelkumpel-video{
 
-    max-width:900px;
-    height:360px;
+    width:100%;
+    max-width:1080px;
+
+    margin:25px auto 55px auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
 }
 
 .pixelkumpel-video video{
 
+    display:block;
+
     width:100%;
-    height:100%;
+
+    aspect-ratio:16/9;
 
     object-fit:cover;
+
     object-position:center center;
+
+    border-radius:18px;
 
 }
 
