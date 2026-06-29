@@ -423,21 +423,21 @@
 
                 </div>
 
-                <pre>
+<pre>
 
-STATUS ............ ONLINE
+STATUS ............ <span id="boot-status"></span>
 
-KAFFEE ............ ████████
+KAFFEE ............ <span id="boot-coffee"></span>
 
-DISKETTEN ......... ████████
+DISKETTEN ......... <span id="boot-disks"></span>
 
-NEUE SPIELE ....... GESUCHT
+NEUE SPIELE ....... <span id="boot-games"></span>
 
-COMMUNITY ......... ♥♥♥♥♥
+COMMUNITY ......... <span id="boot-community"></span>
 
-TIPPS ............. ERWÜNSCHT
+TIPPS ............. <span id="boot-tips"></span>
 
-                </pre>
+</pre>
 
             </div>
 
@@ -577,6 +577,83 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     observer.observe(timeline);
+
+});
+
+</script>
+
+    <script>
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const terminal=document.querySelector(".rnf-terminal");
+
+if(!terminal)return;
+
+const lines=[
+
+["boot-status","ONLINE"],
+["boot-coffee","████████"],
+["boot-disks","████████"],
+["boot-games","GESUCHT"],
+["boot-community","♥♥♥♥♥"],
+["boot-tips","ERWÜNSCHT"]
+
+];
+
+let played=false;
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+if(played)return;
+
+played=true;
+
+terminal.classList.remove("ready");
+
+lines.forEach(line=>{
+
+document.getElementById(line[0]).textContent="";
+
+});
+
+lines.forEach((line,index)=>{
+
+setTimeout(()=>{
+
+document.getElementById(line[0]).textContent=line[1];
+
+if(index===lines.length-1){
+
+terminal.classList.add("ready");
+
+}
+
+},index*250);
+
+});
+
+}else{
+
+played=false;
+
+}
+
+});
+
+},
+
+{
+
+threshold:.55
+
+});
+
+observer.observe(terminal);
 
 });
 
