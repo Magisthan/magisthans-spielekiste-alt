@@ -413,6 +413,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fill = document.querySelector(".rnf-progress-fill");
 
+    const items = document.querySelectorAll(".rnf-progress-item");
+
     if(!timeline || !fill) return;
 
     const observer = new IntersectionObserver((entries)=>{
@@ -421,8 +423,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if(entry.isIntersecting){
 
-                fill.style.animation = "";
+                /* Progressbar zurücksetzen */
 
+                fill.style.animation = "none";
                 void fill.offsetWidth;
 
                 if(window.innerWidth <= 900){
@@ -437,9 +440,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 }
 
-            }else{
+                /* Timeline-Punkte neu animieren */
 
-                fill.style.animation = "none";
+                items.forEach((item,index)=>{
+
+                    item.style.animation = "none";
+                    item.style.opacity = "0";
+
+                    void item.offsetWidth;
+
+                    setTimeout(()=>{
+
+                        item.style.animation =
+                            "rnfFadeUp .7s ease forwards";
+
+                    },index*250);
+
+                });
+
+            }
+
+            else{
+
+                fill.style.animation="none";
+
+                items.forEach(item=>{
+
+                    item.style.animation="none";
+                    item.style.opacity="0";
+
+                });
 
             }
 
