@@ -3267,6 +3267,52 @@ transform:scale(1);
 
 .stat-bar
 
+/* ==========================================
+   RETRO STATS
+========================================== */
+
+.retro-stat{
+
+    margin-top:18px;
+
+}
+
+.retro-stat span{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:.9rem;
+
+    color:#d3daea;
+
+}
+
+.coffee-icons,
+
+.heart-icons{
+
+    font-size:1.35rem;
+
+    letter-spacing:4px;
+
+    user-select:none;
+
+}
+
+.coffee-icons{
+
+    color:#d9b27d;
+
+}
+
+.heart-icons{
+
+    color:#ff5d76;
+
+}
+
 .stat-fill {
     height:100%;
     border-radius:30px;
