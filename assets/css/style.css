@@ -2988,17 +2988,21 @@ transform:scale(1);
 
     grid-template-columns:
 
-        300px
+        370px
 
-        1fr
+        minmax(520px,1.45fr)
 
-        320px;
+        390px;
 
-    gap:35px;
+        gap:55px;
+
+        gap:35px;
 
     align-items:center;
 
-    padding:45px;
+    padding:42px 48px;
+
+    align-items:start;
 
 }
 
@@ -3084,9 +3088,13 @@ transform:scale(1);
 
 .about-intro-card h1{
 
-    margin:10px 0 20px;
+    margin:8px 0 24px;
 
-    font-size:2.3rem;
+    font-size:3.35rem;
+
+    line-height:1.15;
+
+    max-width:620px;
 
 }
 
@@ -3104,11 +3112,13 @@ transform:scale(1);
 
 .about-lead{
 
-    font-size:1.08rem;
+    font-size:1.18rem;
 
-    line-height:1.8;
+    line-height:1.95;
 
     color:#d7dceb;
+
+    max-width:680px;
 
 }
 
@@ -3130,13 +3140,17 @@ transform:scale(1);
 
 .about-profile-card{
 
-    background:#161c2d;
+    background:#192234;
 
-    border:1px solid rgba(58,168,255,.18);
+    border:1px solid rgba(58,168,255,.20);
 
-    border-radius:16px;
+    border-radius:22px;
 
-    padding:28px;
+    padding:34px;
+
+    box-shadow:
+
+        0 18px 35px rgba(0,0,0,.22);
 
 }
 
@@ -3274,7 +3288,15 @@ transform:scale(1);
 
 .inventory-item{
 
-    height:64px;
+    height:82px;
+
+    font-size:2rem;
+
+    background:#232d43;
+
+    border-radius:14px;
+
+    transition:.25s;
 
     display:flex;
 
@@ -3316,7 +3338,7 @@ transform:scale(1);
 
 .stat{
 
-    margin-top:18px;
+    margin-top:22px;
 
 }
 
@@ -3334,9 +3356,9 @@ transform:scale(1);
 
 .stat-bar{
 
-    height:10px;
+    height:12px;
 
-    background:#242c40;
+    background:#2b3448;
 
     border-radius:30px;
 
@@ -3401,10 +3423,9 @@ transform:scale(1);
 .about-photo-card{
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
+    justify-content:flex-start;
 
 }
 
@@ -3412,19 +3433,19 @@ transform:scale(1);
 
     position:relative;
 
-    padding:10px;
+    padding:16px;
 
-    border-radius:24px;
+    border-radius:30px;
 
     background:linear-gradient(
         135deg,
-        rgba(58,168,255,.25),
+        rgba(58,168,255,.20),
         rgba(143,109,255,.18)
     );
 
     box-shadow:
-        0 12px 35px rgba(0,0,0,.25),
-        0 0 28px rgba(58,168,255,.12);
+        0 18px 40px rgba(0,0,0,.30),
+        0 0 35px rgba(58,168,255,.12);
 
 }
 
@@ -3436,11 +3457,9 @@ transform:scale(1);
 
     inset:0;
 
-    border-radius:24px;
+    border-radius:30px;
 
     border:1px solid rgba(255,255,255,.08);
-
-    pointer-events:none;
 
 }
 
@@ -3450,17 +3469,27 @@ transform:scale(1);
 
     width:100%;
 
-    max-width:260px;
+    max-width:315px;
 
-    border-radius:18px;
+    border-radius:22px;
 
 }
 
 .photo-caption{
 
-    margin-top:18px;
+    margin-top:22px;
+
+    width:240px;
+
+    padding:18px;
 
     text-align:center;
+
+    background:#161d2d;
+
+    border:1px solid rgba(58,168,255,.18);
+
+    border-radius:16px;
 
 }
 
@@ -3468,11 +3497,11 @@ transform:scale(1);
 
     display:block;
 
-    font-size:.75rem;
+    color:#56b6ff;
 
     letter-spacing:2px;
 
-    color:#6fb8ff;
+    font-size:.8rem;
 
 }
 
@@ -3480,11 +3509,9 @@ transform:scale(1);
 
     display:block;
 
-    margin-top:6px;
+    margin-top:8px;
 
-    font-size:1.2rem;
-
-    color:#ffffff;
+    font-size:1.45rem;
 
 }
 
@@ -3532,7 +3559,31 @@ transform:scale(1);
 
 }
 
+.savegame-placeholder{
 
+    margin-top:45px;
+
+    height:320px;
+
+    width:100%;
+
+    border-radius:22px;
+
+    border:2px dashed rgba(58,168,255,.18);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#5f6f92;
+
+    text-align:center;
+
+    font-size:1rem;
+
+}
 
 
 /* ==========================
