@@ -2982,15 +2982,27 @@ transform:scale(1);
    ABOUT HERO
 ========================================== */
 
-/* ABOUT HERO CLEAN */
-.about-hero {
-    position:relative;
-    overflow:hidden;
+/* ==========================================
+   ABOUT HERO GRID 2.0
+========================================== */
+
+.about-hero{
+
     display:grid;
-    grid-template-columns:340px minmax(700px,1.8fr) 360px;
-    gap:55px;
+
+    grid-template-columns:
+        320px
+        minmax(0,1fr)
+        360px;
+
+    gap:48px;
+
     align-items:start;
-    padding:42px 48px
+
+    position:relative;
+
+    padding:48px;
+
 }
 
 .about-hero::before {
@@ -3015,10 +3027,16 @@ transform:scale(1);
     background:radial-gradient(rgba(143,109,255,.08),transparent 70%)
 }
 
-.about-photo-card {
+.about-photo-card{
+
     display:flex;
+
     flex-direction:column;
-    align-items:center
+
+    align-items:center;
+
+    width:320px;
+
 }
 
 .photo-frame {
@@ -3089,11 +3107,16 @@ transform:scale(1);
     letter-spacing:2px
 }
 
-.about-intro-card h1 {
-    margin:8px 0 24px;
-    max-width:620px;
-    font-size:3.35rem;
-    line-height:1.15
+.about-intro-card h1{
+
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
 }
 
 .about-lead {
@@ -3131,9 +3154,14 @@ transform:scale(1);
     box-shadow:0 18px 35px rgba(0,0,0,.22)
 }
 
-.about-profile-card h2 {
-    margin:0 0 25px;
-    color:#4eb8ff
+.about-profile-card h2{
+
+    width:360px;
+
+    justify-self:end;
+
+    align-self:start;
+
 }
 
 .profile-row {
@@ -3505,7 +3533,32 @@ footer a:hover {
 
     }
 
+@media (max-width:1200px){
+
+.about-hero{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+}
+
+.about-photo-card{
+
+    width:100%;
+
+}
+
+.about-profile-card{
+
+    width:100%;
+
+    justify-self:stretch;
+
+}
+
 }   
+   
 
 html,
 body {
