@@ -393,6 +393,51 @@ RETRO STATS
 
 <script src="assets/js/achievement.js"></script>
 <script src="assets/js/retro-stats.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    const progress=document.querySelector(".timeline-progress");
+
+    const items=document.querySelectorAll(".timeline-item");
+
+    progress.animate(
+
+        [
+
+            {width:"0%"},
+
+            {width:"100%"}
+
+        ],
+
+        {
+
+            duration:3200,
+
+            fill:"forwards",
+
+            easing:"ease-in-out"
+
+        }
+
+    );
+
+    items.forEach((item,index)=>{
+
+        setTimeout(()=>{
+
+            item.classList.add("show");
+            item.classList.add("active");
+
+        },450+index*600);
+
+    });
+
+});
+
+</script>
       
 </body>
 
