@@ -3176,20 +3176,6 @@ transform:scale(1);
 
 }
 
-.savegame-placeholder {
-    margin-top:35px;
-    width:100%;
-    height:320px;
-    border-radius:20px;
-    background:#161d2d;
-    border:1px dashed rgba(58,168,255,.22);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#5f6f92;
-    text-align:center
-}
-
 .about-pretitle {
     color:#4eb8ff;
     font-size:.85rem;
@@ -3868,6 +3854,224 @@ transform:scale(1);
         transform:translateX(420px);
 
         opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   SAVEGAME TIMELINE
+========================================== */
+
+.savegame-card{
+
+    margin-top:36px;
+
+    padding:34px 45px 42px;
+
+}
+
+.savegame-title{
+
+    text-align:center;
+
+    margin:0 0 45px;
+
+    color:#7be74d;
+
+    letter-spacing:2px;
+
+    font-size:2rem;
+
+}
+
+.timeline{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    top:72px;
+
+    height:4px;
+
+    background:#335022;
+
+    border-radius:10px;
+
+}
+
+.timeline-progress{
+
+    position:absolute;
+
+    left:0;
+
+    top:72px;
+
+    height:4px;
+
+    width:0;
+
+    background:#79ff43;
+
+    border-radius:10px;
+
+    box-shadow:0 0 12px #79ff43;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    width:150px;
+
+    text-align:center;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+}
+
+.timeline-icon{
+
+    width:58px;
+
+    height:58px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.timeline-icon img{
+
+    width:54px;
+
+}
+
+.timeline-dot{
+
+    width:14px;
+
+    height:14px;
+
+    margin:10px auto;
+
+    border-radius:50%;
+
+    background:#5c5c5c;
+
+    border:2px solid #7cff45;
+
+}
+
+.timeline-year{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:1.15rem;
+
+    color:#ffffff;
+
+}
+
+.timeline small{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#d0d0d0;
+
+    line-height:1.5;
+
+}
+
+.timeline-item.show{
+
+    animation:timelinePop .55s forwards;
+
+}
+
+.timeline-item.active .timeline-dot{
+
+    background:#7eff4f;
+
+    box-shadow:0 0 12px #7eff4f;
+
+}
+
+.current{
+
+    animation:currentPulse 2s infinite;
+
+}
+
+@keyframes timelinePop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes currentPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.25);
+
+        box-shadow:0 0 18px #7eff4f;
+
+    }
+
+    100%{
+
+        transform:scale(1);
 
     }
 
