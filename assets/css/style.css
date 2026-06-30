@@ -3448,8 +3448,8 @@ transform:scale(1);
 }
 
 .inventory-item img{
-    width:24px;
-    height:24px;
+    width:42px;
+    height:42px;
     image-rendering:pixelated;
 }
 
