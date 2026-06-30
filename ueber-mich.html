@@ -277,153 +277,96 @@ RETRO STATS
     </section>
 
 <!-- ==========================================
-SAVEGAME TIMELINE
+     SAVEGAME TIMELINE
 ========================================== -->
 
 <div class="card savegame-card">
 
-    <h2 class="savegame-title">
-
+    <h2 class="timeline-title">
         SAVEGAME – EINE REISE DURCH DIE ZEIT
-
     </h2>
 
     <div class="timeline">
 
-        <div class="timeline-progress"></div>
+        <div class="timeline-line">
+            <div class="timeline-progress"></div>
+        </div>
 
-        <div class="timeline-item active" data-year="1986">
-
-            <div class="timeline-icon">
-                <img src="assets/images/icons/C64.png" alt="">
-            </div>
-
+        <div class="timeline-item show active" data-year="1986">
             <div class="timeline-dot"></div>
-
-            <span class="timeline-year">1986</span>
-
-            <small>der Anfang</small>
-
+            <img src="assets/images/timeline/c64.png" alt="1986">
+            <span>1986</span>
         </div>
 
-        <div class="timeline-item" data-year="1987">
-
-            <div class="timeline-icon">
-                <img src="assets/images/icons/C64.png" alt="">
-            </div>
-
+        <div class="timeline-item show active" data-year="1989">
             <div class="timeline-dot"></div>
-
-            <span class="timeline-year">1987</span>
-
-            <small>der erste eigene C64</small>
-
+            <img src="assets/images/timeline/floppy.png" alt="1989">
+            <span>1989</span>
         </div>
 
-        <div class="timeline-item" data-year="1991">
-
-            <div class="timeline-icon">
-                <img src="assets/images/icons/Amiga.png" alt="">
-            </div>
-
+        <div class="timeline-item show active" data-year="1992">
             <div class="timeline-dot"></div>
-
-            <span class="timeline-year">1991</span>
-
-            <small>der erste Amiga</small>
-
+            <img src="assets/images/timeline/amiga.png" alt="1992">
+            <span>1992</span>
         </div>
 
-        <div class="timeline-item" data-year="1996">
-
-            <div class="timeline-icon">
-                <img src="assets/images/icons/PC.png" alt="">
-            </div>
-
+        <div class="timeline-item show active" data-year="1997">
             <div class="timeline-dot"></div>
-
-            <span class="timeline-year">1996</span>
-
-            <small>der erste PC 486DX66</small>
-
+            <img src="assets/images/timeline/pc.png" alt="1997">
+            <span>1997</span>
         </div>
 
-        <div class="timeline-item" data-year="2022">
-
-            <div class="timeline-icon">
-                <img src="assets/images/icons/youtube.png" alt="">
-            </div>
-
-            <div class="timeline-dot current"></div>
-
-            <span class="timeline-year">2022</span>
-
-            <small>Start des Youtube Kanal</small>
-
+        <div class="timeline-item show active" data-year="2023">
+            <div class="timeline-dot"></div>
+            <img src="assets/images/timeline/youtube.png" alt="2023">
+            <span>2023</span>
         </div>
 
-        <div class="timeline-item" data-year="2026">
-
-            <div class="timeline-icon">
-                <img src="assets/images/icons/magisthan.png" alt="">
-            </div>
-
-            <div class="timeline-dot current"></div>
-
-            <span class="timeline-year">2026</span>
-
-            <small>auf zu neuen Welten?</small>
-
+        <div class="timeline-item show active current" data-year="2026">
+            <div class="timeline-dot"></div>
+            <img src="assets/images/timeline/news.png" alt="Heute">
+            <span>Heute</span>
         </div>
 
     </div>
-    
-<!-- Ende Container -->
+
+</div>
+<!-- Ende savegame-card -->
+
 
 <!-- ==========================================
-RETRO MEMORY
+     RETRO MEMORY CARD
 ========================================== -->
 
-<div id="retro-memory" class="retro-memory">
+<div id="retro-memory" class="retro-memory-card show">
 
     <div class="memory-image">
 
-        <img id="memory-image"
-             src="assets/images/timeline/c64.jpg"
-             alt="">
+        <img
+            id="memory-image"
+            src="assets/images/timeline/c64.jpg"
+            alt="Retro Memory">
 
     </div>
 
     <div class="memory-content">
 
         <span id="memory-year">
-
             1986
-
         </span>
 
-        <h3 id="memory-title"
-            class="memory-title">
-            
+        <h3 id="memory-title">
             Der erste C64
-
         </h3>
 
-        <p id="memory-text"
-           class="memory-text">
-
-            Hier begann alles.
-            Winter Games, Summer Games,
-            erste BASIC-Versuche und viele
-            unvergessliche Stunden.
-
+        <p id="memory-text">
+            Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.
         </p>
 
     </div>
 
 </div>
-
-    </div>
+<!-- Ende retro-memory-card -->
 
 <footer>
 
@@ -487,8 +430,6 @@ setTimeout(()=>{
     memory.classList.add("memory-visible");
 
 },3600);
-
-    );
 
     items.forEach((item,index)=>{
 
