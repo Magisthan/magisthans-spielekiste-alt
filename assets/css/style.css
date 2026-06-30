@@ -3246,9 +3246,13 @@ transform:scale(1);
 
 .profile-row strong{
 
-    color:#ffffff;
+    text-align:right;    
 
-    text-align:right;
+}
+
+.profile-row strong:not(.online){
+
+    color:#ffffff;
 
 }
 
