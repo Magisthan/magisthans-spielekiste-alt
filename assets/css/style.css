@@ -4033,6 +4033,22 @@ transform:scale(1);
 
 }
 
+.timeline-title{
+
+    text-align:center;
+
+    color:#74ff4f;
+
+    font-size:2.6rem;
+
+    letter-spacing:1px;
+
+    margin-bottom:60px;
+
+    text-shadow:0 0 14px rgba(116,255,79,.35);
+
+}
+
 @keyframes timelinePop{
 
     from{
