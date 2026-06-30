@@ -4077,6 +4077,34 @@ transform:scale(1);
 
 }
 
+.timeline-item{
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.timeline-item:hover .timeline-icon{
+
+    transform:scale(1.08);
+
+}
+
+.timeline-item:hover .timeline-dot{
+
+    box-shadow:
+
+        0 0 15px #6cff57;
+
+}
+
 /* ==========================================
    RETRO MEMORY
 ========================================== */
