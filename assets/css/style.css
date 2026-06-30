@@ -2998,17 +2998,32 @@ transform:scale(1);
 
     gap:70px;
 
+    padding:48px;
+
     align-items:start;
 
 }
 
-.hero-left{
+.about-intro-card h1{
+
+    font-size:3rem;
+
+    line-height:1.15;
+
+    max-width:560px;
+
+}
+
+ .hero-left{
+
+    display:flex;
+    flex-direction:column;
 
     align-items:center;
 
-    flex-direction:column;
+    justify-content:flex-start;
 
-    gap:40px;
+    gap:34px;
 
 }
 
@@ -3036,13 +3051,11 @@ transform:scale(1);
 
 .about-photo-card{
 
+    width:100%;
+
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
-    width:320px;
 
 }
 
@@ -3164,25 +3177,13 @@ transform:scale(1);
     color:#b9c4d9
 }
 
-.about-profile-card {
-
-    align-self:start;
-    background:#192234;
-    border:1px solid rgba(58,168,255,.20);
-    border-radius:22px;
-
-    padding:26px;
-
-    box-shadow:0 18px 35px rgba(0,0,0,.22);
-
-}
-
 .about-profile-card{
 
-    width:100%;
+    align-self:flex-start;
     max-width:470px;
 
     justify-self:end;
+    margin:0;
 
 }
 
