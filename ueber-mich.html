@@ -384,6 +384,47 @@ SAVEGAME TIMELINE
     
 <!-- Ende Container -->
 
+<!-- ==========================================
+RETRO MEMORY
+========================================== -->
+
+<div id="retro-memory" class="retro-memory">
+
+    <div class="memory-image">
+
+        <img id="memory-image"
+             src="assets/images/timeline/c64.jpg"
+             alt="">
+
+    </div>
+
+    <div class="memory-content">
+
+        <span id="memory-year">
+
+            1986
+
+        </span>
+
+        <h3 id="memory-title">
+
+            Der erste C64
+
+        </h3>
+
+        <p id="memory-text">
+
+            Hier begann alles.
+            Winter Games, Summer Games,
+            erste BASIC-Versuche und viele
+            unvergessliche Stunden.
+
+        </p>
+
+    </div>
+
+</div>
+
 <footer>
 
     <a href="impressum.html">Impressum</a> |
@@ -452,7 +493,93 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 });
 
+const memory=document.getElementById("retro-memory");
+
+const data={
+
+    1986:{
+
+        title:"Der erste C64",
+
+        text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
+
+        image:"assets/images/timeline/c64.jpg"
+
+    },
+
+    1989:{
+
+        title:"Erste Disketten",
+
+        text:"Die Spielesammlung wuchs stetig und die ersten Nächte vor dem Monitor wurden zur Normalität.",
+
+        image:"assets/images/timeline/floppy.jpg"
+
+    },
+
+    1992:{
+
+        title:"Amiga 500",
+
+        text:"Monkey Island, Chaos Engine und viele weitere Klassiker machten den Amiga zu meinem Lieblingsrechner.",
+
+        image:"assets/images/timeline/amiga.jpg"
+
+    },
+
+    2023:{
+
+        title:"YouTube",
+
+        text:"Aus einem Hobby entstand Magisthans Spielekiste.",
+
+        image:"assets/images/timeline/youtube.jpg"
+
+    },
+
+    2026:{
+
+        title:"Retro News Flash",
+
+        text:"Jede Woche neue Spiele, Hardware und Demos rund um C64 und Amiga.",
+
+        image:"assets/images/timeline/newsflash.jpg"
+
+    }
+
+};
+
+document.querySelectorAll(".timeline-item").forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        const year=item.dataset.year;
+
+        const entry=data[year];
+
+        document.getElementById("memory-year").textContent=year;
+
+        document.getElementById("memory-title").textContent=entry.title;
+
+        document.getElementById("memory-text").textContent=entry.text;
+
+        document.getElementById("memory-image").src=entry.image;
+
+        memory.classList.remove("show");
+
+        setTimeout(()=>{
+
+            memory.classList.add("show");
+
+        },120);
+
+    });
+
+});
+
 </script>
+
+
        
 </body>
 
