@@ -3535,6 +3535,134 @@ transform:scale(1);
     
 }
 
+/* ==========================================
+   ACHIEVEMENT POPUP
+========================================== */
+
+.achievement-popup{
+
+    position:fixed;
+
+    right:35px;
+
+    bottom:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px 24px;
+
+    width:360px;
+
+    background:#171d2c;
+
+    border:2px solid #8f6dff;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 0 25px rgba(143,109,255,.35),
+        0 0 60px rgba(58,168,255,.12);
+
+    transform:translateX(420px);
+
+    opacity:0;
+
+    z-index:9999;
+
+}
+
+.achievement-popup.show{
+
+    animation:achievementIn .7s forwards;
+
+}
+
+.achievement-popup.hide{
+
+    animation:achievementOut .6s forwards;
+
+}
+
+.achievement-icon{
+
+    font-size:3rem;
+
+}
+
+.achievement-text span{
+
+    display:block;
+
+    color:#9d79ff;
+
+    font-size:.78rem;
+
+    letter-spacing:2px;
+
+}
+
+.achievement-text strong{
+
+    display:block;
+
+    margin:6px 0;
+
+    color:#ffffff;
+
+    font-size:1.25rem;
+
+}
+
+.achievement-text small{
+
+    color:#66ff8d;
+
+}
+
+@keyframes achievementIn{
+
+    from{
+
+        transform:translateX(420px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes achievementOut{
+
+    from{
+
+        transform:translateX(0);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateX(420px);
+
+        opacity:0;
+
+    }
+
+}
+
 /* ==========================
    Footer
    ========================== */
