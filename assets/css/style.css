@@ -3192,14 +3192,25 @@ transform:scale(1);
 
 }
 
-.profile-row {
+.about-profile-card h2{
 
-    display:flex;
-    justify-content:space-between;
+    margin:0 0 20px;
 
-    padding:9px 0;
+    font-size:2rem;
 
-    border-bottom:1px solid rgba(255,255,255,.05);
+    letter-spacing:.5px;
+
+}
+
+.profile-row{
+
+    display:grid;
+
+    grid-template-columns:150px 1fr;
+
+    align-items:center;
+
+    padding:10px 0;
 
 }
 
@@ -3209,6 +3220,7 @@ transform:scale(1);
 
 .profile-row strong {
     color:#fff
+    text-align:right;
 }
 
 .profile-divider {
@@ -3221,7 +3233,7 @@ transform:scale(1);
 }
 
 .online {
-    color:#57d66d;
+    color:#52d96d;
     animation:onlinePulse 2.2s infinite
 }
 
@@ -3233,14 +3245,15 @@ transform:scale(1);
     
 }
 
-.inventory-grid {
+.inventory-grid{
 
-    display:flex;
-    justify-content:space-between;
+    display:grid;
 
-    gap:12px;
+    grid-template-columns:repeat(6,1fr);
 
-    margin-top:14px;
+    gap:10px;
+
+    margin-top:16px;
 
 }
 
