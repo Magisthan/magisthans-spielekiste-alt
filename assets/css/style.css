@@ -3055,17 +3055,37 @@ transform:scale(1);
     width:100%;
 
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
+    cursor:pointer;
 
 }
 
-.photo-frame {
+.photo-frame{
+
     position:relative;
+
     padding:16px;
+
     border-radius:30px;
-    background:linear-gradient(135deg,rgba(58,168,255,.20),rgba(143,109,255,.18));
-    box-shadow:0 18px 40px rgba(0,0,0,.30),0 0 35px rgba(58,168,255,.12)
+
+    background:linear-gradient(
+        135deg,
+        rgba(58,168,255,.20),
+        rgba(143,109,255,.18)
+    );
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.30),
+        0 0 35px rgba(58,168,255,.12);
+
+    transition:
+        transform .30s ease,
+        box-shadow .30s ease;
+
 }
 
 .photo-frame::before {
@@ -3076,35 +3096,84 @@ transform:scale(1);
     border:1px solid rgba(255,255,255,.08)
 }
 
-.photo-frame img {
+.photo-frame img{
+
     display:block;
+
     width:100%;
+
     max-width:315px;
-    border-radius:22px
+
+    border-radius:22px;
+
+    transition:
+
+        transform .30s ease,
+
+        filter .30s ease;
+
 }
 
-.photo-caption {
+.photo-caption{
+
     margin-top:22px;
+
     width:240px;
+
     padding:18px;
+
     text-align:center;
+
     background:#161d2d;
+
     border:1px solid rgba(58,168,255,.18);
-    border-radius:16px
+
+    border-radius:16px;
+
+    transition:
+
+        transform .30s ease,
+
+        box-shadow .30s ease,
+
+        border-color .30s ease;
+
 }
 
-.photo-caption span {
+.photo-caption span{
+
     display:block;
+
     color:#56b6ff;
+
     letter-spacing:2px;
-    font-size:.8rem
+
+    font-size:.8rem;
+
+    transition:
+
+        color .30s ease,
+
+        text-shadow .30s ease;
+
 }
 
-.photo-caption strong {
+.photo-caption strong{
+
     display:block;
+
     margin-top:8px;
+
     font-size:1.45rem;
-    color:#fff
+
+    color:#ffffff;
+
+    transition:
+
+        color .30s ease,
+
+        text-shadow .30s ease;
+
 }
 
 .savegame-placeholder {
@@ -3427,6 +3496,61 @@ transform:scale(1);
 
 }
 
+/* ==========================================
+   PHOTO HOVER
+========================================== */
+
+.about-photo-card:hover .photo-frame{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 24px 48px rgba(0,0,0,.40),
+
+        0 0 45px rgba(58,168,255,.28);
+
+}
+
+.about-photo-card:hover .photo-frame img{
+
+    transform:scale(1.02);
+
+    filter:brightness(1.05);
+
+}
+
+.about-photo-card:hover .photo-caption{
+
+    transform:translateY(-3px);
+
+    border-color:rgba(58,168,255,.45);
+
+    box-shadow:
+
+        0 0 20px rgba(58,168,255,.22);
+
+}
+
+.about-photo-card:hover .photo-caption span{
+
+    color:#73c8ff;
+
+    text-shadow:
+
+        0 0 10px rgba(58,168,255,.55);
+
+}
+
+.about-photo-card:hover .photo-caption strong{
+
+    color:#ffffff;
+
+    text-shadow:
+
+        0 0 12px rgba(255,255,255,.35);
+
+}
 
 /* ==========================================
    RETRO STATS
