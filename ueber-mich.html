@@ -404,13 +404,15 @@ RETRO MEMORY
 
         </span>
 
-        <h3 id="memory-title">
+        <h3 id="memory-title"
+            class="memory-title">
 
             Der erste C64
 
         </h3>
 
-        <p id="memory-text">
+        <p id="memory-text"
+           class="memory-text">
 
             Hier begann alles.
             Winter Games, Summer Games,
@@ -475,6 +477,14 @@ document.addEventListener("DOMContentLoaded",()=>{
             easing:"ease-in-out"
 
         }
+
+        setTimeout(()=>{
+
+    memory.classList.add("show");
+
+    memory.classList.add("memory-visible");
+
+    },3600);
 
     );
 
@@ -557,25 +567,47 @@ const data={
 
 };
 
-document.querySelectorAll(".timeline-item").forEach(item => {
+document.querySelectorAll(".timeline-item").forEach(item=>{
 
-    item.addEventListener("click", () => {
+    item.addEventListener("click",()=>{
 
-        const year = item.dataset.year;
-        const entry = data[year];
+        const year=item.dataset.year;
 
-        if (!entry) return;
+        const entry=data[year];
 
-        document.getElementById("memory-year").textContent = year;
-        document.getElementById("memory-title").textContent = entry.title;
-        document.getElementById("memory-text").textContent = entry.text;
-        document.getElementById("memory-image").src = entry.image;
+        if(!entry) return;
 
-        memory.classList.remove("show");
+        memory.classList.remove("memory-visible");
 
-        void memory.offsetWidth;
+        memory.classList.add("hide");
 
-        memory.classList.add("show");
+        setTimeout(()=>{
+
+            const img=document.getElementById("memory-image");
+
+            img.classList.add("zoom");
+
+            document.getElementById("memory-year").textContent=year;
+
+            document.getElementById("memory-title").textContent=entry.title;
+
+            document.getElementById("memory-text").textContent=entry.text;
+
+            img.src=entry.image;
+
+            memory.classList.remove("hide");
+
+            memory.classList.add("show");
+
+            setTimeout(()=>{
+
+                img.classList.remove("zoom");
+
+                memory.classList.add("memory-visible");
+
+            },120);
+
+        },300);
 
     });
 
