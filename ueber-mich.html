@@ -306,7 +306,7 @@ RETRO STATS
 
         </div>
 
-        <div class="timeline-item" data-year="1989">
+        <div class="timeline-item" data-year="1987">
 
             <div class="timeline-icon">
                 <img src="assets/images/icons/floppy.png" alt="">
@@ -314,13 +314,13 @@ RETRO STATS
 
             <div class="timeline-dot"></div>
 
-            <span class="timeline-year">1989</span>
+            <span class="timeline-year">1987</span>
 
             <small>Erste Abenteuer</small>
 
         </div>
 
-        <div class="timeline-item" data-year="1992">
+        <div class="timeline-item" data-year="1991">
 
             <div class="timeline-icon">
                 <img src="assets/images/icons/amiga.png" alt="">
@@ -328,9 +328,23 @@ RETRO STATS
 
             <div class="timeline-dot"></div>
 
-            <span class="timeline-year">1992</span>
+            <span class="timeline-year">1991</span>
 
             <small>Amiga Liebe</small>
+
+        </div>
+
+        <div class="timeline-item" data-year="1996">
+
+            <div class="timeline-icon">
+                <img src="assets/images/icons/PC.png" alt="">
+            </div>
+
+            <div class="timeline-dot"></div>
+
+            <span class="timeline-year">1996</span>
+
+            <small>Der erste PC</small>
 
         </div>
 
@@ -481,7 +495,104 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 });
 
+    const memory=document.getElementById("retro-memory");
+
+const data={
+
+    1986:{
+
+        title:"Der erste C64",
+
+        text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
+
+        image:"assets/images/timeline/c64.jpg"
+
+    },
+
+    1987:{
+
+        title:"Erste Disketten",
+
+        text:"Die Spielesammlung wuchs stetig und die ersten Nächte vor dem Monitor wurden zur Normalität.",
+
+        image:"assets/images/timeline/floppy.jpg"
+
+    },
+
+    1991:{
+
+        title:"Amiga 500",
+
+        text:"Monkey Island, Chaos Engine und viele weitere Klassiker machten den Amiga zu meinem Lieblingsrechner.",
+
+        image:"assets/images/timeline/amiga.jpg"
+
+    },
+
+     1996:{
+
+        title:"Amiga 500",
+
+        text:"Monkey Island, Chaos Engine und viele weitere Klassiker machten den Amiga zu meinem Lieblingsrechner.",
+
+        image:"assets/images/timeline/amiga.jpg"
+
+    },
+
+    2022:{
+
+        title:"YouTube",
+
+        text:"Aus einem Hobby entstand Magisthans Spielekiste.",
+
+        image:"assets/images/timeline/youtube.jpg"
+
+    },
+
+    2026:{
+
+        title:"Retro News Flash",
+
+        text:"Jede Woche neue Spiele, Hardware und Demos rund um C64 und Amiga.",
+
+        image:"assets/images/timeline/newsflash.jpg"
+
+    }
+
+};
+
+
+document.querySelectorAll(".timeline-item").forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        const year=item.dataset.year;
+
+        const entry=data[year];
+
+        document.getElementById("memory-year").textContent=year;
+
+        document.getElementById("memory-title").textContent=entry.title;
+
+        document.getElementById("memory-text").textContent=entry.text;
+
+        document.getElementById("memory-image").src=entry.image;
+
+        memory.classList.remove("show");
+
+        setTimeout(()=>{
+
+            memory.classList.add("show");
+
+        },120);
+
+    });
+
+});
+
 </script>
+
+    
       
 </body>
 
