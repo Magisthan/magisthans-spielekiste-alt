@@ -370,15 +370,13 @@ SAVEGAME TIMELINE
 
             <div class="timeline-dot current"></div>
 
-            <span class="timeline-year">HEUTE</span>
+            <span class="timeline-year">2026</span>
 
             <small>auf zu neuen Welten?</small>
 
         </div>
 
     </div>
-
-</div>
     
 <!-- Ende Container -->
 
@@ -405,18 +403,14 @@ RETRO MEMORY
         </span>
 
         <h3 id="memory-title"
-            class="memory-title"
-            src="assets/images/timeline/c64.jpg"
-            alt="">
-
+            class="memory-title">
+            
             Der erste C64
 
         </h3>
 
         <p id="memory-text"
-           class="memory-text"
-           src="assets/images/timeline/c64.jpg"
-           alt="">
+           class="memory-text">
 
             Hier begann alles.
             Winter Games, Summer Games,
@@ -428,6 +422,8 @@ RETRO MEMORY
     </div>
 
 </div>
+
+    </div>
 
 <footer>
 
@@ -464,31 +460,33 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     progress.animate(
 
-        [
+    [
 
-            {width:"0%"},
+        { width:"0%" },
 
-            {width:"100%"}
+        { width:"100%" }
 
-        ],
+    ],
 
-        {
+    {
 
-            duration:3200,
+        duration:3200,
 
-            fill:"forwards",
+        fill:"forwards",
 
-            easing:"ease-in-out"
+        easing:"ease-in-out"
 
-        }
+    }
 
-        setTimeout(()=>{
+);
+
+setTimeout(()=>{
 
     memory.classList.add("show");
 
     memory.classList.add("memory-visible");
 
-    },3600);
+},3600);
 
     );
 
@@ -515,7 +513,7 @@ const data={
 
         text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
 
-        image:"assets/images/timeline/c64.jpg"
+        image:"assets/images/timeline/C64.png"
 
     },
 
@@ -525,7 +523,7 @@ const data={
 
         text:"Die Spielesammlung wuchs stetig und die ersten Nächte vor dem Monitor wurden zur Normalität.",
 
-        image:"assets/images/timeline/floppy.jpg"
+        image:"assets/images/timeline/C64.png"
 
     },
 
@@ -535,7 +533,7 @@ const data={
 
         text:"Monkey Island, Chaos Engine und viele weitere Klassiker machten den Amiga zu meinem Lieblingsrechner.",
 
-        image:"assets/images/timeline/amiga.jpg"
+        image:"assets/images/timeline/Amiga.png"
 
     },
 
@@ -545,7 +543,7 @@ const data={
 
         text:"Monkey Island, Chaos Engine und viele weitere Klassiker machten den Amiga zu meinem Lieblingsrechner.",
 
-        image:"assets/images/timeline/amiga.jpg"
+        image:"assets/images/timeline/PC.png"
 
     },
 
@@ -555,7 +553,7 @@ const data={
 
         text:"Aus einem Hobby entstand Magisthans Spielekiste.",
 
-        image:"assets/images/timeline/youtube.jpg"
+        image:"assets/images/timeline/youtube.png"
 
     },
 
