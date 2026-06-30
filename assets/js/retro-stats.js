@@ -2,21 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const stats = document.getElementById("retro-stats");
 
-    const bars = document.querySelectorAll("#retro-stats .stat-fill");
+    const bars = stats.querySelectorAll(".stat-fill");
 
     function animateBars(){
 
         bars.forEach((bar,index)=>{
 
-            bar.style.transition="none";
-            bar.style.width="0";
+            const value = bar.dataset.value;
 
-            setTimeout(()=>{
+            bar.style.transition = "none";
+            bar.style.width = "0";
 
-                bar.style.transition="width 1.1s ease";
-                bar.style.width=bar.style.getPropertyValue("--value");
+            requestAnimationFrame(()=>{
 
-            },80+(index*180));
+                setTimeout(()=>{
+
+                    bar.style.transition = "width 1s ease";
+                    bar.style.width = value + "%";
+
+                }, index * 180);
+
+            });
 
         });
 
@@ -24,6 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animateBars();
 
-    stats.addEventListener("mouseenter",animateBars);
+    stats.addEventListener("mouseenter", animateBars);
 
 });
