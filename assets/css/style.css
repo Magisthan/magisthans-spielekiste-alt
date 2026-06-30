@@ -3173,12 +3173,12 @@ transform:scale(1);
 .about-profile-card{
 
     width:100%;
-
     max-width:500px;
 
     justify-self:center;
+    align-self:start;
 
-    align-self:flex-start;
+    padding:28px;
 
     background:#192234;
 
@@ -3186,19 +3186,39 @@ transform:scale(1);
 
     border-radius:22px;
 
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.22);
+
+}
+
+.about-profile-card h2,
+.about-profile-card h3{
+
     margin:0;
 
-    box-shadow:0 18px 35px rgba(0,0,0,.22);
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    color:#4eb8ff;
+
+    text-transform:uppercase;
 
 }
 
 .about-profile-card h2{
 
-    margin:0 0 20px;
-
     font-size:2rem;
 
-    letter-spacing:.5px;
+    margin-bottom:22px;
+
+}
+
+.about-profile-card h3{
+
+    font-size:1.35rem;
+
+    margin-bottom:18px;
 
 }
 
@@ -3206,28 +3226,40 @@ transform:scale(1);
 
     display:grid;
 
-    grid-template-columns:150px 1fr;
+    grid-template-columns:155px 1fr;
 
     align-items:center;
 
-    padding:10px 0;
+    gap:14px;
+
+    padding:11px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
 
 }
 
-.profile-row span {
-    color:#98a6c3
+.profile-row span{
+
+    color:#9cabca;
+
 }
 
-.profile-row strong {
-    color:#fff
+.profile-row strong{
+
+    color:#ffffff;
+
     text-align:right;
+
 }
 
-.profile-divider {
+.profile-divider{
 
-    margin:20px 0;
+    margin:22px 0;
+
     border:0;
+
     height:1px;
+
     background:rgba(255,255,255,.08);
 
 }
@@ -3251,15 +3283,17 @@ transform:scale(1);
 
     grid-template-columns:repeat(6,1fr);
 
-    gap:10px;
-
-    margin-top:16px;
+    gap:12px;
 
 }
 
-.inventory-item {
+.inventory-item{
 
-    height:68px;
+    width:60px;
+
+    height:60px;
+
+    margin:auto;
 
     display:flex;
 
@@ -3310,21 +3344,19 @@ transform:scale(1);
 
 .retro-stat{
 
-    margin-top:18px;
+    margin-top:16px;
 
 }
 
 .retro-stat .stat-bar{
 
-    width:100%;
+    margin-top:10px;
 
-    height:10px;
-
-    margin-top:8px;
+    height:8px;
 
     background:#2d3448;
 
-    border-radius:20px;
+    border-radius:30px;
 
     overflow:hidden;
 
@@ -3351,14 +3383,15 @@ transform:scale(1);
 }
 
 .coffee-icons,
-
 .heart-icons{
 
-    font-size:1.35rem;
+    display:flex;
 
-    letter-spacing:4px;
+    gap:12px;
 
-    user-select:none;
+    font-size:1.45rem;
+
+    margin-top:8px;
 
 }
 
