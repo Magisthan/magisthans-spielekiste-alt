@@ -592,12 +592,23 @@ if(!terminal)return;
 
 const lines=[
 
-["boot-status","ONLINE"],
-["boot-coffee","████████"],
-["boot-disks","████████"],
-["boot-games","GESUCHT"],
-["boot-community","♥♥♥♥♥"],
-["boot-tips","ERWÜNSCHT"]
+["boot-status","ONLINE",false],
+
+["boot-coffee",
+'<img src="assets/images/icons/kaffee.png" class="terminal-icon">',
+true],
+
+["boot-disks",
+'<img src="assets/images/icons/diskette.png" class="terminal-icon">',
+true],
+
+["boot-games","GESUCHT",false],
+
+["boot-community",
+'<img src="assets/images/icons/herz.png" class="terminal-icon">',
+true],
+
+["boot-tips","ERWÜNSCHT",false]
 
 ];
 
@@ -625,7 +636,13 @@ lines.forEach((line,index)=>{
 
 setTimeout(()=>{
 
-document.getElementById(line[0]).textContent=line[1];
+const element=document.getElementById(line[0]);
+
+if(line[2]){
+    element.innerHTML=line[1];
+}else{
+    element.textContent=line[1];
+}
 
 if(index===lines.length-1){
 
