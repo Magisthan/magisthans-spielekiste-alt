@@ -4180,7 +4180,18 @@ transform:scale(1);
 
 }
 
+.terminal-icon{
 
+    width:90px;
+    height:18px;
+
+    object-fit:contain;
+
+    image-rendering:pixelated;
+
+    vertical-align:middle;
+
+}
 
 /* ==========================
    Footer
