@@ -3432,7 +3432,7 @@ transform:scale(1);
 
 }
 
-.inventory-item{
+.inventory-item img{
 
     width:60px;
 
@@ -3462,13 +3462,6 @@ transform:scale(1);
     transform:translateY(-3px);
     background:#25304c;
     border-color:rgba(58,168,255,.45)
-}
-
-.inventory-item img {
-    width: 24px;
-    height: 24px;
-    display: block;
-    image-rendering: pixelated;
 }
 
 .stat {
