@@ -4077,6 +4077,86 @@ transform:scale(1);
 
 }
 
+/* ==========================================
+   RETRO MEMORY
+========================================== */
+
+.retro-memory{
+
+    margin-top:55px;
+
+    display:grid;
+
+    grid-template-columns:260px 1fr;
+
+    gap:35px;
+
+    align-items:center;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:#171d2c;
+
+    border:1px solid rgba(58,168,255,.18);
+
+    opacity:0;
+
+    transform:translateY(18px);
+
+    transition:
+
+        opacity .35s ease,
+
+        transform .35s ease;
+
+}
+
+.retro-memory.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.memory-image img{
+
+    width:100%;
+
+    border-radius:16px;
+
+    display:block;
+
+}
+
+.memory-year{
+
+    color:#69c4ff;
+
+    letter-spacing:2px;
+
+    font-size:.9rem;
+
+}
+
+.memory-content h3{
+
+    margin:10px 0 18px;
+
+    font-size:2rem;
+
+}
+
+.memory-content p{
+
+    line-height:1.8;
+
+    color:#d7dceb;
+
+}
+
 /* ==========================
    Footer
    ========================== */
