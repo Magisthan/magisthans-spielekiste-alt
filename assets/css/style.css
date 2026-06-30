@@ -2992,9 +2992,9 @@ transform:scale(1);
 
     grid-template-columns:
 
-        minmax(650px,1fr)
+        minmax(700px,1fr)
 
-        390px;
+        4700px;
 
     gap:55px;
 
@@ -3004,7 +3004,7 @@ transform:scale(1);
 
 .hero-left{
 
-    display:flex;
+    align-items:center;
 
     flex-direction:column;
 
@@ -3114,15 +3114,27 @@ transform:scale(1);
     letter-spacing:2px
 }
 
-.about-intro-card h1{
-
-    min-width:0;
+.about-intro-card{
 
     display:flex;
 
     flex-direction:column;
 
     justify-content:flex-start;
+
+    max-width:600px;
+
+    padding-top:10px;
+
+}
+
+.about-intro-card h1{
+
+    margin:8px 0 24px;
+
+    font-size:3.35rem;
+
+    line-height:1.15;
 
 }
 
@@ -3168,7 +3180,7 @@ transform:scale(1);
 .about-profile-card{
 
     width:100%;
-    max-width:380px;
+    max-width:470px;
 
     justify-self:end;
 
@@ -3217,10 +3229,10 @@ transform:scale(1);
 
 .inventory-grid {
 
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
+    display:flex;
+    justify-content:space-between;
 
-    gap:10px;
+    gap:12px;
 
     margin-top:14px;
 
