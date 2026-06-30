@@ -3432,30 +3432,25 @@ transform:scale(1);
 
 }
 
-.inventory-item img{
-
+.inventory-item{
     width:60px;
-
     height:60px;
 
-    margin:auto;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
-    font-size:1.7rem;
-
     background:#232d43;
-
     border:1px solid rgba(255,255,255,.05);
-
     border-radius:12px;
 
     transition:.25s;
+}
 
+.inventory-item img{
+    width:24px;
+    height:24px;
+    image-rendering:pixelated;
 }
 
 .inventory-item:hover {
