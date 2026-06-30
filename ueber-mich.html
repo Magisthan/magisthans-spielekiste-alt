@@ -31,17 +31,15 @@
 
 <div class="container">
 
-   <div class="container">
-
-    <!-- ==========================================
-         HERO
-    =========================================== -->
+<!-- ==========================================
+HERO
+=========================================== -->
 
     <section class="card about-hero">
 
-        <!-- ======================================
-             LINKE SEITE
-        ======================================= -->
+<!-- ======================================
+LINKE SEITE
+======================================= -->
 
         <div class="hero-left">
 
@@ -111,9 +109,9 @@
 
         </div>
 
-        <!-- ======================================
-             RECHTE SEITE
-        ======================================= -->
+<!-- ======================================
+RECHTE SEITE
+======================================= -->
 
         <aside class="about-profile-card">
 
@@ -559,29 +557,25 @@ const data={
 
 };
 
-document.querySelectorAll(".timeline-item").forEach(item=>{
+document.querySelectorAll(".timeline-item").forEach(item => {
 
-    item.addEventListener("click",()=>{
+    item.addEventListener("click", () => {
 
-        const year=item.dataset.year;
+        const year = item.dataset.year;
+        const entry = data[year];
 
-        const entry=data[year];
+        if (!entry) return;
 
-        document.getElementById("memory-year").textContent=year;
-
-        document.getElementById("memory-title").textContent=entry.title;
-
-        document.getElementById("memory-text").textContent=entry.text;
-
-        document.getElementById("memory-image").src=entry.image;
+        document.getElementById("memory-year").textContent = year;
+        document.getElementById("memory-title").textContent = entry.title;
+        document.getElementById("memory-text").textContent = entry.text;
+        document.getElementById("memory-image").src = entry.image;
 
         memory.classList.remove("show");
 
-        setTimeout(()=>{
+        void memory.offsetWidth;
 
-            memory.classList.add("show");
-
-        },120);
+        memory.classList.add("show");
 
     });
 
