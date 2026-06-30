@@ -3464,6 +3464,13 @@ transform:scale(1);
     border-color:rgba(58,168,255,.45)
 }
 
+.inventory-item img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    image-rendering: pixelated;
+}
+
 .stat {
 
     margin-top:16px;
