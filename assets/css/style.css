@@ -4185,6 +4185,120 @@ transform:scale(1);
 
 }
 
+/* ==========================================
+   RETRO MEMORY ANIMATION
+========================================== */
+
+.retro-memory{
+
+    transition:
+
+        opacity .35s ease,
+
+        transform .35s ease;
+
+}
+
+.retro-memory.hide{
+
+    opacity:0;
+
+    transform:translateY(18px);
+
+}
+
+.retro-memory.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.memory-image{
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+}
+
+.memory-image img{
+
+    display:block;
+
+    width:100%;
+
+    transform:scale(1);
+
+    transition:transform .55s ease;
+
+}
+
+.memory-image img.zoom{
+
+    transform:scale(1.08);
+
+}
+
+.memory-year{
+
+    opacity:0;
+
+    transform:translateY(8px);
+
+    transition:.25s;
+
+}
+
+.memory-title{
+
+    opacity:0;
+
+    transform:translateY(8px);
+
+    transition:.35s;
+
+}
+
+.memory-text{
+
+    opacity:0;
+
+    transform:translateY(8px);
+
+    transition:.45s;
+
+}
+
+.memory-visible .memory-year{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+.memory-visible .memory-title{
+
+    opacity:1;
+
+    transform:none;
+
+    transition-delay:.10s;
+
+}
+
+.memory-visible .memory-text{
+
+    opacity:1;
+
+    transform:none;
+
+    transition-delay:.22s;
+
+}
+
 /* ==========================
    Footer
    ========================== */
