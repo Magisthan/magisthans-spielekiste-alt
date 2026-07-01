@@ -4025,6 +4025,15 @@ transform:scale(1);
 
 .timeline{
 
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    -webkit-overflow-scrolling:touch;
+
+}
+
+.timeline-track{
+
     position:relative;
 
     display:flex;
@@ -4035,12 +4044,14 @@ transform:scale(1);
 
     padding-top:10px;
 
+    min-width:920px;
+
 }
 
 
 /* Grundlinie */
 
-.timeline::before{
+.timeline-track::before{
 
     content:"";
 
