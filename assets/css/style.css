@@ -4188,46 +4188,28 @@ transform:scale(1);
 }
 
 /* ==========================================
-RETRO MEMORY
+   RETRO MEMORY
 ========================================== */
 
 .retro-memory{
 
-    margin-top:45px;
+    margin-top:50px;
 
     display:grid;
 
-    grid-template-columns:340px 1fr;
+    grid-template-columns:280px 1fr;
 
     gap:35px;
 
     padding:28px;
 
-    background:#171d2d;
-
-    border:1px solid rgba(120,255,70,.35);
-
     border-radius:22px;
 
-    box-shadow:0 0 25px rgba(120,255,70,.08);
+    background:#171d2c;
 
-    opacity:0;
+    border:1px solid rgba(58,168,255,.18);
 
-    transform:translateY(20px);
-
-    transition:
-
-        opacity .25s,
-
-        transform .25s;
-
-}
-
-.retro-memory.show{
-
-    opacity:1;
-
-    transform:translateY(0);
+    overflow:hidden;
 
 }
 
@@ -4245,15 +4227,11 @@ RETRO MEMORY
 
     display:block;
 
+    border-radius:16px;
+
     transition:
-
-        transform .55s;
-
-}
-
-.memory-image img.zoom{
-
-    transform:scale(1.08);
+        transform .45s ease,
+        opacity .30s ease;
 
 }
 
@@ -4267,35 +4245,24 @@ RETRO MEMORY
 
 }
 
-.memory-year{
+.memory-year,
+.memory-title,
+.memory-text,
+.memory-tags{
 
-    color:#79ff43;
+    transition:
 
-    font-size:.85rem;
+        opacity .25s ease,
 
-    letter-spacing:2px;
+        transform .25s ease;
 
 }
 
 .memory-title{
 
-    margin:10px 0;
+    margin:10px 0 18px;
 
     font-size:2rem;
-
-    color:white;
-
-}
-
-.memory-line{
-
-    width:220px;
-
-    height:2px;
-
-    margin-bottom:20px;
-
-    background:#79ff43;
 
 }
 
@@ -4309,13 +4276,13 @@ RETRO MEMORY
 
 .memory-tags{
 
-    margin-top:24px;
-
     display:flex;
 
     flex-wrap:wrap;
 
-    gap:12px;
+    gap:10px;
+
+    margin-top:22px;
 
 }
 
@@ -4323,15 +4290,88 @@ RETRO MEMORY
 
     padding:6px 14px;
 
-    border:1px solid rgba(120,255,70,.35);
+    border-radius:20px;
 
-    border-radius:8px;
+    background:#25324b;
 
-    color:#79ff43;
+    color:#7fc9ff;
 
-    font-size:.8rem;
+    font-size:.85rem;
 
 }
+
+
+/* ------------------------
+   OUT
+------------------------- */
+
+.memory-switch .memory-image img{
+
+    opacity:0;
+
+    transform:scale(1.10);
+
+}
+
+.memory-switch .memory-year,
+.memory-switch .memory-title,
+.memory-switch .memory-text,
+.memory-switch .memory-tags{
+
+    opacity:0;
+
+    transform:translateY(12px);
+
+}
+
+
+/* ------------------------
+   IN
+------------------------- */
+
+.memory-show .memory-image img{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+.memory-show .memory-year{
+
+    transition-delay:.05s;
+
+}
+
+.memory-show .memory-title{
+
+    transition-delay:.10s;
+
+}
+
+.memory-show .memory-text{
+
+    transition-delay:.18s;
+
+}
+
+.memory-show .memory-tags{
+
+    transition-delay:.26s;
+
+}
+
+.memory-show .memory-year,
+.memory-show .memory-title,
+.memory-show .memory-text,
+.memory-show .memory-tags{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
 /* ==========================
    Footer
    ========================== */
