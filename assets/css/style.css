@@ -2779,15 +2779,36 @@ transform:scale(1);
 
 }
 
-@media(max-width:900px){
+@media (max-width:900px){
 
-.rnf-editor-card{
+    .rnf-editor-card{
 
-    grid-template-columns:1fr;
+        display:flex;
+        flex-direction:column;
+
+        padding:20px;
+
+        gap:20px;
+
+    }
+
+    .rnf-terminal{
+
+        width:100%;
+
+    }
+
+    .rnf-terminal pre{
+
+        font-size:.82rem;
+
+        line-height:1.6;
+
+        padding:16px;
+
+    }
 
 }
-
-   }
 
 /* =====================================================
    Workflow - Wie entsteht eine Folge?
