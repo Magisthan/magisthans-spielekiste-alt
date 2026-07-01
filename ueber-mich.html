@@ -429,7 +429,7 @@ RETRO MEMORY
 
         </p>
 
-        <div class="memory-tags">
+        <div id="memory-tags" class="memory-tags">
 
             <span>C64</span>
             <span>BASIC</span>
@@ -616,15 +616,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             memoryImage.src = entry.image;
 
-            memoryImage.onload = () => {
+            memoryImage.src = entry.image;
 
-                memory.classList.add("show");
+            memory.classList.add("show");
 
-                requestAnimationFrame(()=>{
+            requestAnimationFrame(()=>{
 
-                    memoryImage.classList.add("zoom");
+                memoryImage.classList.add("zoom");
 
-                });
+});
 
             };
 
