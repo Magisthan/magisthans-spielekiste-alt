@@ -2490,170 +2490,6 @@ transform:scale(1);
    }
 
 /* ==========================================
-   Retro News Flash Redaktion
-   ========================================== */
-
-.rnf-editor-card{
-
-    display:grid;
-
-    grid-template-columns:2fr 1fr;
-
-    gap:35px;
-
-    margin-top:30px;
-
-    padding:35px;
-
-    background:rgba(255,255,255,.03);
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-}
-
-.rnf-editor-left h3{
-
-    color:#46a8ff;
-
-    font-size:1.6rem;
-
-    margin-bottom:18px;
-
-}
-
-.rnf-editor-left p{
-
-    line-height:1.9;
-
-    color:#d8dbe5;
-
-}
-
-.rnf-editor-list{
-
-    list-style:none;
-
-    padding:0;
-
-    margin:25px 0;
-
-}
-
-.rnf-editor-list li{
-
-    padding:8px 0;
-
-    font-size:1.02rem;
-
-}
-
-.rnf-editor-highlight{
-
-    margin-top:28px;
-
-    padding:18px;
-
-    border-left:4px solid #3aa8ff;
-
-    background:rgba(58,168,255,.08);
-
-    border-radius:8px;
-
-    font-size:1.05rem;
-
-}
-
-.rnf-status{
-
-    background:#151b2b;
-
-    border:1px solid rgba(58,168,255,.15);
-
-    border-radius:12px;
-
-    overflow:hidden;
-
-}
-
-.rnf-status-title{
-
-    padding:12px 18px;
-
-    background:linear-gradient(90deg,#3aa8ff,#8d63ff);
-
-    color:white;
-
-    font-weight:bold;
-
-    letter-spacing:1px;
-
-    font-size:.9rem;
-
-}
-
-.rnf-status-row{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    padding:14px 18px;
-
-    border-bottom:1px solid rgba(255,255,255,.05);
-
-}
-
-.rnf-status-row:last-child{
-
-    border-bottom:none;
-
-}
-
-.rnf-status span{
-
-    color:#9fb2d8;
-
-}
-
-.rnf-status strong{
-
-    color:white;
-
-}
-
-.rnf-editor-right{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    gap:25px;
-
-}
-
-.rnf-editor-right .welcome-button{
-
-    width:100%;
-
-    text-align:center;
-
-}
-
-@media(max-width:900px){
-
-.rnf-editor-card{
-
-    grid-template-columns:1fr;
-
-}
-
-   }
-
-/* ==========================================
    Retro Redaktion Terminal
    ========================================== */
 
@@ -2714,7 +2550,7 @@ transform:scale(1);
 
 .rnf-terminal .terminal-icon{
 
-    width:28px;
+    width:72px;
     height:28px;
 
     display:inline-block;
@@ -2788,6 +2624,16 @@ transform:scale(1);
         0 10px 30px rgba(58,168,255,.18);
 
 }
+
+@media(max-width:900px){
+
+.rnf-editor-card{
+
+    grid-template-columns:1fr;
+
+}
+
+   }
 
 /* =====================================================
    Workflow - Wie entsteht eine Folge?
