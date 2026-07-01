@@ -5045,6 +5045,88 @@ footer a:hover {
     }
 
  }
+
+@media (max-width:900px){
+
+.profile-row{
+
+    grid-template-columns:1fr;
+
+    gap:8px;
+
+}
+
+.profile-row strong{
+
+    text-align:left;
+
+}
+
+}
+
+@media (max-width:900px){
+
+.inventory-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+@media (max-width:900px){
+
+.retro-stat-header{
+
+    grid-template-columns:32px 1fr;
+
+}
+
+.retro-value{
+
+    grid-column:2;
+
+    justify-self:end;
+
+}
+
+}
+
+@media (max-width:900px){
+
+.about-intro-card h1{
+
+    font-size:2.1rem;
+
+    line-height:1.2;
+
+}
+
+.about-lead{
+
+    font-size:1.05rem;
+
+}
+
+}
+
+.about-quote{
+
+    flex-direction:column;
+
+}
+
+.photo-frame img{
+
+    max-width:220px;
+
+}
+
+.about-profile-card h2{
+
+    text-align:center;
+
+}
  
 
 html,
