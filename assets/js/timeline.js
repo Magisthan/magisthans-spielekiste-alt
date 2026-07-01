@@ -29,11 +29,11 @@ return;
 
 const data={
 1986:{slot:"SAVEGAME #01",title:"DER ERSTE C64",text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",image:"assets/images/icons/C64.png",tags:["C64","BASIC","Winter Games","Summer Games"]},
-1987:{slot:"SAVEGAME #02",title:"ERSTE ABENTEUER",text:"Die Spielesammlung wuchs stetig. Disketten wurden zum Tor in neue Welten.",image:"assets/images/icons/floppy.png",tags:["1541","Disketten","Wizardry","SSI"]},
-1991:{slot:"SAVEGAME #03",title:"AMIGA LIEBE",text:"Monkey Island, Turrican und Chaos Engine machten den Amiga zum Lieblingsrechner.",image:"assets/images/icons/amiga.png",tags:["Amiga","AGA","Monkey Island","Turrican"]},
+1987:{slot:"SAVEGAME #02",title:"ERSTE ABENTEUER",text:"Die Spielesammlung wuchs stetig. Disketten wurden zum Tor in neue Welten.",image:"assets/images/icons/C64.png",tags:["1541","Disketten","Wizardry","SSI"]},
+1991:{slot:"SAVEGAME #03",title:"AMIGA LIEBE",text:"Monkey Island, Turrican und Chaos Engine machten den Amiga zum Lieblingsrechner.",image:"assets/images/icons/Amiga.png",tags:["Amiga","AGA","Monkey Island","Turrican"]},
 1996:{slot:"SAVEGAME #04",title:"DER ERSTE PC",text:"Mit dem ersten PC begann ein neues Kapitel.",image:"assets/images/icons/PC.png",tags:["DOS","486 DX2","Windows 95","C&C"]},
 2023:{slot:"SAVEGAME #05",title:"YOUTUBE START",text:"Aus einem Hobby entstand Magisthans Spielekiste.",image:"assets/images/icons/youtube.png",tags:["YouTube","Let's Plays","Retro","Community"]},
-2026:{slot:"SAVEGAME #06",title:"RETRO NEWS FLASH",text:"Jede Woche neue Spiele, Hardware und Demos rund um C64 und Amiga.",image:"assets/images/icons/lightning.png",tags:["News","C64","Amiga","Homebrew"]}
+2026:{slot:"SAVEGAME #06",title:"RETRO NEWS FLASH",text:"Jede Woche neue Spiele, Hardware und Demos rund um C64 und Amiga.",image:"assets/images/icons/PC.png",tags:["News","C64","Amiga","Homebrew"]}
 };
 
 function loadMemory(year){
