@@ -3860,25 +3860,32 @@ transform:scale(1);
 
 .savegame-card{
 
-    margin-top:36px;
+    margin-top:40px;
 
-    padding:34px 45px 42px;
+    padding:42px;
 
 }
 
 .savegame-title{
 
+    margin:0 0 50px;
+
     text-align:center;
-
-    margin:0 0 45px;
-
-    color:#7be74d;
-
-    letter-spacing:2px;
 
     font-size:2rem;
 
+    letter-spacing:2px;
+
+    color:#7be74d;
+
+    text-shadow:0 0 14px rgba(123,231,77,.35);
+
 }
+
+
+/* ------------------------------------------
+   Timeline
+------------------------------------------ */
 
 .timeline{
 
@@ -3890,7 +3897,12 @@ transform:scale(1);
 
     align-items:flex-start;
 
+    padding-top:10px;
+
 }
+
+
+/* Grundlinie */
 
 .timeline::before{
 
@@ -3902,15 +3914,18 @@ transform:scale(1);
 
     right:0;
 
-    top:72px;
+    top:74px;
 
     height:4px;
 
-    background:#335022;
+    background:#345122;
 
-    border-radius:10px;
+    border-radius:20px;
 
 }
+
+
+/* Ladebalken */
 
 .timeline-progress{
 
@@ -3918,19 +3933,22 @@ transform:scale(1);
 
     left:0;
 
-    top:72px;
-
-    height:4px;
+    top:74px;
 
     width:0;
 
+    height:4px;
+
     background:#79ff43;
 
-    border-radius:10px;
+    border-radius:20px;
 
-    box-shadow:0 0 12px #79ff43;
+    box-shadow:0 0 14px #79ff43;
 
 }
+
+
+/* Ein Savepoint */
 
 .timeline-item{
 
@@ -3940,19 +3958,41 @@ transform:scale(1);
 
     text-align:center;
 
+    cursor:pointer;
+
     opacity:0;
 
     transform:translateY(20px);
 
+    transition:
+
+        transform .30s ease,
+
+        filter .30s ease;
+
 }
+
+
+/* Animation beim Aufbau */
+
+.timeline-item.show{
+
+    animation:timelinePop .55s forwards;
+
+}
+
+
+/* ------------------------------------------
+   Icon
+------------------------------------------ */
 
 .timeline-icon{
 
-    width:58px;
+    width:64px;
 
-    height:58px;
+    height:64px;
 
-    margin:auto;
+    margin:0 auto;
 
     display:flex;
 
@@ -3960,13 +4000,22 @@ transform:scale(1);
 
     justify-content:center;
 
+    transition:transform .30s ease;
+
 }
 
 .timeline-icon img{
 
     width:54px;
 
+    display:block;
+
 }
+
+
+/* ------------------------------------------
+   Punkt
+------------------------------------------ */
 
 .timeline-dot{
 
@@ -3978,11 +4027,18 @@ transform:scale(1);
 
     border-radius:50%;
 
-    background:#5c5c5c;
+    background:#666;
 
     border:2px solid #7cff45;
 
+    transition:all .30s ease;
+
 }
+
+
+/* ------------------------------------------
+   Jahr
+------------------------------------------ */
 
 .timeline-year{
 
@@ -3992,9 +4048,16 @@ transform:scale(1);
 
     font-size:1.15rem;
 
+    font-weight:600;
+
     color:#ffffff;
 
+    transition:color .30s ease;
+
 }
+
+
+/* Untertitel */
 
 .timeline small{
 
@@ -4002,59 +4065,82 @@ transform:scale(1);
 
     margin-top:8px;
 
-    color:#d0d0d0;
+    line-height:1.45;
 
-    line-height:1.5;
-
-}
-
-.timeline-item.show{
-
-    animation:timelinePop .55s forwards;
+    color:#cfd5df;
 
 }
 
-.timeline-item.active .timeline-dot{
 
-    background:#7eff4f;
+/* ==========================================
+   Hover + Active
+========================================== */
 
-    box-shadow:0 0 12px #7eff4f;
+.timeline-item:hover,
 
-}
-
-.timeline-item{
-
-    cursor:pointer;
-
-    transition:.25s;
-
-}
-
-.timeline-item:hover{
+.timeline-item.active{
 
     transform:translateY(-8px);
 
 }
 
-.timeline-item:hover .timeline-icon{
 
-    transform:scale(1.08);
+.timeline-item:hover .timeline-icon,
+
+.timeline-item.active .timeline-icon{
+
+    transform:scale(1.10);
+
+}
+
+
+.timeline-item:hover .timeline-dot,
+
+.timeline-item.active .timeline-dot{
+
+    background:#7eff4f;
+
+    transform:scale(1.35);
+
+    box-shadow:0 0 18px #7eff4f;
 
 }
 
-.timeline-item:hover .timeline-dot{
 
-    box-shadow:
+.timeline-item:hover .timeline-year,
 
-        0 0 15px #6cff57;
+.timeline-item.active .timeline-year{
+
+    color:#79ff43;
 
 }
+
+
+/* leichtes Leuchten */
+
+.timeline-item:hover,
+
+.timeline-item.active{
+
+    filter:drop-shadow(0 0 10px rgba(126,255,79,.20));
+
+}
+
+
+/* ==========================================
+   Aktueller Punkt
+========================================== */
 
 .current{
 
     animation:currentPulse 2s infinite;
 
 }
+
+
+/* ==========================================
+   Keyframes
+========================================== */
 
 @keyframes timelinePop{
 
@@ -4076,6 +4162,7 @@ transform:scale(1);
 
 }
 
+
 @keyframes currentPulse{
 
     0%{
@@ -4088,7 +4175,7 @@ transform:scale(1);
 
         transform:scale(1.25);
 
-        box-shadow:0 0 18px #7eff4f;
+        box-shadow:0 0 20px #7eff4f;
 
     }
 
