@@ -4260,56 +4260,174 @@ transform:scale(1);
 }
 
 
-/* ==========================================
-   Keyframes
-========================================== */
-
-@keyframes timelinePop{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(18px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-
-@keyframes currentPulse{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.25);
-
-        box-shadow:0 0 20px #7eff4f;
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
-
-}
+/* ==========================================================
+   RESPONSIVE FRAMEWORK 2.0
+   Mobile & Tablet
+========================================================== */
 
 @media (max-width:900px){
+
+/* ===========================
+   Allgemein
+=========================== */
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+.container{
+
+    width:100%;
+
+    padding:18px;
+
+}
+
+.card{
+
+    padding:24px;
+
+}
+
+/* ===========================
+   Überschriften
+=========================== */
+
+h1{
+
+    font-size:2.2rem;
+
+    line-height:1.2;
+
+}
+
+h2{
+
+    font-size:1.7rem;
+
+}
+
+h3{
+
+    font-size:1.3rem;
+
+}
+
+p{
+
+    line-height:1.8;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.welcome-button{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   Alle Grids
+=========================== */
+
+.hero-card,
+.two-column,
+.about-grid,
+.content-grid,
+.game-grid,
+.profile-grid,
+.rnf-editor-card{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:30px;
+
+}
+
+/* ===========================
+   Bilder
+=========================== */
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+/* ===========================
+   Hero
+=========================== */
+
+.hero-card{
+
+    text-align:center;
+
+}
+
+.hero-card img{
+
+    margin:auto;
+
+}
+
+/* ===========================
+   Timeline
+=========================== */
+
+.timeline{
+
+    overflow-x:auto;
+
+    padding-bottom:15px;
+
+}
+
+.timeline::-webkit-scrollbar{
+
+    height:6px;
+
+}
+
+.timeline-item{
+
+    min-width:140px;
+
+}
+
+/* ===========================
+   Savegame Cards
+=========================== */
+
+.memory-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.memory-card img{
+
+    width:100%;
+
+}
+
+/* ===========================
+   About Player Profile
+=========================== */
 
 .about-profile-card{
 
@@ -4321,15 +4439,15 @@ transform:scale(1);
 
 }
 
-}
-
-@media (max-width:900px){
-
 .profile-row{
 
-    grid-template-columns:1fr;
+    display:flex;
 
-    gap:8px;
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:6px;
 
 }
 
@@ -4339,72 +4457,83 @@ transform:scale(1);
 
 }
 
-}
-
-@media (max-width:900px){
+/* ===========================
+   Inventar
+=========================== */
 
 .inventory-grid{
 
     grid-template-columns:repeat(3,1fr);
 
-}
+    gap:15px;
 
 }
 
-@media (max-width:900px){
+/* ===========================
+   Retro Stats
+=========================== */
+
+.retro-stat{
+
+    display:block;
+
+}
 
 .retro-stat-header{
 
-    grid-template-columns:32px 1fr;
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:10px;
 
 }
 
-.retro-value{
+/* ===========================
+   Terminal
+=========================== */
 
-    grid-column:2;
+.rnf-terminal{
 
-    justify-self:end;
-
-}
-
-}
-
-@media (max-width:900px){
-
-.about-intro-card h1{
-
-    font-size:2.1rem;
-
-    line-height:1.2;
+    width:100%;
 
 }
 
-.about-lead{
+/* ===========================
+   Workflow
+=========================== */
 
-    font-size:1.05rem;
+.workflow{
 
-}
-
-}
-
-.about-quote{
+    display:flex;
 
     flex-direction:column;
 
 }
 
-.photo-frame img{
+.workflow-arrow{
 
-    max-width:220px;
-
-}
-
-.about-profile-card h2{
-
-    text-align:center;
+    display:none;
 
 }
 
+/* ===========================
+   Weniger Luft
+=========================== */
+
+section{
+
+    margin-bottom:45px;
+
+}
+
+.content-divider{
+
+    margin:40px 0;
+
+}
+
+}
 
 
 /* ==========================================
