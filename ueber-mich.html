@@ -304,7 +304,7 @@ RETRO STATS
 
         <div class="timeline-progress"></div>
 
-        <div class="timeline-item active" data-year="1986">
+        <div class="timeline-item" data-year="1986">
 
             <div class="timeline-icon">
                 <img src="assets/images/icons/C64.png" alt="">
@@ -360,7 +360,7 @@ RETRO STATS
 
         </div>
 
-        <div class="timeline-item" data-year="2022">
+        <div class="timeline-item" data-year="2023">
 
             <div class="timeline-icon">
                 <img src="assets/images/icons/youtube.png" alt="">
@@ -368,7 +368,7 @@ RETRO STATS
 
             <div class="timeline-dot"></div>
 
-            <span class="timeline-year">2022</span>
+            <span class="timeline-year">2023</span>
 
             <small>YouTube Start</small>
 
@@ -472,233 +472,7 @@ RETRO MEMORY
 
 <script src="assets/js/achievement.js"></script>
 <script src="assets/js/retro-stats.js"></script>
-
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* ==========================================
-       TIMELINE ANIMATION
-    ========================================== */
-
-    const progress = document.querySelector(".timeline-progress");
-    const items = document.querySelectorAll(".timeline-item");
-
-    progress.animate(
-        [
-            { width: "0%" },
-            { width: "100%" }
-        ],
-        {
-            duration: 3200,
-            fill: "forwards",
-            easing: "ease-in-out"
-        }
-    );
-
-    items.forEach((item, index) => {
-
-        setTimeout(() => {
-
-            item.classList.add("show");
-            item.classList.add("active");
-
-        }, 450 + index * 500);
-
-    });
-
-
-    /* ==========================================
-       RETRO MEMORY
-    ========================================== */
-
-    const memory      = document.getElementById("retro-memory");
-    const memoryImage = document.getElementById("memory-image");
-    const memoryYear  = document.getElementById("memory-year");
-    const memoryTitle = document.getElementById("memory-title");
-    const memoryText  = document.getElementById("memory-text");
-
-
-    const data = {
-
-        1986:{
-
-            slot:"SAVEGAME #01",
-
-            title:"DER ERSTE C64",
-
-            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
-
-            image:"assets/images/icons/C64.png",
-
-            tags:[
-             "C64",
-             "BASIC",
-             "Winter Games",
-             "Summer Games"
-    ]
-
-},
-        1987:{
-
-            slot:"SAVEGAME #01",
-
-            title:"DER ERSTE C64",
-
-            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
-
-            image:"assets/images/icons/C64.png",
-
-            tags:[
-             "Amiga",
-             "AGA",
-             "Turrican",
-             "Monkey Island"
-    ]
-
-},
-
-        1991:{
-
-            slot:"SAVEGAME #01",
-
-            title:"DER ERSTE C64",
-
-            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
-
-            image:"assets/images/icons/C64.png",
-
-            tags:[
-             "C64",
-             "BASIC",
-             "Winter Games",
-             "Summer Games"
-    ]
-
-},
-        1996:{
-
-            slot:"SAVEGAME #01",
-
-            title:"DER ERSTE C64",
-
-            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
-
-            image:"assets/images/icons/C64.png",
-
-            tags:[
-             "C64",
-             "BASIC",
-             "Winter Games",
-             "Summer Games"
-    ]
-
-},
-
-        2022:{
-
-            slot:"SAVEGAME #01",
-
-            title:"DER ERSTE C64",
-
-            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
-
-            image:"assets/images/icons/C64.png",
-
-            tags:[
-             "C64",
-             "BASIC",
-             "Winter Games",
-             "Summer Games"
-    ]
-
-},
-
-        2026:{
-
-            slot:"SAVEGAME #01",
-
-            title:"DER ERSTE C64",
-
-            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
-
-            image:"assets/images/icons/C64.png",
-
-            tags:[
-             "C64",
-             "BASIC",
-             "Winter Games",
-             "Summer Games"
-    ]
-
-},
-
-    function loadMemory(year){
-
-    const entry=data[year];
-
-    if(!entry) return;
-
-    memory.classList.remove("memory-show");
-
-    memory.classList.add("memory-switch");
-
-    setTimeout(()=>{
-
-        memoryYear.textContent=entry.slot;
-
-        memoryTitle.textContent=entry.title;
-
-        memoryText.textContent=entry.text;
-
-        memoryImage.src=entry.image;
-
-        document.getElementById("memory-tags").innerHTML=
-            entry.tags.map(tag=>`<span>${tag}</span>`).join("");
-
-        memory.classList.remove("memory-switch");
-
-        memory.classList.add("memory-show");
-
-    },250);
-
-}
-
-            };
-
-        },180);
-
-    }
-
-
-    /* ==========================================
-       HOVER EVENTS
-    ========================================== */
-
-    items.forEach(item=>{
-
-    item.addEventListener("mouseenter",()=>{
-
-        items.forEach(i=>i.classList.remove("active"));
-
-        item.classList.add("active");
-
-        loadMemory(item.dataset.year);
-
-    });
-
-});
-
-
-    /* ==========================================
-       STARTWERT
-    ========================================== */
-
-    loadMemory("1986");
-
-});
-
-</script>
+<script src="assets/js/timeline.js"></script>
 
     
       
