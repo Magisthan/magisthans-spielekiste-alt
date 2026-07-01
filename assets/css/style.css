@@ -3013,6 +3013,94 @@ transform:scale(1);
 }
 
 /* ==========================================
+   Mobile Terminal Redaktion
+========================================== */
+
+.rnf-terminal-mobile{
+
+    display:none;
+
+}
+
+/* Smartphone */
+
+@media (max-width:900px){
+
+    /* altes Terminal ausblenden */
+
+    .rnf-terminal pre{
+
+        display:none;
+
+    }
+
+    /* neues anzeigen */
+
+    .rnf-terminal-mobile{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:14px;
+
+        padding:20px;
+
+    }
+
+    .terminal-row{
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        gap:15px;
+
+        padding:12px 0;
+
+        border-bottom:1px solid rgba(255,255,255,.06);
+
+    }
+
+    .terminal-row:last-child{
+
+        border-bottom:none;
+
+    }
+
+    .terminal-row span{
+
+        color:#93b5d9;
+
+        font-weight:600;
+
+        letter-spacing:1px;
+
+    }
+
+    .terminal-row strong{
+
+        color:white;
+
+    }
+
+    .terminal-row img{
+
+        width:22px;
+
+        height:22px;
+
+        image-rendering:pixelated;
+
+        margin-left:2px;
+
+    }
+
+}
+
+/* ==========================================
    ABOUT HERO
 ========================================== */
 
