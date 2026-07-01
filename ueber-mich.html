@@ -527,104 +527,142 @@ document.addEventListener("DOMContentLoaded", () => {
 
             title:"DER ERSTE C64",
 
-            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche machten den Commodore 64 zu meinem Einstieg in die Welt der Computer.",
+            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
 
-            image:"assets/images/icons/C64.png"
+            image:"assets/images/icons/C64.png",
 
-        },
+            tags:[
+             "C64",
+             "BASIC",
+             "Winter Games",
+             "Summer Games"
+    ]
 
+},
         1987:{
 
-            slot:"SAVEGAME #02",
+            slot:"SAVEGAME #01",
 
-            title:"ERSTE DISKETTEN",
+            title:"DER ERSTE C64",
 
-            text:"Die Spielesammlung wuchs stetig. Jede neue Diskette bedeutete neue Abenteuer und viele lange Nächte vor dem Monitor.",
+            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
 
-            image:"assets/images/icons/Amiga.png"
+            image:"assets/images/icons/C64.png",
 
-        },
+            tags:[
+             "Amiga",
+             "AGA",
+             "Turrican",
+             "Monkey Island"
+    ]
+
+},
 
         1991:{
 
-            slot:"SAVEGAME #03",
+            slot:"SAVEGAME #01",
 
-            title:"AMIGA LIEBE",
+            title:"DER ERSTE C64",
 
-            text:"Monkey Island, Chaos Engine, Turrican und viele weitere Klassiker machten den Amiga zu meinem Lieblingscomputer.",
+            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
 
-            image:"assets/images/icons/Amiga.png"
+            image:"assets/images/icons/C64.png",
 
-        },
+            tags:[
+             "C64",
+             "BASIC",
+             "Winter Games",
+             "Summer Games"
+    ]
 
+},
         1996:{
 
-            slot:"SAVEGAME #03",
+            slot:"SAVEGAME #01",
 
-            title:"Der erste PC",
+            title:"DER ERSTE C64",
 
-            text:"Monkey Island, Chaos Engine, Turrican und viele weitere Klassiker machten den Amiga zu meinem Lieblingscomputer.",
+            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
 
-            image:"assets/images/icons/PC.png"
+            image:"assets/images/icons/C64.png",
 
-        },
+            tags:[
+             "C64",
+             "BASIC",
+             "Winter Games",
+             "Summer Games"
+    ]
+
+},
 
         2022:{
 
-            slot:"SAVEGAME #04",
+            slot:"SAVEGAME #01",
 
-            title:"YOUTUBE",
+            title:"DER ERSTE C64",
 
-            text:"Aus einem Hobby entstand Magisthans Spielekiste. Seitdem erscheinen regelmäßig Let's Plays, News und Retro-Projekte.",
+            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
 
-            image:"assets/images/icons/youtube.png"
+            image:"assets/images/icons/C64.png",
 
-        },
+            tags:[
+             "C64",
+             "BASIC",
+             "Winter Games",
+             "Summer Games"
+    ]
+
+},
 
         2026:{
 
-            slot:"SAVEGAME #05",
+            slot:"SAVEGAME #01",
 
-            title:"RETRO NEWS FLASH",
+            title:"DER ERSTE C64",
 
-            text:"Jede Woche neue Spiele, Hardware und Demos rund um Commodore 64 und Amiga.",
+            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
 
-            image:"assets/images/icons/kamera.png"
+            image:"assets/images/icons/C64.png",
 
-        }
+            tags:[
+             "C64",
+             "BASIC",
+             "Winter Games",
+             "Summer Games"
+    ]
 
-    };
-
+},
 
     function loadMemory(year){
 
-        const entry = data[year];
+    const entry=data[year];
 
-        if(!entry) return;
+    if(!entry) return;
 
-        memory.classList.remove("show");
+    memory.classList.remove("memory-show");
 
-        memoryImage.classList.remove("zoom");
+    memory.classList.add("memory-switch");
 
-        setTimeout(()=>{
+    setTimeout(()=>{
 
-            memoryYear.textContent = entry.slot;
+        memoryYear.textContent=entry.slot;
 
-            memoryTitle.textContent = entry.title;
+        memoryTitle.textContent=entry.title;
 
-            memoryText.textContent = entry.text;
+        memoryText.textContent=entry.text;
 
-            memoryImage.src = entry.image;
+        memoryImage.src=entry.image;
 
-            memoryImage.src = entry.image;
+        document.getElementById("memory-tags").innerHTML=
+            entry.tags.map(tag=>`<span>${tag}</span>`).join("");
 
-            memory.classList.add("show");
+        memory.classList.remove("memory-switch");
 
-            requestAnimationFrame(()=>{
+        memory.classList.add("memory-show");
 
-                memoryImage.classList.add("zoom");
+    },250);
 
-});
+}
 
             };
 
@@ -639,17 +677,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     items.forEach(item=>{
 
-        item.addEventListener("mouseenter",()=>{
+    item.addEventListener("mouseenter",()=>{
 
-            items.forEach(i=>i.classList.remove("active"));
+        items.forEach(i=>i.classList.remove("active"));
 
-            item.classList.add("active");
+        item.classList.add("active");
 
-            loadMemory(item.dataset.year);
-
-        });
+        loadMemory(item.dataset.year);
 
     });
+
+});
 
 
     /* ==========================================
