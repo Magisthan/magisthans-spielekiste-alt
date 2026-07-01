@@ -28,8 +28,7 @@ return;
 }
 
 const data={
-1986:{slot:"SAVEGAME #01",title:"DER ERSTE C64",text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",image:"assets/images/icons/c64-512.png",tags:["C64","BASIC","Winter Games","Summer Games"]},
-1987:{slot:"SAVEGAME #02",title:"ERSTE ABENTEUER",text:"Die Spielesammlung wuchs stetig. Disketten wurden zum Tor in neue Welten.",image:"assets/images/icons/c64-512.png",tags:["1541","Disketten","Wizardry","SSI"]},
+1987:{slot:"SAVEGAME #01",title:"DER ERSTE C64",text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",image:"assets/images/icons/c64-512.png",tags:["C64","BASIC","Winter Games","Summer Games"]},
 1991:{slot:"SAVEGAME #03",title:"AMIGA LIEBE",text:"Monkey Island, Turrican und Chaos Engine machten den Amiga zum Lieblingsrechner.",image:"assets/images/icons/amiga-512.png",tags:["Amiga","AGA","Monkey Island","Turrican"]},
 1996:{slot:"SAVEGAME #04",title:"DER ERSTE PC",text:"Mit dem ersten PC begann ein neues Kapitel.",image:"assets/images/icons/pc-512.png",tags:["DOS","486 DX2","Windows 95","C&C"]},
 2023:{slot:"SAVEGAME #05",title:"YOUTUBE START",text:"Aus einem Hobby entstand Magisthans Spielekiste.",image:"assets/images/icons/youtube-512.png",tags:["YouTube","Let's Plays","Retro","Community"]},
