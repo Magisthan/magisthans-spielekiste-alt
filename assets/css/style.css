@@ -5013,21 +5013,6 @@ footer a:hover {
 
 }
 
-
-.about-photo-card{
-
-    width:100%;
-
-}
-
-.about-profile-card{
-
-    width:100%;
-
-    justify-self:stretch;
-
-}
-
 }  
 
    @keyframes rnfProgressVertical{
@@ -5122,12 +5107,6 @@ footer a:hover {
 
 }
 
-.about-profile-card h2{
-
-    text-align:center;
-
-}
- 
 
 html,
 body {
