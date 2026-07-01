@@ -5049,9 +5049,8 @@ footer a:hover {
 
     }
 
-@media (max-width:1200px){
 
-.about-hero{
+   .about-hero{
 
     grid-template-columns:1fr;
 
@@ -5059,13 +5058,13 @@ footer a:hover {
 
 }
 
-.about-photo-card{
+   .about-photo-card{
 
     width:100%;
 
 }
 
-.about-profile-card{
+   .about-profile-card{
 
     width:100%;
 
@@ -5073,7 +5072,7 @@ footer a:hover {
 
 }
 
-.profile-row{
+   .profile-row{
 
     grid-template-columns:1fr;
 
@@ -5081,13 +5080,13 @@ footer a:hover {
 
 }
 
-.profile-row strong{
+   .profile-row strong{
 
     text-align:left;
 
 }
 
-.inventory-grid{
+   .inventory-grid{
 
     grid-template-columns:repeat(3,1fr);
 
@@ -5099,13 +5098,20 @@ footer a:hover {
 
 }
 
-.retro-value{
+   .retro-value{
 
     grid-column:2;
 
     justify-self:end;
 
 }
+   
+   .about-hero::before,
+   .about-hero::after{
+
+        display:none;
+
+    }
 }  
 
 html,
