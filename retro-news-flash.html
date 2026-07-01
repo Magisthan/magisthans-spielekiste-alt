@@ -670,12 +670,25 @@ lines.forEach((line,index)=>{
 
 setTimeout(()=>{
 
-const element=document.getElementById(line[0]);
+const element = document.getElementById(line[0]);
+const mobileElement = document.getElementById(line[0] + "-mobile");
 
 if(line[2]){
-    element.innerHTML=line[1];
+
+    element.innerHTML = line[1];
+
+    if(mobileElement){
+        mobileElement.innerHTML = line[1];
+    }
+
 }else{
-    element.textContent=line[1];
+
+    element.textContent = line[1];
+
+    if(mobileElement){
+        mobileElement.textContent = line[1];
+    }
+
 }
 
 if(index===lines.length-1){
