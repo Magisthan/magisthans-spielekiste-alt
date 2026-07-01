@@ -5088,7 +5088,125 @@ footer a:hover {
         display:none;
 
     }
-}  
+
+   /* ==========================================
+   ÜBER MICH - MOBILE V2
+   ========================================== */
+
+@media (max-width:900px){
+
+/* Hero */
+
+.about-hero{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+    padding:24px;
+
+    overflow:hidden;
+
+}
+
+/* Hintergrundeffekte aus */
+
+.about-hero::before,
+.about-hero::after{
+
+    display:none;
+
+}
+
+/* Linke Spalte */
+
+.hero-left{
+
+    width:100%;
+
+    order:2;
+
+}
+
+/* Portrait */
+
+.about-photo-card{
+
+    width:100%;
+
+    order:1;
+
+}
+
+.photo-frame{
+
+    margin:0 auto;
+
+}
+
+.photo-frame img{
+
+    width:100%;
+
+    max-width:240px;
+
+}
+
+.photo-caption{
+
+    width:100%;
+
+    max-width:260px;
+
+}
+
+/* Einleitung */
+
+.about-intro-card{
+
+    max-width:none;
+
+    width:100%;
+
+    padding-top:0;
+
+}
+
+.about-intro-card h1{
+
+    font-size:2rem;
+
+    line-height:1.2;
+
+}
+
+.about-lead{
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+}
+
+/* Zitat */
+
+.about-quote{
+
+    flex-direction:column;
+
+}
+
+.quote-line{
+
+    width:100%;
+
+    height:4px;
+
+}
+
+} 
 
 html,
 body
