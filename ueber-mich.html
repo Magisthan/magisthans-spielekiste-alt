@@ -518,139 +518,176 @@ RETRO MEMORY
 
 <script>
 
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
-    const progress=document.querySelector(".timeline-progress");
+    /* ==========================================
+       TIMELINE ANIMATION
+    ========================================== */
 
-    const items=document.querySelectorAll(".timeline-item");
+    const progress = document.querySelector(".timeline-progress");
+    const items = document.querySelectorAll(".timeline-item");
 
     progress.animate(
-
         [
-
-            {width:"0%"},
-
-            {width:"100%"}
-
+            { width: "0%" },
+            { width: "100%" }
         ],
-
         {
-
-            duration:3200,
-
-            fill:"forwards",
-
-            easing:"ease-in-out"
-
+            duration: 3200,
+            fill: "forwards",
+            easing: "ease-in-out"
         }
-
     );
 
-    items.forEach((item,index)=>{
+    items.forEach((item, index) => {
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
             item.classList.add("show");
             item.classList.add("active");
 
-        },450+index*600);
+        }, 450 + index * 500);
 
     });
 
-});
 
-    const memory=document.getElementById("retro-memory");
+    /* ==========================================
+       RETRO MEMORY
+    ========================================== */
 
-const data={
-
-    1986:{
-
-        title:"Der erste C64",
-
-        text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
-
-        image:"assets/images/timeline/c64.jpg"
-
-    },
-
-    1987:{
-
-        title:"Erste Disketten",
-
-        text:"Die Spielesammlung wuchs stetig und die ersten Nächte vor dem Monitor wurden zur Normalität.",
-
-        image:"assets/images/timeline/floppy.jpg"
-
-    },
-
-    1991:{
-
-        title:"Amiga 500",
-
-        text:"Monkey Island, Chaos Engine und viele weitere Klassiker machten den Amiga zu meinem Lieblingsrechner.",
-
-        image:"assets/images/timeline/amiga.jpg"
-
-    },
-
-     1996:{
-
-        title:"Amiga 500",
-
-        text:"Monkey Island, Chaos Engine und viele weitere Klassiker machten den Amiga zu meinem Lieblingsrechner.",
-
-        image:"assets/images/timeline/amiga.jpg"
-
-    },
-
-    2022:{
-
-        title:"YouTube",
-
-        text:"Aus einem Hobby entstand Magisthans Spielekiste.",
-
-        image:"assets/images/timeline/youtube.jpg"
-
-    },
-
-    2026:{
-
-        title:"Retro News Flash",
-
-        text:"Jede Woche neue Spiele, Hardware und Demos rund um C64 und Amiga.",
-
-        image:"assets/images/timeline/newsflash.jpg"
-
-    }
-
-};
+    const memory      = document.getElementById("retro-memory");
+    const memoryImage = document.getElementById("memory-image");
+    const memoryYear  = document.getElementById("memory-year");
+    const memoryTitle = document.getElementById("memory-title");
+    const memoryText  = document.getElementById("memory-text");
 
 
-document.querySelectorAll(".timeline-item").forEach(item=>{
+    const data = {
 
-    item.addEventListener("click",()=>{
+        1986:{
 
-        const year=item.dataset.year;
+            slot:"SAVEGAME #01",
 
-        const entry=data[year];
+            title:"DER ERSTE C64",
 
-        document.getElementById("memory-year").textContent=year;
+            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche machten den Commodore 64 zu meinem Einstieg in die Welt der Computer.",
 
-        document.getElementById("memory-title").textContent=entry.title;
+            image:"assets/images/timeline/c64.jpg"
 
-        document.getElementById("memory-text").textContent=entry.text;
+        },
 
-        document.getElementById("memory-image").src=entry.image;
+        1989:{
+
+            slot:"SAVEGAME #02",
+
+            title:"ERSTE DISKETTEN",
+
+            text:"Die Spielesammlung wuchs stetig. Jede neue Diskette bedeutete neue Abenteuer und viele lange Nächte vor dem Monitor.",
+
+            image:"assets/images/timeline/floppy.jpg"
+
+        },
+
+        1992:{
+
+            slot:"SAVEGAME #03",
+
+            title:"AMIGA LIEBE",
+
+            text:"Monkey Island, Chaos Engine, Turrican und viele weitere Klassiker machten den Amiga zu meinem Lieblingscomputer.",
+
+            image:"assets/images/timeline/amiga.jpg"
+
+        },
+
+        2023:{
+
+            slot:"SAVEGAME #04",
+
+            title:"YOUTUBE",
+
+            text:"Aus einem Hobby entstand Magisthans Spielekiste. Seitdem erscheinen regelmäßig Let's Plays, News und Retro-Projekte.",
+
+            image:"assets/images/timeline/youtube.jpg"
+
+        },
+
+        2026:{
+
+            slot:"SAVEGAME #05",
+
+            title:"RETRO NEWS FLASH",
+
+            text:"Jede Woche neue Spiele, Hardware und Demos rund um Commodore 64 und Amiga.",
+
+            image:"assets/images/timeline/newsflash.jpg"
+
+        }
+
+    };
+
+
+    function loadMemory(year){
+
+        const entry = data[year];
+
+        if(!entry) return;
 
         memory.classList.remove("show");
 
+        memoryImage.classList.remove("zoom");
+
         setTimeout(()=>{
 
-            memory.classList.add("show");
+            memoryYear.textContent = entry.slot;
 
-        },120);
+            memoryTitle.textContent = entry.title;
+
+            memoryText.textContent = entry.text;
+
+            memoryImage.src = entry.image;
+
+            memoryImage.onload = () => {
+
+                memory.classList.add("show");
+
+                requestAnimationFrame(()=>{
+
+                    memoryImage.classList.add("zoom");
+
+                });
+
+            };
+
+        },180);
+
+    }
+
+
+    /* ==========================================
+       HOVER EVENTS
+    ========================================== */
+
+    items.forEach(item=>{
+
+        item.addEventListener("mouseenter",()=>{
+
+            items.forEach(i=>i.classList.remove("active"));
+
+            item.classList.add("active");
+
+            loadMemory(item.dataset.year);
+
+        });
 
     });
+
+
+    /* ==========================================
+       STARTWERT
+    ========================================== */
+
+    loadMemory("1986");
 
 });
 
