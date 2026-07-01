@@ -4818,7 +4818,6 @@ footer a:hover {
 
     max-width: 100%;
 }
-   
    .container {
 
     width: 100%;
@@ -5010,9 +5009,7 @@ footer a:hover {
     animation:none;
 
 }
-
-}  
-
+   
    @keyframes rnfProgressVertical{
 
     from{
@@ -5027,9 +5024,29 @@ footer a:hover {
 
     }
 
- }
+@media (max-width:1200px){
 
-@media (max-width:900px){
+.about-hero{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+}
+
+.about-photo-card{
+
+    width:100%;
+
+}
+
+.about-profile-card{
+
+    width:100%;
+
+    justify-self:stretch;
+
+}
 
 .profile-row{
 
@@ -5045,21 +5062,13 @@ footer a:hover {
 
 }
 
-}
-
-@media (max-width:900px){
-
 .inventory-grid{
 
     grid-template-columns:repeat(3,1fr);
 
-}
+}   
 
-}
-
-@media (max-width:900px){
-
-.retro-stat-header{
+   .retro-stat-header{
 
     grid-template-columns:32px 1fr;
 
@@ -5072,39 +5081,7 @@ footer a:hover {
     justify-self:end;
 
 }
-
-}
-
-@media (max-width:900px){
-
-.about-intro-card h1{
-
-    font-size:2.1rem;
-
-    line-height:1.2;
-
-}
-
-.about-lead{
-
-    font-size:1.05rem;
-
-}
-
-}
-
-.about-quote{
-
-    flex-direction:column;
-
-}
-
-.photo-frame img{
-
-    max-width:220px;
-
-}
-
+}  
 
 html,
 body {
