@@ -5091,8 +5091,6 @@ footer a:hover {
 }  
 
 html,
-body {
+body
 
-    overflow-x: hidden;
-}
-
+   
