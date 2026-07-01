@@ -4101,38 +4101,38 @@ transform:scale(1);
 }
 
 /* ==========================================
-   RETRO MEMORY
+RETRO MEMORY
 ========================================== */
 
 .retro-memory{
 
-    margin-top:55px;
+    margin-top:45px;
 
     display:grid;
 
-    grid-template-columns:260px 1fr;
+    grid-template-columns:340px 1fr;
 
     gap:35px;
 
-    align-items:center;
+    padding:28px;
 
-    padding:30px;
+    background:#171d2d;
 
-    border-radius:20px;
+    border:1px solid rgba(120,255,70,.35);
 
-    background:#171d2c;
+    border-radius:22px;
 
-    border:1px solid rgba(58,168,255,.18);
+    box-shadow:0 0 25px rgba(120,255,70,.08);
 
     opacity:0;
 
-    transform:translateY(18px);
+    transform:translateY(20px);
 
     transition:
 
-        opacity .35s ease,
+        opacity .25s,
 
-        transform .35s ease;
+        transform .25s;
 
 }
 
@@ -4144,35 +4144,75 @@ transform:scale(1);
 
 }
 
+.memory-image{
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+}
+
 .memory-image img{
 
     width:100%;
 
-    border-radius:16px;
-
     display:block;
+
+    transition:
+
+        transform .55s;
+
+}
+
+.memory-image img.zoom{
+
+    transform:scale(1.08);
+
+}
+
+.memory-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
 
 }
 
 .memory-year{
 
-    color:#69c4ff;
+    color:#79ff43;
+
+    font-size:.85rem;
 
     letter-spacing:2px;
 
-    font-size:.9rem;
-
 }
 
-.memory-content h3{
+.memory-title{
 
-    margin:10px 0 18px;
+    margin:10px 0;
 
     font-size:2rem;
 
+    color:white;
+
 }
 
-.memory-content p{
+.memory-line{
+
+    width:220px;
+
+    height:2px;
+
+    margin-bottom:20px;
+
+    background:#79ff43;
+
+}
+
+.memory-text{
 
     line-height:1.8;
 
@@ -4180,19 +4220,31 @@ transform:scale(1);
 
 }
 
-.terminal-icon{
+.memory-tags{
 
-    width:90px;
-    height:18px;
+    margin-top:24px;
 
-    object-fit:contain;
+    display:flex;
 
-    image-rendering:pixelated;
+    flex-wrap:wrap;
 
-    vertical-align:middle;
+    gap:12px;
 
 }
 
+.memory-tags span{
+
+    padding:6px 14px;
+
+    border:1px solid rgba(120,255,70,.35);
+
+    border-radius:8px;
+
+    color:#79ff43;
+
+    font-size:.8rem;
+
+}
 /* ==========================
    Footer
    ========================== */
