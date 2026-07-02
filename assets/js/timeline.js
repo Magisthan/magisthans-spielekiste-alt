@@ -86,7 +86,10 @@ Viele endeten allerdings mit Fehlermeldungen.
     image:"assets/images/icons/c64-512.png",
 
     tags:[
-        ...
+        "WHDLoad",
+        "Kickstart",
+        "Workbench",
+        "Turrican"
     ]
 
 },
