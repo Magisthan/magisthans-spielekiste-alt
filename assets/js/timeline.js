@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    /* ==========================================
+       ELEMENTE
+    ========================================== */
+
     const timeline = document.querySelector(".savegame-card");
     const progress = document.querySelector(".timeline-progress");
-    const items = document.querySelectorAll(".timeline-item");
+    const items = [...document.querySelectorAll(".timeline-item")];
 
     const memory = document.getElementById("retro-memory");
     const memoryImage = document.getElementById("memory-image");
@@ -11,101 +15,222 @@ document.addEventListener("DOMContentLoaded", () => {
     const memoryText = document.getElementById("memory-text");
     const memoryTags = document.getElementById("memory-tags");
 
-    if (!timeline || !progress || !memory) return;
-
-    let introFinished = false;
-    let timelineRunning = false;
+    if (
+        !timeline ||
+        !progress ||
+        !memory ||
+        !memoryImage ||
+        !memoryYear ||
+        !memoryTitle ||
+        !memoryText ||
+        !memoryTags
+    ) {
+        return;
+    }
 
     /* ==========================================
-       MEMORY DATEN
+       STATUS
+    ========================================== */
+
+    let timelineRunning = false;
+    let introFinished = false;
+    let currentYear = null;
+
+    /* ==========================================
+       SAVEGAME DATEN
     ========================================== */
 
     const data = {
 
-        1986: {
-            slot: "SAVEGAME #01",
-            title: "DER ERSTE C64",
-            text: "Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
-            image: "assets/images/icons/c64-512.png",
-            tags: ["C64","BASIC","Winter Games","Summer Games"]
+        1986:{
+
+            slot:"SAVEGAME #01",
+
+            title:"DER ERSTE C64",
+
+            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
+
+            image:"assets/images/icons/c64-512.png",
+
+            tags:[
+                "C64",
+                "BASIC",
+                "Winter Games",
+                "Summer Games"
+            ]
+
         },
 
-        1987: {
-            slot: "SAVEGAME #02",
-            title: "ERSTE DISKETTEN",
-            text: "Die Spielesammlung wuchs stetig.",
-            image: "assets/images/icons/c64-512.png",
-            tags: ["1541","Disketten","SSI","Wizardry"]
+        1987:{
+
+            slot:"SAVEGAME #02",
+
+            title:"ERSTE DISKETTEN",
+
+            text:"Die Spielesammlung wuchs stetig.",
+
+            image:"assets/images/icons/c64-512.png",
+
+            tags:[
+                "1541",
+                "Disketten",
+                "SSI",
+                "Wizardry"
+            ]
+
         },
 
-        1991: {
-            slot: "SAVEGAME #03",
-            title: "AMIGA LIEBE",
-            text: "Monkey Island, Turrican und Chaos Engine machten den Amiga zum Lieblingsrechner.",
-            image: "assets/images/icons/amiga-512.png",
-            tags: ["Amiga","AGA","Monkey Island","Turrican"]
+        1991:{
+
+            slot:"SAVEGAME #03",
+
+            title:"AMIGA LIEBE",
+
+            text:"Monkey Island, Turrican und Chaos Engine machten den Amiga zum Lieblingsrechner.",
+
+            image:"assets/images/icons/amiga-512.png",
+
+            tags:[
+                "Amiga",
+                "AGA",
+                "Monkey Island",
+                "Turrican"
+            ]
+
         },
 
-        1996: {
-            slot: "SAVEGAME #04",
-            title: "DER ERSTE PC",
-            text: "Mit dem ersten PC begann ein neues Kapitel.",
-            image: "assets/images/icons/pc-512.png",
-            tags: ["DOS","486 DX2","Windows 95","C&C"]
+        1996:{
+
+            slot:"SAVEGAME #04",
+
+            title:"DER ERSTE PC",
+
+            text:"Mit dem ersten PC begann ein neues Kapitel.",
+
+            image:"assets/images/icons/pc-512.png",
+
+            tags:[
+                "DOS",
+                "486 DX2",
+                "Windows 95",
+                "Command & Conquer"
+            ]
+
         },
 
-        2023: {
-            slot: "SAVEGAME #05",
-            title: "YOUTUBE START",
-            text: "Aus einem Hobby entstand Magisthans Spielekiste.",
-            image: "assets/images/icons/youtube-512.png",
-            tags: ["YouTube","Let's Plays","Retro","Community"]
+        2023:{
+
+            slot:"SAVEGAME #05",
+
+            title:"YOUTUBE START",
+
+            text:"Aus einem Hobby entstand Magisthans Spielekiste.",
+
+            image:"assets/images/icons/youtube-512.png",
+
+            tags:[
+                "YouTube",
+                "Let's Plays",
+                "Retro",
+                "Community"
+            ]
+
         },
 
-        2026: {
-            slot: "SAVEGAME #06",
-            title: "RETRO NEWS FLASH",
-            text: "Jede Woche neue Spiele, Hardware und Demos rund um C64 und Amiga.",
-            image: "assets/images/icons/heute-512.png",
-            tags: ["News","C64","Amiga","Homebrew"]
+        2026:{
+
+            slot:"SAVEGAME #06",
+
+            title:"RETRO NEWS FLASH",
+
+            text:"Jede Woche neue Spiele, Hardware und Demos rund um C64 und Amiga.",
+
+            image:"assets/images/icons/heute-512.png",
+
+            tags:[
+                "News",
+                "C64",
+                "Amiga",
+                "Homebrew"
+            ]
+
         }
 
     };
 
+
     /* ==========================================
-       MEMORY LADEN
+       MEMORY FÜLLEN
     ========================================== */
 
-    function loadMemory(year){
+    function fillMemory(year){
 
         const entry = data[year];
+
         if(!entry) return;
 
-        memory.classList.add("memory-switch");
+        memoryYear.textContent = entry.slot;
+        memoryTitle.textContent = entry.title;
+        memoryText.textContent = entry.text;
+        memoryImage.src = entry.image;
 
-        setTimeout(()=>{
+        memoryTags.innerHTML = "";
 
-            memoryYear.textContent = entry.slot;
-            memoryTitle.textContent = entry.title;
-            memoryText.textContent = entry.text;
-            memoryImage.src = entry.image;
+        entry.tags.forEach(tag=>{
 
-            memoryTags.innerHTML = "";
+            const span = document.createElement("span");
 
-            entry.tags.forEach(tag=>{
+            span.textContent = tag;
 
-                const span = document.createElement("span");
-                span.textContent = tag;
-                memoryTags.appendChild(span);
+            memoryTags.appendChild(span);
+
+        });
+
+    }
+
+
+    /* ==========================================
+       MEMORY ÖFFNEN
+    ========================================== */
+
+    function openMemory(year){
+
+        if(currentYear === year){
+
+            return;
+
+        }
+
+        if(memory.classList.contains("open")){
+
+            memory.classList.remove("open");
+
+            setTimeout(()=>{
+
+                fillMemory(year);
+
+                memory.classList.add("open");
+
+            },220);
+
+        }
+
+        else{
+
+            fillMemory(year);
+
+            requestAnimationFrame(()=>{
+
+                memory.classList.add("open");
 
             });
 
-            memory.classList.remove("memory-switch");
-            memory.classList.add("memory-show");
+        }
 
-        },220);
+        currentYear = year;
 
     }
+
 
     /* ==========================================
        TIMELINE START
@@ -113,24 +238,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function startTimeline(){
 
-        if(timelineRunning) return;
+        if(timelineRunning){
+
+            return;
+
+        }
 
         timelineRunning = true;
         introFinished = false;
 
         progress.style.width = "0%";
 
+        progress.getAnimations().forEach(animation=>{
+
+            animation.cancel();
+
+        });
+
         progress.animate(
 
             [
+
                 {width:"0%"},
+
                 {width:"100%"}
+
             ],
 
             {
+
                 duration:5200,
+
                 easing:"ease-in-out",
+
                 fill:"forwards"
+
             }
 
         );
@@ -148,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 item.classList.add("show");
 
-            },500 + index*700);
+            },500 + index * 700);
 
         });
 
@@ -156,26 +298,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
             introFinished = true;
 
-            items[0].classList.add("active");
-
-            loadMemory(items[0].dataset.year);
-
-        },5000);
+        },5200);
 
     }
-
+	
     /* ==========================================
-       RESET
+       TIMELINE RESET
     ========================================== */
 
     function resetTimeline(){
 
         timelineRunning = false;
         introFinished = false;
+        currentYear = null;
 
-        progress.getAnimations().forEach(a=>a.cancel());
+        progress.getAnimations().forEach(animation=>{
 
-        progress.style.width="0%";
+            animation.cancel();
+
+        });
+
+        progress.style.width = "0%";
 
         items.forEach(item=>{
 
@@ -184,55 +327,160 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+        memory.classList.remove("open");
+
     }
 
+
     /* ==========================================
-       HOVER
+       SAVEGAME AUSWÄHLEN
     ========================================== */
 
     items.forEach(item=>{
 
-        item.addEventListener("mouseenter",()=>{
+        item.addEventListener("click",()=>{
 
-            if(!introFinished) return;
+            if(!introFinished){
 
-            items.forEach(i=>i.classList.remove("active"));
+                return;
+
+            }
+
+            const year = item.dataset.year;
+
+            /* Punkt aktivieren */
+
+            items.forEach(i=>{
+
+                i.classList.remove("active");
+
+            });
 
             item.classList.add("active");
 
-            loadMemory(item.dataset.year);
+            /*
+             * kleiner "Spielgefühl"-Moment
+             * erst Glow,
+             * dann Karte öffnen
+             */
+
+            setTimeout(()=>{
+
+                openMemory(year);
+
+            },150);
 
         });
 
     });
+
 
     /* ==========================================
        SCROLL OBSERVER
     ========================================== */
 
-    const observer = new IntersectionObserver((entries)=>{
+    const observer = new IntersectionObserver(
 
-        entries.forEach(entry=>{
+        entries=>{
 
-            if(entry.isIntersecting){
+            entries.forEach(entry=>{
 
-                startTimeline();
+                if(entry.isIntersecting){
 
-            }else{
+                    startTimeline();
 
-                resetTimeline();
+                }
 
-            }
+                else{
 
-        });
+                    resetTimeline();
 
-    },{
+                }
 
-        threshold:0.20,
-        rootMargin:"0px 0px -10% 0px"
+            });
+
+        },
+
+        {
+
+            threshold:.20,
+
+            rootMargin:"0px 0px -10% 0px"
+
+        }
+
+    );
+
+    observer.observe(timeline);
+
+
+    /* ==========================================
+       MEMORY CARD
+       Beim Laden NICHT sichtbar
+    ========================================== */
+
+    memory.classList.remove("open");
+
+
+    /* ==========================================
+       OPTIONAL:
+       ESC schließt die Karte
+    ========================================== */
+
+    document.addEventListener("keydown",event=>{
+
+        if(event.key==="Escape"){
+
+            memory.classList.remove("open");
+
+            items.forEach(item=>{
+
+                item.classList.remove("active");
+
+            });
+
+            currentYear=null;
+
+        }
 
     });
 
-    observer.observe(timeline);
+
+    /* ==========================================
+       OPTIONAL:
+       Klick neben die Karte schließt sie
+    ========================================== */
+
+    document.addEventListener("click",event=>{
+
+        if(!memory.classList.contains("open")){
+
+            return;
+
+        }
+
+        if(event.target.closest(".timeline-item")){
+
+            return;
+
+        }
+
+        if(event.target.closest(".retro-memory")){
+
+            return;
+
+        }
+
+        memory.classList.remove("open");
+
+        items.forEach(item=>{
+
+            item.classList.remove("active");
+
+        });
+
+        currentYear=null;
+
+    });
 
 });
