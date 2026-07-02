@@ -324,7 +324,7 @@ Viele endeten allerdings mit Fehlermeldungen.
 
          paragraphs.forEach((element,index)=>{
 
-         element.style.animationDelay = (index * 140) + "ms";
+         element.style.animationDelay = (index * 340) + "ms";
 
 });
         memoryImage.src = entry.image;
