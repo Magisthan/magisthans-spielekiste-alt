@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         !memoryTitle ||
         !memoryText ||
         !memoryTags
+		!memoryStory ||
     ) {
         return;
     }
@@ -85,11 +86,11 @@ Viele endeten allerdings mit Fehlermeldungen.
 
     image:"assets/images/icons/c64-512.png",
 
-    tags:[
-        "WHDLoad",
-        "Kickstart",
-        "Workbench",
-        "Turrican"
+            tags:[
+               "WHDLoad",
+               "Kickstart",
+               "Workbench",
+               "Turrican"
     ]
 
 },
@@ -102,6 +103,38 @@ Viele endeten allerdings mit Fehlermeldungen.
 
             text:"Monkey Island, Turrican und Chaos Engine machten den Amiga zum Lieblingsrechner.",
 
+			story:`
+
+<p>
+Eigentlich wollte ich nur ein bisschen spielen.
+Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
+"Lass uns ein Spiel starten."
+</p>
+
+<p>
+Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
+Dank Datasette hieß es oft:
+Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
+</p>
+
+<h4>Der erste eigene C64</h4>
+
+<p>
+Mit etwa elf Jahren war es endlich soweit.
+Mein eigener Commodore 64 zog ein.
+Mit 1541-II und Nadeldrucker.
+</p>
+
+<h4>BASIC</h4>
+
+<p>
+Natürlich wollte ich irgendwann selbst Spiele entwickeln.
+Viele Programme funktionierten.
+Viele endeten allerdings mit Fehlermeldungen.
+</p>
+
+`,
+			
             image:"assets/images/icons/amiga-512.png",
 
             tags:[
@@ -121,6 +154,38 @@ Viele endeten allerdings mit Fehlermeldungen.
             title:"DER ERSTE PC",
 
             text:"Mit dem ersten PC begann ein neues Kapitel.",
+
+			story:`
+
+<p>
+Eigentlich wollte ich nur ein bisschen spielen.
+Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
+"Lass uns ein Spiel starten."
+</p>
+
+<p>
+Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
+Dank Datasette hieß es oft:
+Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
+</p>
+
+<h4>Der erste eigene C64</h4>
+
+<p>
+Mit etwa elf Jahren war es endlich soweit.
+Mein eigener Commodore 64 zog ein.
+Mit 1541-II und Nadeldrucker.
+</p>
+
+<h4>BASIC</h4>
+
+<p>
+Natürlich wollte ich irgendwann selbst Spiele entwickeln.
+Viele Programme funktionierten.
+Viele endeten allerdings mit Fehlermeldungen.
+</p>
+
+`,
 
             image:"assets/images/icons/pc-512.png",
 
@@ -142,6 +207,38 @@ Viele endeten allerdings mit Fehlermeldungen.
 
             text:"Aus einem Hobby entstand Magisthans Spielekiste.",
 
+			story:`
+
+<p>
+Eigentlich wollte ich nur ein bisschen spielen.
+Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
+"Lass uns ein Spiel starten."
+</p>
+
+<p>
+Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
+Dank Datasette hieß es oft:
+Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
+</p>
+
+<h4>Der erste eigene C64</h4>
+
+<p>
+Mit etwa elf Jahren war es endlich soweit.
+Mein eigener Commodore 64 zog ein.
+Mit 1541-II und Nadeldrucker.
+</p>
+
+<h4>BASIC</h4>
+
+<p>
+Natürlich wollte ich irgendwann selbst Spiele entwickeln.
+Viele Programme funktionierten.
+Viele endeten allerdings mit Fehlermeldungen.
+</p>
+
+`,
+
             image:"assets/images/icons/youtube-512.png",
 
             tags:[
@@ -161,6 +258,38 @@ Viele endeten allerdings mit Fehlermeldungen.
             title:"RETRO NEWS FLASH",
 
             text:"Jede Woche neue Spiele, Hardware und Demos rund um C64 und Amiga.",
+
+			story:`
+
+<p>
+Eigentlich wollte ich nur ein bisschen spielen.
+Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
+"Lass uns ein Spiel starten."
+</p>
+
+<p>
+Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
+Dank Datasette hieß es oft:
+Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
+</p>
+
+<h4>Der erste eigene C64</h4>
+
+<p>
+Mit etwa elf Jahren war es endlich soweit.
+Mein eigener Commodore 64 zog ein.
+Mit 1541-II und Nadeldrucker.
+</p>
+
+<h4>BASIC</h4>
+
+<p>
+Natürlich wollte ich irgendwann selbst Spiele entwickeln.
+Viele Programme funktionierten.
+Viele endeten allerdings mit Fehlermeldungen.
+</p>
+
+`,
 
             image:"assets/images/icons/heute-512.png",
 
