@@ -4861,10 +4861,7 @@ section{
 
     opacity:0;
 
-    transform:translateY(8px);
-
-    animation:storyFade .35s forwards;
-
+    transform:translateY(8px);    
 }
 
 .memory-story-text p{
