@@ -57,8 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Disketten",
                 "BASIC",
                 "LOAD "*",8,1"
-				"The Last Ninja"
-				"Sid Meier's Pirates!"
+				
             ]
 
         },
@@ -78,8 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Kickstart",
                 "Workbench",
                 "Turrican"
-				"The Secret of Monkey Island"
-				"AGA"
+				
             ]
 
         },
@@ -99,8 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "3dfx Voodoo",
                 "Windows 98",
                 "Command & Conquer"
-				"StarCraft"
-				"Pentium II"
+				
             ]
 
         },
@@ -120,8 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "GeForce GTX",
                 "Online Multiplayer",
                 "The Witcher 3: Wild Hunt"
-				"Minecraft"
-				"Grand Theft Auto V"
+				
             ]
 
         },
@@ -141,8 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "C64",
                 "Amiga",
                 "Homebrew"
-				"Retro"
-	            "Youtube"
+				
             ]
 
         }
