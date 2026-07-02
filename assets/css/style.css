@@ -4823,6 +4823,76 @@ section{
 
 }
 
+.memory-story{
+
+    margin-top:30px;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.memory-story h4{
+
+    margin:0 0 18px;
+
+    color:#79ff43;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    font-size:1rem;
+
+}
+
+.memory-story-text{
+
+    line-height:1.9;
+
+    color:#dbe4ef;
+
+}
+
+.memory-story-text p,
+
+.memory-story-text h4{
+
+    opacity:0;
+
+    transform:translateY(8px);
+
+    animation:storyFade .35s forwards;
+
+}
+
+.memory-story-text p{
+
+    margin-bottom:18px;
+
+}
+
+@keyframes storyFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
 
 /* ==========================
    Footer
