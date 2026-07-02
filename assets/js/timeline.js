@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const memoryTitle = document.getElementById("memory-title");
     const memoryText = document.getElementById("memory-text");
     const memoryTags = document.getElementById("memory-tags");
+	const memoryStory = document.getElementById("memory-story");
 
     if (
         !timeline ||
@@ -44,23 +45,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
         1987:{
 
-            slot:"SAVEGAME #01",
+    slot:"SAVEGAME #01",
 
-            title:"ERSTE DISKETTEN",
+    title:"ERSTE DISKETTEN",
 
-            text:"Eigentlich wollte ich nur ein bisschen spielen... Wenn ich heute darüber nachdenke, begann alles mit einer einfachen Idee: Lass uns ein Spiel starten. Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute. Dank Datasette hieß es oft: Wir laden das Spiel – und gehen solange eine Runde Fußball spielen. Bis manche Spiele geladen waren, verging tatsächlich genug Zeit dafür. Damals ahnte ich noch nicht, dass mich dieser kleine Brotkasten viele Jahrzehnte begleiten würde. --- ## Der erste eigene C64 Mit etwa elf Jahren war es endlich so weit: Mein eigener Commodore 64 zog ein – inklusive 1541-II-Floppy und MPS-Nadeldrucker, was damals fast schon Luxus war. Spiele wie Moon Cresta und vor allem Vermeer fesselten mich sofort. Später kamen Klassiker wie Maniac Mansion, Zak McKracken, International Karate, R-Type und Katakis dazu. Stunden wurden zu Tagen und die Ferien waren immer viel zu schnell vorbei. --- ## Der Programmierer, der nie einer wurde Irgendwann wollte ich natürlich auch selbst Spiele entwickeln und begann mit BASIC. Einige kleine Programme funktionierten sogar, viele endeten allerdings in Fehlermeldungen. Assembler habe ich nie gelernt – vielleicht war das auch besser so. Meine Joysticks hätten es mir vermutlich nicht gedankt.",
+    text:"Mein Einstieg in die Welt des Commodore 64.",
 
-            image:"assets/images/icons/c64-512.png",
+    story:`
 
-            tags:[
-                "1541",
-                "Disketten",
-                "BASIC",
-                "LOAD "*",8,1"
-				
-            ]
+<p>
+Eigentlich wollte ich nur ein bisschen spielen.
+Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
+"Lass uns ein Spiel starten."
+</p>
 
-        },
+<p>
+Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
+Dank Datasette hieß es oft:
+Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
+</p>
+
+<h4>Der erste eigene C64</h4>
+
+<p>
+Mit etwa elf Jahren war es endlich soweit.
+Mein eigener Commodore 64 zog ein.
+Mit 1541-II und Nadeldrucker.
+</p>
+
+<h4>BASIC</h4>
+
+<p>
+Natürlich wollte ich irgendwann selbst Spiele entwickeln.
+Viele Programme funktionierten.
+Viele endeten allerdings mit Fehlermeldungen.
+</p>
+
+`,
+
+    image:"assets/images/icons/c64-512.png",
+
+    tags:[
+        ...
+    ]
+
+},
 
         1991:{
 
@@ -158,6 +187,14 @@ document.addEventListener("DOMContentLoaded", () => {
         memoryYear.textContent = entry.slot;
         memoryTitle.textContent = entry.title;
         memoryText.textContent = entry.text;
+		memoryStory.innerHTML = entry.story;
+		const paragraphs = memoryStory.querySelectorAll("p, h4");
+
+         paragraphs.forEach((element,index)=>{
+
+         element.style.animationDelay = (index * 140) + "ms";
+
+});
         memoryImage.src = entry.image;
 
         memoryTags.innerHTML = "";
