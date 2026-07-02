@@ -2,46 +2,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const stats = document.querySelector("#retro-stats");
 
-    const bars = document.querySelectorAll(".stat-fill");
+    if (!stats) return;
 
-    function animateBars(){
+    const bars = stats.querySelectorAll(".stat-fill");
 
-        bars.forEach(bar=>{
+    function resetBars() {
 
-            bar.style.transition="none";
-            bar.style.width="0%";
+        bars.forEach(bar => {
 
-        });
-
-        requestAnimationFrame(()=>{
-
-            bars.forEach(bar=>{
-
-                const value=bar.dataset.value;
-
-                bar.style.transition="width 1.8s ease";
-                bar.style.width=value+"%";
-
-            });
+            bar.style.transition = "none";
+            bar.style.width = "0%";
 
         });
 
     }
 
-    const observer=new IntersectionObserver((entries)=>{
+    function animateBars() {
 
-        entries.forEach(entry=>{
+        resetBars();
 
-            if(entry.isIntersecting){
+        setTimeout(() => {
+
+            bars.forEach(bar => {
+
+                bar.style.transition = "width 1.8s ease";
+
+                bar.style.width = bar.dataset.value + "%";
+
+            });
+
+        }, 60);
+
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
 
                 animateBars();
+
+            } else {
+
+                resetBars();
 
             }
 
         });
 
-    },{
-        threshold:0.55
+    }, {
+
+        threshold: 0.15,
+        root: null,
+        rootMargin: "0px 0px -10% 0px"
+
     });
 
     observer.observe(stats);
