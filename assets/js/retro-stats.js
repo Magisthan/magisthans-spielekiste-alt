@@ -1,26 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const stats = document.getElementById("retro-stats");
+    const stats = document.querySelector("#retro-stats");
 
-    const bars = stats.querySelectorAll(".stat-fill");
+    const bars = document.querySelectorAll(".stat-fill");
 
     function animateBars(){
 
-        bars.forEach((bar,index)=>{
+        bars.forEach(bar=>{
 
-            const value = bar.dataset.value;
+            bar.style.transition="none";
+            bar.style.width="0%";
 
-            bar.style.transition = "none";
-            bar.style.width = "0";
+        });
 
-            requestAnimationFrame(()=>{
+        requestAnimationFrame(()=>{
 
-                setTimeout(()=>{
+            bars.forEach(bar=>{
 
-                    bar.style.transition = "width 1s ease";
-                    bar.style.width = value + "%";
+                const value=bar.dataset.value;
 
-                }, index * 180);
+                bar.style.transition="width 1.8s ease";
+                bar.style.width=value+"%";
 
             });
 
@@ -28,8 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    animateBars();
+    const observer=new IntersectionObserver((entries)=>{
 
-    stats.addEventListener("mouseenter", animateBars);
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                animateBars();
+
+            }
+
+        });
+
+    },{
+        threshold:0.55
+    });
+
+    observer.observe(stats);
 
 });
