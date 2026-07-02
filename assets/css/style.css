@@ -4206,53 +4206,37 @@ transform:scale(1);
    Hover + Active
 ========================================== */
 
-.timeline-item:hover,
-
 .timeline-item.active{
 
     transform:translateY(-8px);
 
-}
-
-
-.timeline-item:hover .timeline-icon,
-
-.timeline-item.active .timeline-icon{
-
-    transform:scale(1.10);
+    filter:drop-shadow(0 0 16px rgba(122,255,85,.45));
 
 }
-
-
-.timeline-item:hover .timeline-dot,
 
 .timeline-item.active .timeline-dot{
 
-    background:#7eff4f;
+    background:#79ff43;
 
-    transform:scale(1.35);
+    transform:scale(1.45);
 
-    box-shadow:0 0 18px #7eff4f;
+    box-shadow:
+
+        0 0 18px #79ff43,
+
+        0 0 32px rgba(121,255,67,.35);
 
 }
 
+.timeline-item.active .timeline-icon{
 
-.timeline-item:hover .timeline-year,
+    transform:scale(1.12);
+
+}
 
 .timeline-item.active .timeline-year{
 
     color:#79ff43;
-
-}
-
-
-/* leichtes Leuchten */
-
-.timeline-item:hover,
-
-.timeline-item.active{
-
-    filter:drop-shadow(0 0 10px rgba(126,255,79,.20));
 
 }
 
@@ -4776,6 +4760,69 @@ section{
     transform:none;
 
 }
+
+/* ==========================================
+   MEMORY CARD OPEN / CLOSE
+========================================== */
+
+.retro-memory{
+
+    max-height:0;
+
+    opacity:0;
+
+    overflow:hidden;
+
+    margin-top:0;
+
+    transform:translateY(-10px) scale(.98);
+
+    transition:
+        max-height .45s ease,
+        opacity .22s ease,
+        transform .22s ease,
+        margin-top .25s ease;
+
+}
+
+/* Karte geöffnet */
+
+.retro-memory.open{
+
+    max-height:900px;
+
+    opacity:1;
+
+    margin-top:45px;
+
+    transform:translateY(0) scale(1);
+
+}
+
+
+/* kleines Aufklappen */
+
+.memory-window{
+
+    transform-origin:top center;
+
+    transition:
+        transform .22s ease;
+
+}
+
+.retro-memory.open .memory-window{
+
+    transform:scaleY(1);
+
+}
+
+.retro-memory:not(.open) .memory-window{
+
+    transform:scaleY(.95);
+
+}
+
 
 /* ==========================
    Footer
