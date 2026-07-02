@@ -345,46 +345,97 @@ Viele endeten allerdings mit Fehlermeldungen.
 
 
     /* ==========================================
-       MEMORY ÖFFNEN
-    ========================================== */
+   MEMORY ÖFFNEN
+========================================== */
 
-    function openMemory(year){
+function openMemory(year){
 
-        if(currentYear === year){
+    if(currentYear === year){
+        return;
+    }
 
-            return;
+    /* Karte bereits offen? */
+    if(memory.classList.contains("open")){
 
-        }
+        /* 1. Karte schließen */
+        memory.classList.remove("open");
 
-        if(memory.classList.contains("open")){
-
-            memory.classList.remove("open");
-
-            setTimeout(()=>{
-
-                fillMemory(year);
-
-                memory.classList.add("open");
-
-            },220);
-
-        }
-
-        else{
+        /* 2. Inhalt erst wechseln, wenn sie zu ist */
+        setTimeout(()=>{
 
             fillMemory(year);
 
-            requestAnimationFrame(()=>{
+        },250);
 
-                memory.classList.add("open");
+        /* 3. Karte wieder öffnen */
+        setTimeout(()=>{
+
+            memory.classList.add("open");
+
+        },450);
+
+        /* 4. Story leicht verzögert starten */
+        setTimeout(()=>{
+
+            const elements = memory.querySelectorAll(
+                ".memory-story-text h4, .memory-story-text p"
+            );
+
+            elements.forEach((element,index)=>{
+
+                element.style.animation = "none";
+                element.offsetHeight; // Animation zurücksetzen
+
+                element.style.animation =
+                    `storyFade .65s ease forwards`;
+
+                element.style.animationDelay =
+                    (index * 280) + "ms";
 
             });
 
-        }
-
-        currentYear = year;
+        },650);
 
     }
+
+    else{
+
+        /* Erste Anzeige */
+
+        fillMemory(year);
+
+        requestAnimationFrame(()=>{
+
+            memory.classList.add("open");
+
+            setTimeout(()=>{
+
+                const elements = memory.querySelectorAll(
+                    ".memory-story-text h4, .memory-story-text p"
+                );
+
+                elements.forEach((element,index)=>{
+
+                    element.style.animation = "none";
+                    element.offsetHeight;
+
+                    element.style.animation =
+                        `storyFade .65s ease forwards`;
+
+                    element.style.animationDelay =
+                        (index * 280) + "ms";
+
+                });
+
+            },250);
+
+        });
+
+    }
+
+    currentYear = year;
+
+}
 
 
     /* ==========================================
