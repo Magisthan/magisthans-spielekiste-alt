@@ -42,47 +42,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const data = {
 
-        1986:{
+        1987:{
 
             slot:"SAVEGAME #01",
 
-            title:"DER ERSTE C64",
-
-            text:"Hier begann alles. Winter Games, Summer Games und die ersten BASIC-Versuche.",
-
-            image:"assets/images/icons/c64-512.png",
-
-            tags:[
-                "C64",
-                "BASIC",
-                "Winter Games",
-                "Summer Games"
-            ]
-
-        },
-
-        1987:{
-
-            slot:"SAVEGAME #02",
-
             title:"ERSTE DISKETTEN",
 
-            text:"Die Spielesammlung wuchs stetig.",
+            text:"Eigentlich wollte ich nur ein bisschen spielen... Wenn ich heute darüber nachdenke, begann alles mit einer einfachen Idee: Lass uns ein Spiel starten. Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute. Dank Datasette hieß es oft: Wir laden das Spiel – und gehen solange eine Runde Fußball spielen. Bis manche Spiele geladen waren, verging tatsächlich genug Zeit dafür. Damals ahnte ich noch nicht, dass mich dieser kleine Brotkasten viele Jahrzehnte begleiten würde. --- ## Der erste eigene C64 Mit etwa elf Jahren war es endlich so weit: Mein eigener Commodore 64 zog ein – inklusive 1541-II-Floppy und MPS-Nadeldrucker, was damals fast schon Luxus war. Spiele wie Moon Cresta und vor allem Vermeer fesselten mich sofort. Später kamen Klassiker wie Maniac Mansion, Zak McKracken, International Karate, R-Type und Katakis dazu. Stunden wurden zu Tagen und die Ferien waren immer viel zu schnell vorbei. --- ## Der Programmierer, der nie einer wurde Irgendwann wollte ich natürlich auch selbst Spiele entwickeln und begann mit BASIC. Einige kleine Programme funktionierten sogar, viele endeten allerdings in Fehlermeldungen. Assembler habe ich nie gelernt – vielleicht war das auch besser so. Meine Joysticks hätten es mir vermutlich nicht gedankt.",
 
             image:"assets/images/icons/c64-512.png",
 
             tags:[
                 "1541",
                 "Disketten",
-                "SSI",
-                "Wizardry"
+                "BASIC",
+                "LOAD "*",8,1"
+				"The Last Ninja"
+				"Sid Meier's Pirates!"
             ]
 
         },
 
         1991:{
 
-            slot:"SAVEGAME #03",
+            slot:"SAVEGAME #02",
 
             title:"AMIGA LIEBE",
 
@@ -91,17 +74,19 @@ document.addEventListener("DOMContentLoaded", () => {
             image:"assets/images/icons/amiga-512.png",
 
             tags:[
-                "Amiga",
-                "AGA",
-                "Monkey Island",
+                "WHDLoad",
+                "Kickstart",
+                "Workbench",
                 "Turrican"
+				"The Secret of Monkey Island"
+				"AGA"
             ]
 
         },
 
         1996:{
 
-            slot:"SAVEGAME #04",
+            slot:"SAVEGAME #03",
 
             title:"DER ERSTE PC",
 
@@ -111,16 +96,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
             tags:[
                 "DOS",
-                "486 DX2",
-                "Windows 95",
+                "3dfx Voodoo",
+                "Windows 98",
                 "Command & Conquer"
+				"StarCraft"
+				"Pentium II"
             ]
 
         },
 
         2023:{
 
-            slot:"SAVEGAME #05",
+            slot:"SAVEGAME #04",
 
             title:"YOUTUBE START",
 
@@ -129,17 +116,19 @@ document.addEventListener("DOMContentLoaded", () => {
             image:"assets/images/icons/youtube-512.png",
 
             tags:[
-                "YouTube",
-                "Let's Plays",
-                "Retro",
-                "Community"
+                "Steam",
+                "GeForce GTX",
+                "Online Multiplayer",
+                "The Witcher 3: Wild Hunt"
+				"Minecraft"
+				"Grand Theft Auto V"
             ]
 
         },
 
         2026:{
 
-            slot:"SAVEGAME #06",
+            slot:"SAVEGAME #05",
 
             title:"RETRO NEWS FLASH",
 
@@ -152,6 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "C64",
                 "Amiga",
                 "Homebrew"
+				"Retro"
+	            "Youtube"
             ]
 
         }
