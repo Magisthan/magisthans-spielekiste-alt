@@ -1,692 +1,672 @@
 document.addEventListener("DOMContentLoaded", () => {
   
-    /* ==========================================
-       ELEMENTE
-    ========================================== */
-
-    const timeline = document.querySelector(".savegame-card");
-    const progress = document.querySelector(".timeline-progress");
-    const items = [...document.querySelectorAll(".timeline-item")];
-
-    const memory = document.getElementById("retro-memory");
-    const memoryImage = document.getElementById("memory-image");
-    const memoryYear = document.getElementById("memory-year");
-    const memoryTitle = document.getElementById("memory-title");
-    const memoryText = document.getElementById("memory-text");
-    const memoryTags = document.getElementById("memory-tags");
-	const memoryStory = document.getElementById("memory-story");
-
-    if (
-        !timeline ||
-        !progress ||
-        !memory ||
-        !memoryImage ||
-        !memoryYear ||
-        !memoryTitle ||
-        !memoryText ||
-        !memoryTags
-		!memoryStory ||
-    ) {
-        return;
-    }
-
-    /* ==========================================
-       STATUS
-    ========================================== */
-
-    let timelineRunning = false;
-    let introFinished = false;
-    let currentYear = null;
-
-    /* ==========================================
-       SAVEGAME DATEN
-    ========================================== */
-
-    const data = {
-
-        1987:{
-
-    slot:"SAVEGAME #01",
-
-    title:"ERSTE DISKETTEN",
-
-    text:"Mein Einstieg in die Welt des Commodore 64.",
-
-    story:`
-
-<p>
-Eigentlich wollte ich nur ein bisschen spielen.
-Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
-"Lass uns ein Spiel starten."
-</p>
-
-<p>
-Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
-Dank Datasette hieß es oft:
-Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
-</p>
-
-<h4>Der erste eigene C64</h4>
-
-<p>
-Mit etwa elf Jahren war es endlich soweit.
-Mein eigener Commodore 64 zog ein.
-Mit 1541-II und Nadeldrucker.
-</p>
-
-<h4>BASIC</h4>
-
-<p>
-Natürlich wollte ich irgendwann selbst Spiele entwickeln.
-Viele Programme funktionierten.
-Viele endeten allerdings mit Fehlermeldungen.
-</p>
-
-`,
-
-    image:"assets/images/icons/c64-512.png",
-
-            tags:[
-               "WHDLoad",
-               "Kickstart",
-               "Workbench",
-               "Turrican"
-    ]
-
-},
-
-        1991:{
-
-            slot:"SAVEGAME #02",
-
-            title:"AMIGA LIEBE",
-
-            text:"Monkey Island, Turrican und Chaos Engine machten den Amiga zum Lieblingsrechner.",
-
-			story:`
-
-<p>
-Eigentlich wollte ich nur ein bisschen spielen.
-Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
-"Lass uns ein Spiel starten."
-</p>
-
-<p>
-Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
-Dank Datasette hieß es oft:
-Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
-</p>
-
-<h4>Der erste eigene C64</h4>
-
-<p>
-Mit etwa elf Jahren war es endlich soweit.
-Mein eigener Commodore 64 zog ein.
-Mit 1541-II und Nadeldrucker.
-</p>
-
-<h4>BASIC</h4>
-
-<p>
-Natürlich wollte ich irgendwann selbst Spiele entwickeln.
-Viele Programme funktionierten.
-Viele endeten allerdings mit Fehlermeldungen.
-</p>
-
-`,
-			
-            image:"assets/images/icons/amiga-512.png",
-
-            tags:[
-                "WHDLoad",
-                "Kickstart",
-                "Workbench",
-                "Turrican"
-				
-            ]
-
-        },
-
-        1996:{
-
-            slot:"SAVEGAME #03",
-
-            title:"DER ERSTE PC",
-
-            text:"Mit dem ersten PC begann ein neues Kapitel.",
-
-			story:`
-
-<p>
-Eigentlich wollte ich nur ein bisschen spielen.
-Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
-"Lass uns ein Spiel starten."
-</p>
-
-<p>
-Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
-Dank Datasette hieß es oft:
-Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
-</p>
-
-<h4>Der erste eigene C64</h4>
-
-<p>
-Mit etwa elf Jahren war es endlich soweit.
-Mein eigener Commodore 64 zog ein.
-Mit 1541-II und Nadeldrucker.
-</p>
-
-<h4>BASIC</h4>
-
-<p>
-Natürlich wollte ich irgendwann selbst Spiele entwickeln.
-Viele Programme funktionierten.
-Viele endeten allerdings mit Fehlermeldungen.
-</p>
-
-`,
-
-            image:"assets/images/icons/pc-512.png",
-
-            tags:[
-                "DOS",
-                "3dfx Voodoo",
-                "Windows 98",
-                "Command & Conquer"
-				
-            ]
-
-        },
-
-        2023:{
-
-            slot:"SAVEGAME #04",
-
-            title:"YOUTUBE START",
-
-            text:"Aus einem Hobby entstand Magisthans Spielekiste.",
-
-			story:`
-
-<p>
-Eigentlich wollte ich nur ein bisschen spielen.
-Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
-"Lass uns ein Spiel starten."
-</p>
-
-<p>
-Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
-Dank Datasette hieß es oft:
-Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
-</p>
-
-<h4>Der erste eigene C64</h4>
-
-<p>
-Mit etwa elf Jahren war es endlich soweit.
-Mein eigener Commodore 64 zog ein.
-Mit 1541-II und Nadeldrucker.
-</p>
-
-<h4>BASIC</h4>
-
-<p>
-Natürlich wollte ich irgendwann selbst Spiele entwickeln.
-Viele Programme funktionierten.
-Viele endeten allerdings mit Fehlermeldungen.
-</p>
-
-`,
-
-            image:"assets/images/icons/youtube-512.png",
-
-            tags:[
-                "Steam",
-                "GeForce GTX",
-                "Online Multiplayer",
-                "The Witcher 3: Wild Hunt"
-				
-            ]
-
-        },
-
-        2026:{
-
-            slot:"SAVEGAME #05",
-
-            title:"RETRO NEWS FLASH",
-
-            text:"Jede Woche neue Spiele, Hardware und Demos rund um C64 und Amiga.",
-
-			story:`
-
-<p>
-Eigentlich wollte ich nur ein bisschen spielen.
-Wenn ich heute darüber nachdenke, begann alles mit einer ziemlich einfachen Idee:
-"Lass uns ein Spiel starten."
-</p>
-
-<p>
-Beim Commodore 64 meines Cousins bedeutete das allerdings etwas anderes als heute.
-Dank Datasette hieß es oft:
-Wir laden das Spiel und gehen solange eine Runde Fußball spielen.
-</p>
-
-<h4>Der erste eigene C64</h4>
-
-<p>
-Mit etwa elf Jahren war es endlich soweit.
-Mein eigener Commodore 64 zog ein.
-Mit 1541-II und Nadeldrucker.
-</p>
-
-<h4>BASIC</h4>
-
-<p>
-Natürlich wollte ich irgendwann selbst Spiele entwickeln.
-Viele Programme funktionierten.
-Viele endeten allerdings mit Fehlermeldungen.
-</p>
-
-`,
-
-            image:"assets/images/icons/heute-512.png",
-
-            tags:[
-                "News",
-                "C64",
-                "Amiga",
-                "Homebrew"
-				
-            ]
-
-        }
-
-    };
-
-
-    /* ==========================================
-       MEMORY FÜLLEN
-    ========================================== */
-
-    function fillMemory(year){
-
-        const entry = data[year];
-
-        if(!entry) return;
-
-        memoryYear.textContent = entry.slot;
-        memoryTitle.textContent = entry.title;
-        memoryText.textContent = entry.text;
-		memoryStory.innerHTML = entry.story;
-		const paragraphs = memoryStory.querySelectorAll("p, h4");
-
-         paragraphs.forEach((element,index)=>{
-
-         element.style.animationDelay = (index * 340) + "ms";
-
-});
-        memoryImage.src = entry.image;
-
-        memoryTags.innerHTML = "";
-
-        entry.tags.forEach(tag=>{
-
-            const span = document.createElement("span");
-
-            span.textContent = tag;
-
-            memoryTags.appendChild(span);
-
-        });
-
-    }
-
-
-    /* ==========================================
-   MEMORY ÖFFNEN
+ /* ==========================================
+   ELEMENTE
 ========================================== */
 
-function openMemory(year){
+const timeline = document.querySelector(".savegame-card");
+
+const progress = document.querySelector(".timeline-progress");
+
+const items = [...document.querySelectorAll(".timeline-item")];
+
+
+/* ==========================================
+   MEMORY CARD
+========================================== */
+
+const memory = document.getElementById("retro-memory");
+
+const memorySlot = document.getElementById("memory-slot");
+
+const memoryDate = document.getElementById("memory-date");
+
+const memoryImage = document.getElementById("memory-image");
+
+const memoryTitle = document.getElementById("memory-title");
+
+const memorySummary = document.getElementById("memory-summary");
+
+const memoryTags = document.getElementById("memory-tags");
+
+const memoryStory = document.getElementById("memory-story");
+
+const memoryStoryText = document.getElementById("memory-story-text");
+
+const memoryToggle = document.getElementById("memory-toggle");
+
+
+/* ==========================================
+   PRÜFUNG
+========================================== */
+
+if(
+
+    !timeline ||
+
+    !progress ||
+
+    !memory ||
+
+    !memorySlot ||
+
+    !memoryDate ||
+
+    !memoryImage ||
+
+    !memoryTitle ||
+
+    !memorySummary ||
+
+    !memoryTags ||
+
+    !memoryStory ||
+
+    !memoryStoryText ||
+
+    !memoryToggle
+
+){
+
+    console.warn("Timeline: Elemente fehlen.");
+
+    return;
+
+}
+
+
+/* ==========================================
+   STATUS
+========================================== */
+
+let timelineRunning = false;
+
+let introFinished = false;
+
+let currentYear = null;
+
+let storyOpen = false;
+
+/* ==========================================
+   SAVEGAME DATEN
+========================================== */
+
+const data = {
+
+    1987:{
+
+        slot:"SAVEGAME #01",
+
+        date:"1987",
+
+        title:"DER ANFANG",
+
+        summary:"Mein Einstieg in die Welt des Commodore 64.",
+
+        image:"assets/images/c64-timeline.png", 
+
+        tags:[
+            "1541-II",
+            "BASIC",
+            "Vermeer",
+            'LOAD"*",8,1'
+        ],
+
+        story:`
+<h4>Eigentlich wollte ich nur ein bisschen spielen...</h4>
+<p>
+Eigentlich wollte ich nur ein bisschen spielen...
+Wenn ich heute darüber nachdenke, hat alles mit einer ziemlich einfachen Idee 
+begonnen: "Lass uns ein Spiel starten."
+Gut... beim Commodore 64 meines Cousins bedeutete das damals allerdings etwas 
+anderes als heute. Er gehörte zu den Glücklichen, die schon sehr früh einen C64 besaßen
+selbstverständlich mit Datasette. 
+</p>
+
+<p>
+Unser typischer Ablauf war daher ungefähr so:
+"Wir laden jetzt das Spiel... und solange gehen wir erst einmal eine Runde Fußball spielen."
+Das war kein Scherz. Bis manche Spiele endlich geladen waren, konnte man tatsächlich noch 
+etwas anderes unternehmen. Damals ahnte ich natürlich noch nicht, dass mich dieser kleine 
+Brotkasten viele Jahrzehnte begleiten würde.
+</p>
+
+<h4>Der erste eigene C64</h4>
+
+<p>
+Mit ungefähr elf Jahren war es dann endlich soweit: Mein eigener Commodore 64 zog ein.
+Diesmal sogar schon mit einer 1541-II-Floppy und einem MPS-Nadeldrucker. Rückblickend war 
+das fast schon Luxus.
+Die ersten Spiele, die mich wirklich in ihren Bann zogen, waren Moon Cresta und Vermeer. Besonders Vermeer faszinierte mich. Damals verstand ich wahrscheinlich nur die Hälfte dessen, was ich eigentlich tat – aber genau das machte den Reiz aus.
+Es folgten Klassiker wie Maniac Mansion, Zak McKracken, International Karate, R-Type oder Katakis. Stunden wurden zu Tagen, Tage zu Ferien und Ferien schienen grundsätzlich viel zu kurz zu sein.
+</p>
+
+<h4>BASIC</h4>
+
+<p>
+Natürlich wollte ich irgendwann auch selbst Spiele programmieren.
+Also begann ich mit BASIC.
+Die Ergebnisse waren... nennen wir sie "überschaubar".
+Ein paar Programme funktionierten sogar. Viele andere sorgten eher für 
+kryptische Fehlermeldungen und spontane Systemabstürze.
+Assembler? Den habe ich nie gelernt.
+Vielleicht war das auch besser so. Wahrscheinlich wären dadurch einige 
+Joysticks in ernsthafte Gefahr geraten.
+</p>
+
+`
+
+    },
+
+    1991:{
+
+        slot:"SAVEGAME #02",
+
+        date:"1991",
+
+        title:"AMIGA LIEBE",
+
+        summary:"Monkey Island, Turrican und Chaos Engine machten den Amiga zu meinem Lieblingsrechner.",
+
+        image:"assets/images/amiga-timeline.png",
+
+        tags:[
+            "Amiga 500",
+            "Workbench",
+            "Monkey Island",
+            "Turrican"
+        ],
+
+        story:`
+
+<h4>Willkommen Amiga!</h4>
+<p>
+Mit ungefähr vierzehn Jahren zog schließlich ein Amiga 500 bei mir ein.
+Natürlich blieb es nicht beim Grundgerät. Ein zweites Diskettenlaufwerk 
+musste her. Speichererweiterung ebenfalls. Und irgendwann stand auch noch 
+ein gebrauchter Commodore-Monitor auf dem Schreibtisch.
+Der Amiga wurde schnell zum Mittelpunkt vieler Nachmittage.
+</p>
+
+<h4>Mit Freunden macht es noch mal so viel Spass</h4>
+
+<p>
+Mal spielte ich allein. Mal mit einem Freund. Und manchmal mit einer ganzen Gruppe.
+Besonders in Erinnerung geblieben sind die legendären Oil-Imperium-Runden. Da immer 
+nur ein Spieler gleichzeitig an den Bildschirm durfte, mussten alle anderen den Raum 
+verlassen. Heute klingt das fast absurd. Damals war das vollkommen normal.
+Und erstaunlicherweise funktionierte das sogar.
+
+</p>
+
+`
+
+    },
+
+    1996:{
+
+        slot:"SAVEGAME #03",
+
+        date:"1996",
+
+        title:"DER ERSTE PC",
+
+        summary:"Mit dem ersten PC begann ein neues Kapitel.",
+
+        image:"assets/images/pc-timeline.png",
+
+        tags:[
+            "DOS",
+            "Windows 98",
+            "3dfx",
+            "Command & Conquer"
+        ],
+
+        story:`
+
+<h4>Dann kam der erste PC</h4>
+<p>
+Irgendwann hielt schließlich auch der erste PC Einzug.
+Ein 486 DX2 mit sagenhaften 66 MHz.
+Plötzlich gab es VGA-Grafik, Soundkarten und ganz neue Spielewelten.
+In vielen Bereichen war der PC überlegen.
+Trotzdem blieb der Amiga noch lange griffbereit. Manche Spiele fühlten sich dort einfach... 
+richtiger an. Mit den Jahren wurde der PC schließlich zum Alltagsgerät.
+Das Spielen wurde seltener. Beruf, Alltag und andere Hobbys rückten in den Vordergrund.
+
+</p>
+`
+
+    },
+
+    2023:{
+
+        slot:"SAVEGAME #04",
+
+        date:"2023",
+
+        title:"YOUTUBE",
+
+        summary:"Aus einem Hobby entstand Magisthans Spielekiste.",
+
+        image:"assets/images/youtube-timeline.png",
+
+        tags:[
+            "YouTube",
+            "Let's Plays",
+            "Retro",
+            "Community"
+        ],
+
+        story:`
+
+<h4>Die alte Liebe kehrt zurück...</h4>
+<p>
+Viele Jahre später passierte etwas, womit ich selbst nicht gerechnet hätte.
+Durch einen guten Freund kam ich wieder mit der C64- und Amiga-Community in Kontakt.
+Plötzlich entdeckte ich neue Spiele.
+Neue Hardware.
+Neue Demos.
+Und vor allem viele Menschen, die diese alten Computer bis heute mit unglaublich viel 
+Leidenschaft am Leben erhalten. Je mehr ich mich damit beschäftigte, desto stärker wurde 
+die alte Begeisterung. Nur eines fehlte noch: Die Motivation, all die alten Spiele 
+tatsächlich wieder regelmäßig zu spielen.
+
+</p>
+
+<h4>Die verrückte Idee mit YouTube</h4>
+
+<p>
+Also machte ich etwas, womit ich das Spielen gleich mit etwas völlig Neuem verbinden konnte.
+Ich eröffnete einen eigenen YouTube-Kanal. Plötzlich ging es nicht mehr nur um Spiele. Ich 
+lernte Videos aufzunehmen. Zu schneiden. Thumbnails zu erstellen. SEO. Tonbearbeitung.
+Und überhaupt alles, was hinter einem YouTube-Kanal steckt.
+Rückblickend war das fast noch spannender als manche Spiele selbst.
+
+</p>
+
+`
+
+    },
+
+    2026:{
+
+        slot:"SAVEGAME #05",
+
+        date:"Heute",
+
+        title:"RETRO NEWS FLASH",
+
+        summary:"Jede Woche neue Spiele, Hardware und Demos rund um Commodore 64 und Amiga.",
+
+        image:"assets/images/heute-timeline.png",
+
+        tags:[
+            "News",
+            "C64",
+            "Amiga",
+            "Homebrew"
+        ],
+
+        story:`
+
+<h4>Wie der Retro News Flash entstand</h4>
+<p>
+Mit jedem neuen Video kamen neue Zuschauer hinzu. Und irgendwann stellte ich mir eine 
+einfache Frage: Warum eigentlich immer nur über alte Spiele sprechen? Jede Woche erscheinen 
+neue Homebrew-Spiele für C64 und Amiga. Neue Demos. Neue Hardware. Neue Projekte.
+Aber viele bekommen davon kaum etwas mit. Ende 2024 entstand deshalb der Retro News Flash.
+Seitdem berichte ich jede Woche über genau diese Entwicklungen und versuche, möglichst 
+viele spannende Projekte vorzustellen.
+
+
+</p>
+
+<h4>HEUTE</h4>
+
+<p>
+Heute gehört der Retro News Flash fest zu meinem Wochenablauf. Daneben gibt es gemeinsam 
+mit meinem langjährigen Freund Sascha den Kanal "Die Pixelkumpel", auf dem wir alte Spiele 
+neu entdecken, Erinnerungen austauschen und uns gelegentlich darüber streiten, wer eigentlich
+gerade den größten Unsinn gemacht hat. Außerdem schreibe ich regelmäßig Artikel für die 
+Computerzeitschrift Amiga Future und freue mich, auf diese Weise ebenfalls einen kleinen 
+Beitrag zur Community leisten zu dürfen.
+
+</p>
+
+<h4>Mein Wunsch für die Zukunft...</h4>
+
+<p>
+Ich wünsche mir, dass die C64- und Amiga-Szene auch in Zukunft weiter wächst.
+Dass neue Entwickler den Mut haben, ihre Ideen umzusetzen.
+Dass noch mehr Menschen entdecken, wie lebendig diese Computer bis heute sind.
+Und natürlich hoffe ich auch, dass sich mein Kanal weiterentwickelt, noch mehr Retro-Fans 
+erreicht und ich viele weitere Jahre jede Woche über neue Spiele, neue Ideen und neue 
+Projekte berichten darf. Denn ganz ehrlich: Eigentlich wollte ich damals nur ein 
+bisschen spielen. Dass daraus einmal all das entstehen würde, hätte ich nie gedacht.
+
+</p>
+
+`
+
+    }
+
+};
+
+
+/* ==========================================
+   MEMORY WECHSELN
+========================================== */
+
+function changeMemory(year){
+
+    const entry = data[year];
+
+    if(!entry){
+        return;
+    }
 
     if(currentYear === year){
         return;
     }
 
-    /* Karte bereits offen? */
-    if(memory.classList.contains("open")){
+    currentYear = year;
 
-        /* 1. Karte schließen */
-        memory.classList.remove("open");
+    /* Story immer schließen */
 
-        /* 2. Inhalt erst wechseln, wenn sie zu ist */
+    memoryStory.classList.remove("open");
+
+    storyOpen = false;
+
+    memoryToggle.textContent = "► Erinnerungen anzeigen";
+
+    /* Inhalt weich ausblenden */
+
+    memory.classList.add("memory-changing");
+
+    setTimeout(()=>{
+
+        /* Header */
+
+        memorySlot.textContent = entry.slot;
+
+        memoryDate.textContent = entry.date;
+
+        /* Bild */
+
+        memoryImage.style.opacity = 0;
+        memoryImage.style.transform = "scale(.95)";
+
         setTimeout(()=>{
 
-            fillMemory(year);
+            memoryImage.src = entry.image;
 
-        },250);
+        },120);
 
-        /* 3. Karte wieder öffnen */
+        memoryImage.onload = ()=>{
+
+            memoryImage.style.opacity = 1;
+            memoryImage.style.transform = "scale(1)";
+
+        };
+
+        /* Titel */
+
+        memoryTitle.textContent = entry.title;
+
+        /* Kurzbeschreibung */
+
+        memorySummary.textContent = entry.summary;
+
+        /* Tags */
+
+        memoryTags.innerHTML = "";
+
+        entry.tags.forEach((tag,index)=>{
+
+            const span = document.createElement("span");
+
+            span.textContent = tag;
+
+            span.style.opacity = 0;
+
+            span.style.transform = "translateY(8px)";
+
+            memoryTags.appendChild(span);
+
+            setTimeout(()=>{
+
+                span.style.transition =
+                    "all .35s ease";
+
+                span.style.opacity = 1;
+
+                span.style.transform =
+                    "translateY(0)";
+
+            },80*index);
+
+        });
+
+        /* Story */
+
+        memoryStoryText.innerHTML = entry.story;
+
+        /* Einblenden */
+
+        memory.classList.remove("memory-changing");
+
+    },260);
+
+}
+
+/* ==========================================
+   STORY ÖFFNEN / SCHLIESSEN
+========================================== */
+
+function toggleStory(){
+
+    storyOpen = !storyOpen;
+
+    if(storyOpen){
+
+        memoryStory.classList.add("open");
+
+        memoryToggle.textContent =
+
+            "▼ Erinnerungen ausblenden";
+
+        /*
+        Erst Karte öffnen...
+        */
+
         setTimeout(()=>{
 
-            memory.classList.add("open");
+            /*
+            ...dann Text weich einblenden
+            */
+
+            memoryStory.classList.add("show-text");
 
         },450);
-
-        /* 4. Story leicht verzögert starten */
-        setTimeout(()=>{
-
-            const elements = memory.querySelectorAll(
-                ".memory-story-text h4, .memory-story-text p"
-            );
-
-            elements.forEach((element,index)=>{
-
-                element.style.animation = "none";
-                element.offsetHeight; // Animation zurücksetzen
-
-                element.style.animation =
-                    `storyFade .65s ease forwards`;
-
-                element.style.animationDelay =
-                    (index * 280) + "ms";
-
-            });
-
-        },650);
 
     }
 
     else{
 
-        /* Erste Anzeige */
+        /*
+        Text zuerst ausblenden
+        */
 
-        fillMemory(year);
+        memoryStory.classList.remove("show-text");
 
-        requestAnimationFrame(()=>{
-
-            memory.classList.add("open");
-
-            setTimeout(()=>{
-
-                const elements = memory.querySelectorAll(
-                    ".memory-story-text h4, .memory-story-text p"
-                );
-
-                elements.forEach((element,index)=>{
-
-                    element.style.animation = "none";
-                    element.offsetHeight;
-
-                    element.style.animation =
-                        `storyFade .65s ease forwards`;
-
-                    element.style.animationDelay =
-                        (index * 280) + "ms";
-
-                });
-
-            },250);
-
-        });
-
-    }
-
-    currentYear = year;
-
-}
-
-
-    /* ==========================================
-       TIMELINE START
-    ========================================== */
-
-    function startTimeline(){
-
-        if(timelineRunning){
-
-            return;
-
-        }
-
-        timelineRunning = true;
-        introFinished = false;
-
-        progress.style.width = "0%";
-
-        progress.getAnimations().forEach(animation=>{
-
-            animation.cancel();
-
-        });
-
-        progress.animate(
-
-            [
-
-                {width:"0%"},
-
-                {width:"100%"}
-
-            ],
-
-            {
-
-                duration:5200,
-
-                easing:"ease-in-out",
-
-                fill:"forwards"
-
-            }
-
-        );
-
-        items.forEach(item=>{
-
-            item.classList.remove("show");
-            item.classList.remove("active");
-
-        });
-
-        items.forEach((item,index)=>{
-
-            setTimeout(()=>{
-
-                item.classList.add("show");
-
-            },500 + index * 700);
-
-        });
+        /*
+        kleine Pause,
+        danach Karte schließen
+        */
 
         setTimeout(()=>{
 
-            introFinished = true;
+            memoryStory.classList.remove("open");
+            memoryStory.classList.remove("show-text");
 
-        },5200);
+        },180);
 
-    }
-	
-    /* ==========================================
-       TIMELINE RESET
-    ========================================== */
+        memoryToggle.textContent=
 
-    function resetTimeline(){
-
-        timelineRunning = false;
-        introFinished = false;
-        currentYear = null;
-
-        progress.getAnimations().forEach(animation=>{
-
-            animation.cancel();
-
-        });
-
-        progress.style.width = "0%";
-
-        items.forEach(item=>{
-
-            item.classList.remove("show");
-            item.classList.remove("active");
-
-        });
-
-        memory.classList.remove("open");
+            "► Erinnerungen anzeigen";
 
     }
 
+}
 
-    /* ==========================================
-       SAVEGAME AUSWÄHLEN
-    ========================================== */
+/* ==========================================
+   BUTTON
+========================================== */
 
-    items.forEach(item=>{
-
-        item.addEventListener("click",()=>{
-
-            if(!introFinished){
-
-                return;
-
-            }
-
-            const year = item.dataset.year;
-
-            /* Punkt aktivieren */
-
-            items.forEach(i=>{
-
-                i.classList.remove("active");
-
-            });
-
-            item.classList.add("active");
-
-            /*
-             * kleiner "Spielgefühl"-Moment
-             * erst Glow,
-             * dann Karte öffnen
-             */
-
-            setTimeout(()=>{
-
-                openMemory(year);
-
-            },150);
-
-        });
-
-    });
+memoryToggle.addEventListener("click", toggleStory);
 
 
-    /* ==========================================
-       SCROLL OBSERVER
-    ========================================== */
+/* ==========================================
+   TIMELINE START
+========================================== */
 
-    const observer = new IntersectionObserver(
+function startTimeline(){
 
-        entries=>{
+    if(timelineRunning){
+        return;
+    }
 
-            entries.forEach(entry=>{
+    timelineRunning = true;
+    introFinished = false;
 
-                if(entry.isIntersecting){
+    /* Progress zurücksetzen */
 
-                    startTimeline();
+    progress.getAnimations().forEach(animation=>animation.cancel());
 
-                }
+    progress.style.width="0%";
 
-                else{
+    progress.animate(
 
-                    resetTimeline();
+        [
 
-                }
+            { width:"0%" },
 
-            });
+            { width:"100%" }
 
-        },
+        ],
 
         {
 
-            threshold:.20,
+            duration:5200,
 
-            rootMargin:"0px 0px -10% 0px"
+            easing:"ease-in-out",
+
+            fill:"forwards"
 
         }
 
     );
 
-    observer.observe(timeline);
+    /* Punkte zurücksetzen */
 
+    items.forEach(item=>{
 
-    /* ==========================================
-       MEMORY CARD
-       Beim Laden NICHT sichtbar
-    ========================================== */
-
-    memory.classList.remove("open");
-
-
-    /* ==========================================
-       OPTIONAL:
-       ESC schließt die Karte
-    ========================================== */
-
-    document.addEventListener("keydown",event=>{
-
-        if(event.key==="Escape"){
-
-            memory.classList.remove("open");
-
-            items.forEach(item=>{
-
-                item.classList.remove("active");
-
-            });
-
-            currentYear=null;
-
-        }
+        item.classList.remove("show");
+        item.classList.remove("active");
 
     });
 
+    /* Punkte nacheinander anzeigen */
 
-    /* ==========================================
-       OPTIONAL:
-       Klick neben die Karte schließt sie
-    ========================================== */
+    items.forEach((item,index)=>{
 
-    document.addEventListener("click",event=>{
+        setTimeout(()=>{
 
-        if(!memory.classList.contains("open")){
+            item.classList.add("show");
 
+        },500 + index*700);
+
+    });
+
+    /* Danach darf geklickt werden */
+
+    setTimeout(()=>{
+
+        introFinished=true;
+
+        /* ersten Punkt automatisch aktivieren */
+
+        items[0].classList.add("active");
+
+        changeMemory(items[0].dataset.year);
+
+    },5200);
+
+}
+
+/* ==========================================
+   TIMELINE KLICK
+========================================== */
+
+items.forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        if(!introFinished){
             return;
-
         }
 
-        if(event.target.closest(".timeline-item")){
+        items.forEach(i=>{
 
-            return;
-
-        }
-
-        if(event.target.closest(".retro-memory")){
-
-            return;
-
-        }
-
-        memory.classList.remove("open");
-
-        items.forEach(item=>{
-
-            item.classList.remove("active");
+            i.classList.remove("active");
 
         });
 
-        currentYear=null;
+        item.classList.add("active");
+
+        changeMemory(item.dataset.year);
 
     });
+
+});
+
+/* ==========================================
+   SCROLL OBSERVER
+========================================== */
+
+const observer = new IntersectionObserver(
+
+    entries=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                startTimeline();
+
+            }
+
+        });
+
+    },
+
+    {
+
+        threshold:.25,
+
+        rootMargin:"0px 0px -15% 0px"
+
+    }
+
+);
+
+observer.observe(timeline);
+
+/* ==========================================
+   STARTWERT
+========================================== */
+
+changeMemory("1987");
 
 });
