@@ -103,7 +103,7 @@ const data = {
 
         summary:"Mein Einstieg in die Welt des Commodore 64.",
 
-        image:"assets/images/c64-timeline.png", 
+        image:"assets/images/c64-timeline.webp", 
 
         tags:[
             "1541-II",
@@ -168,7 +168,7 @@ Joysticks in ernsthafte Gefahr geraten.
 
         summary:"Monkey Island, Turrican und Chaos Engine machten den Amiga zu meinem Lieblingsrechner.",
 
-        image:"assets/images/amiga-timeline.png",
+        image:"assets/images/amiga-timeline.webp",
 
         tags:[
             "Amiga 500",
@@ -213,7 +213,7 @@ Und erstaunlicherweise funktionierte das sogar.
 
         summary:"Mit dem ersten PC begann ein neues Kapitel.",
 
-        image:"assets/images/pc-timeline.png",
+        image:"assets/images/pc-timeline.webp",
 
         tags:[
             "DOS",
@@ -249,7 +249,7 @@ Das Spielen wurde seltener. Beruf, Alltag und andere Hobbys rückten in den Vord
 
         summary:"Aus einem Hobby entstand Magisthans Spielekiste.",
 
-        image:"assets/images/youtube-timeline.png",
+        image:"assets/images/youtube-timeline.webp",
 
         tags:[
             "YouTube",
@@ -299,7 +299,7 @@ Rückblickend war das fast noch spannender als manche Spiele selbst.
 
         summary:"Jede Woche neue Spiele, Hardware und Demos rund um Commodore 64 und Amiga.",
 
-        image:"assets/images/heute-timeline.png",
+        image:"assets/images/heute-timeline.webp",
 
         tags:[
             "News",
