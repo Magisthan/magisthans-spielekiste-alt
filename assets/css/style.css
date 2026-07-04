@@ -7,13 +7,7 @@
     src: url('../fonts/Orbitron-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
-}
- 
-@font-face {
-    font-family: 'Orbitron';
-    src: url('../fonts/Orbitron-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -21,20 +15,7 @@
     src: url('../fonts/Inter-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
+    font-display: swap;
 }
 
 /* ==========================
@@ -99,6 +80,11 @@ a:hover {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.game-cover,
+.screenshot {
+    height: auto;
 }
 
 /* ==========================
@@ -415,32 +401,6 @@ iframe {
     overflow: hidden;
 }
 
-.playlist-bg::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background-size: cover;
-
-    background-position: center;
-
-    opacity: 0.90;
-
-    transition: all 0.25s ease;
-
-    z-index: 0;
-}
-
-.playlist-bg:hover::before {
-
-    opacity: 1.00;
-
-    transform: scale(1.03);
-}
-
 .playlist-bg .playlist-title,
 .playlist-bg .platform-tag,
 .playlist-bg .platform-icons {
@@ -454,81 +414,29 @@ iframe {
    Playlist Spiele
    ========================== */
 
-.patrizier-bg::before {
-
-    background-image:
-    url("../playlists/patrizier.png");
-    background-position: center 70%;
+.playlist-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.90;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    z-index: 0;
 }
 
-.megalomania-bg::before {
-
-    background-image:
-    url("../playlists/megalomania.png");
-    background-position: center;
+.playlist-bg:hover .playlist-image {
+    opacity: 1.00;
+    transform: scale(1.03);
 }
 
-.max1869-bg::before {
-
-    background-image:
-    url("../playlists/max1869.png");
-    background-position: center;
-}
-
-.fugger-bg::before {
-
-    background-image:
-    url("../playlists/fugger.png");
-    background-position: center;
-}
-
-.fugger2-bg::before {
-
-    background-image:
-    url("../playlists/fugger2.png");
-    background-position: center 70%;
-}
-
-.ringsofmedusa-bg::before {
-
-    background-image:
-    url("../playlists/ringsofmedusa.png");
-    background-position: center 70%;
-}
-
-.burntime-bg::before {
-
-    background-image:
-    url("../playlists/burntime.png");
-    background-position: center 70%;
-}
-
-.cok-bg::before {
-
-    background-image:
-    url("../playlists/cok.png");
-    background-position: center;
-}
-
-.cinemaware-bg::before {
-
-    background-image:
-    url("../playlists/cinemaware.png");
-    background-position: center;
-}
-
-.piratesamiga-bg::before {
-
-    background-image:
-    url("../playlists/piratesamiga.png");
-    background-position: center;
-}
-
-.vermeer-bg::before {
-
-    background-image:
-    url("../playlists/vermeer.png");
-    background-position: center;
+.patrizier-bg .playlist-image,
+.fugger2-bg .playlist-image,
+.ringsofmedusa-bg .playlist-image,
+.burntime-bg .playlist-image {
+    object-position: center 70%;
 }
 
 /* ==========================
@@ -974,6 +882,60 @@ iframe {
     border: none;
 
     display: block;
+}
+
+.lite-video-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: #000;
+    color: #ffffff;
+    cursor: pointer;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    font: inherit;
+}
+
+.lite-video-button img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    opacity: 0.88;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.lite-video-button:hover img {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.lite-video-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 78px;
+    height: 78px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255,42,195,0.88);
+    box-shadow: 0 0 28px rgba(255,42,195,0.45);
+    transform: translate(-50%, -50%);
+}
+
+.lite-video-play::before {
+    content: "";
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 25px solid #ffffff;
 }
 
 /* ==========================
@@ -1964,6 +1926,14 @@ iframe {
 
 }
 
+.pixel-video-shell {
+    position: relative;
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #05050a;
+}
+
 .pixelkumpel-video video{
 
     display:block;
@@ -1976,7 +1946,32 @@ iframe {
 
     object-position:center center;
 
-    border-radius:18px;
+}
+
+.pixel-video-start {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border: 0;
+    background:
+        linear-gradient(rgba(0,0,0,.12), rgba(0,0,0,.52)),
+        url("../images/pixelkumpel-logo.webp") center / min(42%, 360px) no-repeat #05050a;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.pixel-video-start span {
+    margin-top: 210px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    background: rgba(58,168,255,0.18);
+    border: 1px solid rgba(58,168,255,0.35);
+    box-shadow: 0 0 18px rgba(58,168,255,0.28);
+}
+
+.pixel-video-shell.is-playing .pixel-video-start {
+    display: none;
 
 }
 
@@ -3207,6 +3202,8 @@ transform:scale(1);
 
     width:100%;
 
+    height:auto;
+
     max-width:315px;
 
     border-radius:22px;
@@ -4138,6 +4135,8 @@ transform:scale(1);
 
     width:54px;
 
+    height:auto;
+
     display:block;
 
 }
@@ -4764,7 +4763,7 @@ section{
 
     height:100%;
 
-    object-fit:cover;
+    object-fit:contain;
 
     border-radius:12px;
 
@@ -5501,7 +5500,4 @@ footer a:hover {
 
 } 
 
-html,
-body
-
-   
+}
