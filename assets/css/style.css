@@ -1945,13 +1945,13 @@ iframe {
 
 .memory-photo > .pixelkumpel-photo{
 
-    display:block;
-
     width:700px;
 
-    max-width:none;
+    max-width:100%;
 
     height:auto;
+
+    display:block;
 
     margin:0 auto;
 
@@ -2329,11 +2329,17 @@ iframe {
 
 /* unterer */
 
+/* unterer */
+
 .crt-knob-channel{
 
-    right:38px;
+    left:82.55%;
 
-    top:292px;
+    top:39.25%;
+
+    width:9.56%;
+
+    height:17.49%;
 
 }
 
@@ -6992,6 +6998,248 @@ footer a:hover {
 /* ==========================
    Mobile
    ========================== */
+
+
+
+@media (max-width: 900px){
+
+    .memory-photo > .pixelkumpel-photo{
+
+        width:100%;
+
+        max-width:420px;
+
+    }
+
+    .memory-header{
+
+    padding:14px 18px;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    }
+
+/* =====================================================
+   PLAYER CARD RESPONSIVE
+===================================================== */
+
+@media (max-width:900px){
+
+    /* Karte */
+
+    .player-card{
+
+    width:100%;
+
+    max-width:360px;
+
+    min-height:700px;
+
+    height:700px;
+
+    margin:0 auto 40px;
+
+    }
+
+    .player-card-back{
+
+    overflow-y:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+    }
+
+    /* Portrait */
+
+    .player-card-portrait{
+
+        width:170px;
+
+        height:170px;
+
+        margin-top:24px;
+
+        margin-bottom:18px;
+
+    }
+
+    /* Vorderseite */
+
+    .player-card-player{
+
+        font-size:.62rem;
+
+        letter-spacing:3px;
+
+    }
+
+    .player-card-name{
+
+        font-size:1.45rem;
+
+        letter-spacing:1px;
+
+        text-align:center;
+
+        padding:0 18px;
+
+    }
+
+    .player-card-subtitle{
+
+        font-size:.72rem;
+
+        letter-spacing:2px;
+
+        margin-top:8px;
+
+        margin-bottom:22px;
+
+        text-align:center;
+
+        padding:0 15px;
+
+    }
+
+    .player-card-button{
+
+        width:180px;
+
+        padding:12px 16px;
+
+        margin-bottom:20px;
+
+        font-size:.85rem;
+
+    }
+
+    /* Rückseite */
+
+    .player-card-back{
+
+        padding:18px;
+
+    }
+
+    .player-card-title{
+
+        font-size:1.1rem;
+
+        letter-spacing:2px;
+
+    }
+
+    .player-card-divider{
+
+        margin:14px 0;
+
+    }
+
+    /* Zweispaltiges Layout untereinander */
+
+    .player-card-top{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+    }
+
+    .player-card-right{
+
+        gap:18px;
+
+    }
+
+    .player-card-values{
+
+        gap:12px;
+
+    }
+
+    .player-card-stats h3,
+
+    .player-card-inventory h3{
+
+        font-size:.72rem;
+
+        letter-spacing:2px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .crt-channel{
+
+        left:10px;
+
+        bottom:10px;
+
+        padding:6px 8px;
+
+    }
+
+    .crt-channel-number{
+
+        font-size:.52rem;
+
+        letter-spacing:1px;
+
+    }
+
+    .crt-channel-title{
+
+        font-size:.60rem;
+
+        line-height:1.2;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .crt-play{
+
+        padding:10px 18px;
+
+        gap:8px;
+
+    }
+
+    .play-icon{
+
+        font-size:1rem;
+
+    }
+
+    .play-label{
+
+        font-size:.72rem;
+
+        letter-spacing:.5px;
+
+    }
+
+    .crt-hint{
+
+    font-size:.55rem;
+
+    padding:6px 10px;
+
+    max-width:40%;
+
+    text-align:center;
+
+    }
+    
+
+
+}
 
 @media (max-width: 900px) {
 

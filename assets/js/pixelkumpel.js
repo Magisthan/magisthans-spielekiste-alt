@@ -190,13 +190,27 @@ document.addEventListener("DOMContentLoaded", () => {
        HINWEISE
     ===================================================== */
 
-    function showHint(text){
+    let hintTimer;
+
+    function showHint(text, autoHide = false){
+
+        clearTimeout(hintTimer);
 
         hint.textContent = text;
 
         hint.classList.add("show");
 
+        if(autoHide){
+
+            hintTimer = setTimeout(()=>{
+
+                hideHint();
+
+            },1800);
+
     }
+
+}
 
     function hideHint(){
 
@@ -347,7 +361,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    powerButton.addEventListener("click",startTV);
+    powerButton.addEventListener("click",()=>{
+
+    showHint("TV startet...",true);
+
+    startTV();
+
+    });
 
 
     /* =====================================================
@@ -373,7 +393,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    channelButton.addEventListener("click",nextChannel);
+    channelButton.addEventListener("click",()=>{
+
+    nextChannel();
+
+    showHint("Kanal gewechselt",true);
+
+    });
 
 
     /* =====================================================
