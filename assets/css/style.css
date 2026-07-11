@@ -7021,6 +7021,7 @@ footer a:hover {
 
     }
 
+}
 /* =====================================================
    PLAYER CARD RESPONSIVE
 ===================================================== */
@@ -7040,14 +7041,6 @@ footer a:hover {
     height:700px;
 
     margin:0 auto 40px;
-
-    }
-
-    .player-card-back{
-
-    overflow-y:auto;
-
-    -webkit-overflow-scrolling:touch;
 
     }
 
@@ -7119,7 +7112,9 @@ footer a:hover {
 
     .player-card-back{
 
-        padding:18px;
+    overflow-y:auto;
+
+    -webkit-overflow-scrolling:touch;
 
     }
 
@@ -7168,76 +7163,6 @@ footer a:hover {
         letter-spacing:2px;
 
     }
-
-}
-
-@media (max-width:768px){
-
-    .crt-channel{
-
-        left:10px;
-
-        bottom:10px;
-
-        padding:6px 8px;
-
-    }
-
-    .crt-channel-number{
-
-        font-size:.52rem;
-
-        letter-spacing:1px;
-
-    }
-
-    .crt-channel-title{
-
-        font-size:.60rem;
-
-        line-height:1.2;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    .crt-play{
-
-        padding:10px 18px;
-
-        gap:8px;
-
-    }
-
-    .play-icon{
-
-        font-size:1rem;
-
-    }
-
-    .play-label{
-
-        font-size:.72rem;
-
-        letter-spacing:.5px;
-
-    }
-
-    .crt-hint{
-
-    font-size:.55rem;
-
-    padding:6px 10px;
-
-    max-width:40%;
-
-    text-align:center;
-
-    }
-    
-
 
 }
 
